@@ -647,4 +647,234 @@ body {
     .grid-3 {
         grid-template-columns: 1fr;
     }
+    
+    .blog-grid,
+    .store-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Academic Papers Section */
+.academic-papers {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.paper-category {
+    margin-bottom: 3rem;
+}
+
+.paper-category h4 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.papers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.paper-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.paper-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 198, 255, 0.2);
+}
+
+.paper-item h5 {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.paper-authors {
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.paper-journal {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.paper-abstract {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.paper-link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.paper-link:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+/* Blog Section */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 198, 255, 0.3);
+    border-color: var(--accent);
+}
+
+.blog-date {
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.blog-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.blog-card p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.blog-read-more {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.blog-read-more:hover {
+    transform: translateX(5px);
+}
+
+/* Store Section */
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 198, 255, 0.3);
+    border-color: var(--accent);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.product-placeholder {
+    font-size: 4rem;
+    opacity: 0.5;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.product-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    min-height: 60px;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.product-card .btn {
+    width: 100%;
+}
+
+.store-notice {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(0, 198, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    text-align: center;
+}
+
+.store-notice p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.store-notice a {
+    color: var(--accent);
+    font-weight: 600;
 }
