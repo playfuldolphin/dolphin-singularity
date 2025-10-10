@@ -26,6 +26,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    const paperCategories = document.querySelectorAll('.paper-category h4');
+    paperCategories.forEach(heading => {
+        heading.addEventListener('click', function() {
+            this.parentElement.classList.toggle('collapsed');
+        });
+    });
+    
+    const backToTopButton = document.createElement('button');
+    backToTopButton.className = 'back-to-top';
+    backToTopButton.innerHTML = '↑';
+    backToTopButton.setAttribute('aria-label', 'Back to top');
+    document.body.appendChild(backToTopButton);
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 500) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
     let lastScroll = 0;
     
     window.addEventListener('scroll', function() {
