@@ -9,7 +9,6 @@ const PRODUCT_LINKS = {
 
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-links a');
     
     const productButtons = document.querySelectorAll('[data-product]');
     productButtons.forEach(button => {
@@ -68,25 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         lastScroll = currentScroll;
-    });
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const targetSection = document.querySelector(href);
-                
-                if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
     });
     
     const observerOptions = {
