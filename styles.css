@@ -1242,3 +1242,202 @@ body {
 .blog-post-content ul li {
     margin-bottom: 0.5rem;
 }
+
+/* Store Coming Soon Styles */
+.coming-soon-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.launch-timeline {
+    background: var(--light-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    margin: 3rem 0;
+    text-align: left;
+}
+
+.launch-timeline h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.preview-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.preview-card h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.preview-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.preview-card ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-muted);
+}
+
+.preview-card ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.funding-chart {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.funding-item {
+    text-align: center;
+}
+
+.funding-percentage {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.funding-category h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.funding-category p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.early-access-box {
+    background: linear-gradient(135deg, rgba(0, 119, 190, 0.1), rgba(0, 201, 255, 0.1));
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.early-access-form {
+    margin-top: 2rem;
+}
+
+.early-access-form .form-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.early-access-form input[type="email"] {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.benefit-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.benefit-list li::before {
+    content: "✨";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.support-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.support-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.support-card h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.partner-box {
+    background: var(--dark-bg);
+    color: var(--text-light);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.partner-box h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.partner-box p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+.impact-note {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
