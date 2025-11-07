@@ -478,5 +478,5 @@ White:           #ffffff
 
 ## Questions?
 
-Contact: mr.noahwilson@gmail.com
+Contact: dolphinsingularity@gmail.com
 Website: dolphinsingularity.org

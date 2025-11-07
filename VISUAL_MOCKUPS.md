@@ -379,7 +379,7 @@ For each product:
 
 ## Need Help?
 
-**Design Questions:** mr.noahwilson@gmail.com
+**Design Questions:** dolphinsingularity@gmail.com
 **Printful Support:** help.printful.com
 **More Resources:** See DESIGN_SPECS.md
 

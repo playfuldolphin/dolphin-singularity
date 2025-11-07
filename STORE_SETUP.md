@@ -103,4 +103,4 @@ After setup:
 
 ## Support
 
-Questions? Email mr.noahwilson@gmail.com
+Questions? Email dolphinsingularity@gmail.com

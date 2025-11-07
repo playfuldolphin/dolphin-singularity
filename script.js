@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (productUrl && !productUrl.includes('YOUR-STORE')) {
                 window.open(productUrl, '_blank');
             } else {
-                alert('Store coming soon! Email mr.noahwilson@gmail.com for early access and updates.');
+                alert('Store coming soon! Email dolphinsingularity@gmail.com for early access and updates.');
             }
         });
     });
