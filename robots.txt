@@ -1,0 +1,36 @@
+# Robots.txt for DolphinSingularity.org
+# Last updated: November 2025
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Disallow access to internal directories
+Disallow: /.git/
+Disallow: /.github/
+
+# Allow search engines to access all content
+Allow: /blog/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap location
+Sitemap: https://dolphinsingularity.org/sitemap.xml
+
+# Specific crawler instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 10

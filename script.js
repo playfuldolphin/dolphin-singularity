@@ -1,14 +1,82 @@
 const PRODUCT_LINKS = {
-    tshirt: 'https://YOUR-STORE.printful.com/product-url-1',
-    hoodie: 'https://YOUR-STORE.printful.com/product-url-2',
-    tote: 'https://YOUR-STORE.printful.com/product-url-3',
-    bundle: 'https://YOUR-STORE.printful.com/product-url-4',
-    mug: 'https://YOUR-STORE.printful.com/product-url-5',
-    print: 'https://YOUR-STORE.printful.com/product-url-6'
+    tshirt: 'https://dolphin-singularity.printful.me/product/signature-whistle-tshirt',
+    hoodie: 'https://dolphin-singularity.printful.me/product/ocean-guardian-hoodie',
+    tote: 'https://dolphin-singularity.printful.me/product/eco-warrior-tote',
+    bundle: 'https://dolphin-singularity.printful.me/product/conservation-bundle',
+    mug: 'https://dolphin-singularity.printful.me/product/morning-waves-mug',
+    print: 'https://dolphin-singularity.printful.me/product/acoustic-art-print'
 };
+
+// Page loader
+window.addEventListener('load', function() {
+    const pageLoader = document.getElementById('pageLoader');
+    if (pageLoader) {
+        setTimeout(() => {
+            pageLoader.classList.add('hide');
+        }, 1000);
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
+    
+    // Mobile menu toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileMenuToggle && navLinks) {
+        mobileMenuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target)) {
+                mobileMenuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    }
+    
+    // Social Share Bar functionality
+    const shareBar = document.getElementById('shareBar');
+    if (shareBar) {
+        // Hide share bar on mobile
+        function updateShareBarVisibility() {
+            if (window.innerWidth <= 768) {
+                shareBar.style.display = 'none';
+            } else {
+                shareBar.style.display = 'flex';
+            }
+        }
+        
+        updateShareBarVisibility();
+        window.addEventListener('resize', updateShareBarVisibility);
+        
+        // Animate share bar on scroll
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 768) {
+                if (window.scrollY > 200) {
+                    shareBar.style.opacity = '1';
+                    shareBar.style.transform = 'translateY(-50%) translateX(0)';
+                } else {
+                    shareBar.style.opacity = '0';
+                    shareBar.style.transform = 'translateY(-50%) translateX(-100px)';
+                }
+            }
+        });
+    }
     
     const productButtons = document.querySelectorAll('[data-product]');
     productButtons.forEach(button => {
@@ -74,21 +142,55 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px 0px -100px 0px'
     };
     
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
+    // Enhanced intersection observer for multiple animation types
+    const animationObserver = new IntersectionObserver(function(entries) {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                // Add staggered delay based on index
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                    if (entry.target.classList.contains('section')) {
+                        entry.target.classList.add('visible');
+                    }
+                }, index * 100);
             }
         });
     }, observerOptions);
     
-    const cards = document.querySelectorAll('.card, .research-card, .mission-card');
-    cards.forEach(card => {
+    // Observe all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        animationObserver.observe(section);
+    });
+    
+    // Observe all cards with enhanced animations
+    const cards = document.querySelectorAll('.card, .research-card, .mission-card, .blog-card, .highlight-card');
+    cards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+        card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        animationObserver.observe(card);
+    });
+    
+    // Add hover tilt effect to cards
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+        });
     });
     
     const heroVisual = document.querySelector('.wave-animation');
@@ -193,6 +295,38 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Form submitted:', formData);
         });
     }
+
+    // Newsletter signup handling
+    const newsletterForms = document.querySelectorAll('#newsletterForm');
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = this.querySelector('input[type="email"]').value;
+            const button = this.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            
+            // Simulate form submission
+            button.textContent = 'Subscribing...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                // In production, this would send to a backend service
+                localStorage.setItem('dolphinNewsletterSubscribed', 'true');
+                localStorage.setItem('dolphinNewsletterEmail', email);
+                
+                button.textContent = 'Subscribed! ✓';
+                this.reset();
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }, 3000);
+            }, 1500);
+            
+            console.log('Newsletter signup:', email);
+        });
+    });
 });
 
 // Blog post data and functionality

@@ -43,6 +43,30 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://dolphinsingularity.org/blog/dolphingemma-progress.html</loc>
+        <lastmod>2025-11-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dolphinsingularity.org/blog/dolphins-teach-ai.html</loc>
+        <lastmod>2025-11-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dolphinsingularity.org/blog/signature-paradox.html</loc>
+        <lastmod>2025-11-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dolphinsingularity.org/blog/conservation-understanding.html</loc>
+        <lastmod>2025-11-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://dolphinsingularity.org/resources.html</loc>
         <lastmod>2024-11-07</lastmod>
         <changefreq>weekly</changefreq>

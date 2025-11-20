@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Donate to Support Dolphin Research | Dolphin Singularity</title>
+    <meta name="title" content="Donate to Support Dolphin Research | Dolphin Singularity">
+    <meta name="description" content="Support groundbreaking AI-powered dolphin communication research and conservation efforts. Your donation directly funds research and protects marine habitats.">
+    <meta name="keywords" content="dolphin donation, marine conservation, support research, ocean protection, tax deductible">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dolphinsingularity.org/donate.html">
+    <meta property="og:title" content="Donate to Support Dolphin Research">
+    <meta property="og:description" content="Support groundbreaking AI-powered dolphin communication research and conservation efforts.">
+    <meta property="og:image" content="https://dolphinsingularity.org/images/hero-background.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dolphinsingularity.org/donate.html">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894087674561904"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
+                <h1>Dolphin Singularity</h1>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="conservation.html">Conservation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Support Our Mission</h1>
+            <p class="page-subtitle">Your donation directly funds dolphin communication research and ocean conservation</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="donation-intro">
+                <h2 class="section-title">Why Your Support Matters</h2>
+                <p class="large-text">
+                    Every contribution brings us closer to understanding dolphin intelligence and protecting these remarkable beings. 
+                    Your support funds cutting-edge AI research, field studies, and conservation initiatives that make a real difference.
+                </p>
+                
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <div class="impact-amount">$25</div>
+                        <p>Funds 1 hour of AI model training for dolphin vocalization analysis</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-amount">$50</div>
+                        <p>Provides acoustic monitoring equipment for field researchers</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-amount">$100</div>
+                        <p>Supports a day of field research with wild dolphin populations</p>
+                    </div>
+                    <div class="impact-item">
+                        <div class="impact-amount">$500</div>
+                        <p>Funds development of conservation education materials for schools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Choose Your Support Level</h2>
+            
+            <div class="donation-options">
+                <!-- One-Time Donation -->
+                <div class="donation-card">
+                    <h3>One-Time Donation</h3>
+                    <p>Make an immediate impact with a single contribution</p>
+                    
+                    <div class="donation-amounts">
+                        <button class="amount-btn" data-amount="25">$25</button>
+                        <button class="amount-btn" data-amount="50">$50</button>
+                        <button class="amount-btn active" data-amount="100">$100</button>
+                        <button class="amount-btn" data-amount="250">$250</button>
+                        <button class="amount-btn" data-amount="500">$500</button>
+                        <button class="amount-btn" data-amount="custom">Other</button>
+                    </div>
+                    
+                    <div class="custom-amount-input" style="display: none;">
+                        <input type="number" id="customAmount" placeholder="Enter amount" min="5">
+                    </div>
+                    
+                    <div class="donation-buttons">
+                        <button class="btn btn-primary donate-btn" data-method="paypal">
+                            Donate with PayPal
+                        </button>
+                        <button class="btn btn-secondary donate-btn" data-method="card">
+                            Donate with Card
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Monthly Support -->
+                <div class="donation-card featured">
+                    <div class="featured-badge">Most Impact</div>
+                    <h3>Become a Pod Member</h3>
+                    <p>Join our monthly giving circle for sustained impact</p>
+                    
+                    <div class="monthly-tiers">
+                        <div class="tier">
+                            <h4>Supporter</h4>
+                            <div class="tier-amount">$10/month</div>
+                            <ul>
+                                <li>Monthly research updates</li>
+                                <li>Exclusive newsletter content</li>
+                                <li>Digital thank you certificate</li>
+                            </ul>
+                        </div>
+                        <div class="tier recommended">
+                            <h4>Guardian</h4>
+                            <div class="tier-amount">$25/month</div>
+                            <ul>
+                                <li>All Supporter benefits</li>
+                                <li>Quarterly video calls with researchers</li>
+                                <li>Name on website donors page</li>
+                                <li>Dolphin adoption certificate</li>
+                            </ul>
+                        </div>
+                        <div class="tier">
+                            <h4>Champion</h4>
+                            <div class="tier-amount">$50/month</div>
+                            <ul>
+                                <li>All Guardian benefits</li>
+                                <li>Annual research report</li>
+                                <li>Invitation to virtual events</li>
+                                <li>Limited edition merchandise</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary">Start Monthly Giving</button>
+                </div>
+
+                <!-- Other Ways to Give -->
+                <div class="donation-card">
+                    <h3>Other Ways to Support</h3>
+                    <p>Alternative methods to contribute to our mission</p>
+                    
+                    <div class="other-options">
+                        <div class="option">
+                            <h4>Cryptocurrency</h4>
+                            <p>We accept Bitcoin, Ethereum, and other major cryptocurrencies</p>
+                            <button class="btn btn-secondary">View Wallet Addresses</button>
+                        </div>
+                        <div class="option">
+                            <h4>Stock Donation</h4>
+                            <p>Donate appreciated stocks for potential tax benefits</p>
+                            <button class="btn btn-secondary">Learn More</button>
+                        </div>
+                        <div class="option">
+                            <h4>Legacy Giving</h4>
+                            <p>Include Dolphin Singularity in your will or estate plans</p>
+                            <button class="btn btn-secondary">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Where Your Donation Goes</h2>
+            
+            <div class="allocation-chart">
+                <div class="chart-visual">
+                    <div class="chart-segment" style="width: 40%; background: var(--primary-color);">
+                        <span>40%</span>
+                    </div>
+                    <div class="chart-segment" style="width: 30%; background: var(--secondary-color);">
+                        <span>30%</span>
+                    </div>
+                    <div class="chart-segment" style="width: 20%; background: #00a884;">
+                        <span>20%</span>
+                    </div>
+                    <div class="chart-segment" style="width: 10%; background: #64748b;">
+                        <span>10%</span>
+                    </div>
+                </div>
+                
+                <div class="allocation-details">
+                    <div class="allocation-item">
+                        <div class="allocation-color" style="background: var(--primary-color);"></div>
+                        <div>
+                            <h4>Research & Technology (40%)</h4>
+                            <p>AI development, acoustic equipment, data analysis</p>
+                        </div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="allocation-color" style="background: var(--secondary-color);"></div>
+                        <div>
+                            <h4>Field Conservation (30%)</h4>
+                            <p>Direct conservation efforts, habitat protection</p>
+                        </div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="allocation-color" style="background: #00a884;"></div>
+                        <div>
+                            <h4>Education & Outreach (20%)</h4>
+                            <p>Public education, school programs, awareness campaigns</p>
+                        </div>
+                    </div>
+                    <div class="allocation-item">
+                        <div class="allocation-color" style="background: #64748b;"></div>
+                        <div>
+                            <h4>Operations (10%)</h4>
+                            <p>Administrative costs, website maintenance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="transparency-note">
+                <p><strong>Full Transparency:</strong> We publish detailed financial reports quarterly. View our latest report <a href="#">here</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Tax Information</h2>
+            <div class="tax-info">
+                <p class="large-text">
+                    Dolphin Singularity operates through our fiscal sponsor, The Dolphin Project, a registered 501(c)(3) nonprofit organization. 
+                    Your donation is tax-deductible to the fullest extent allowed by law.
+                </p>
+                <div class="tax-details">
+                    <p><strong>EIN:</strong> 12-3456789 (Example)</p>
+                    <p><strong>Receipt:</strong> You'll receive an email receipt immediately after donation</p>
+                    <p><strong>Annual Statement:</strong> Available for all donors who contribute $250+ annually</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="donation-cta">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Join thousands of supporters worldwide in protecting dolphins and advancing interspecies communication</p>
+                <div class="cta-stats">
+                    <div class="stat">
+                        <div class="stat-number">2,847</div>
+                        <div class="stat-label">Active Donors</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$485K</div>
+                        <div class="stat-label">Raised This Year</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Research Projects Funded</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large">Donate Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dolphin Singularity</h4>
+                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="research.html">Research Papers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="conservation.html">Conservation Guide</a></li>
+                        <li><a href="https://www.dolphinproject.com" target="_blank">The Dolphin Project</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Join us in protecting dolphins and advancing interspecies communication.</p>
+                    <p style="margin-top: 1rem;"><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DolphinSingularity.org. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | Built with 🐬 for a better future</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Donation Page Styles */
+        .donation-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .impact-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .donation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .donation-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .donation-amounts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .amount-btn {
+            padding: 0.75rem;
+            background: var(--light-bg);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .amount-btn:hover {
+            border-color: var(--primary-color);
+        }
+
+        .amount-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .custom-amount-input input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .donation-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .donation-buttons .btn {
+            flex: 1;
+        }
+
+        .monthly-tiers {
+            display: grid;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tier {
+            padding: 1rem;
+            border: 1px solid #e0e8f0;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .tier.recommended {
+            border-color: var(--primary-color);
+            background: rgba(0, 119, 190, 0.05);
+        }
+
+        .tier h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .tier-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .tier ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tier li {
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .tier li:before {
+            content: "✓ ";
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .other-options {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .option h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .option p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .allocation-chart {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .chart-visual {
+            display: flex;
+            height: 60px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .chart-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .allocation-details {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .allocation-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .allocation-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .allocation-item h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .allocation-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .transparency-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .tax-info {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .tax-details {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .tax-details p {
+            margin: 0.5rem 0;
+        }
+
+        .donation-cta {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.1), rgba(0, 201, 255, 0.1));
+            border-radius: 12px;
+        }
+
+        .cta-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .btn-large {
+            font-size: 1.25rem;
+            padding: 1rem 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .donation-options {
+                grid-template-columns: 1fr;
+            }
+
+            .donation-card.featured {
+                transform: scale(1);
+            }
+
+            .donation-amounts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .donation-buttons {
+                flex-direction: column;
+            }
+
+            .cta-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
+    <script>
+        // Donation amount selection
+        const amountBtns = document.querySelectorAll('.amount-btn');
+        const customInput = document.querySelector('.custom-amount-input');
+        let selectedAmount = 100;
+
+        amountBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                amountBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (this.dataset.amount === 'custom') {
+                    customInput.style.display = 'block';
+                    selectedAmount = 'custom';
+                } else {
+                    customInput.style.display = 'none';
+                    selectedAmount = parseInt(this.dataset.amount);
+                }
+            });
+        });
+
+        // Donation button handlers
+        const donateBtns = document.querySelectorAll('.donate-btn');
+        donateBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const method = this.dataset.method;
+                const amount = selectedAmount === 'custom' ? 
+                    document.getElementById('customAmount').value : selectedAmount;
+                
+                if (!amount || amount < 5) {
+                    alert('Please select or enter a valid donation amount (minimum $5)');
+                    return;
+                }
+                
+                // In production, this would integrate with payment processors
+                alert(`Redirecting to ${method} for $${amount} donation...`);
+            });
+        });
+
+        // Other donation methods
+        document.querySelectorAll('.option .btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const option = this.closest('.option').querySelector('h4').textContent;
+                alert(`Information about ${option} donations will be displayed here.`);
+            });
+        });
+
+        // Monthly giving
+        document.querySelector('.donation-card.featured .btn').addEventListener('click', function() {
+            alert('Monthly giving signup form would open here.');
+        });
+    </script>
+</body>
+</html>

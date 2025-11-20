@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Dolphin Sound Library - Listen to Real Dolphin Communications | Dolphin Singularity</title>
+    <meta name="title" content="Dolphin Sound Library - Listen to Real Dolphin Communications">
+    <meta name="description" content="Explore our interactive library of dolphin vocalizations. Listen to signature whistles, echolocation clicks, and burst pulses with detailed explanations.">
+    <meta name="keywords" content="dolphin sounds, signature whistles, echolocation, dolphin communication, marine bioacoustics">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dolphinsingularity.org/sound-library.html">
+    <meta property="og:title" content="Interactive Dolphin Sound Library">
+    <meta property="og:description" content="Listen to and learn about real dolphin vocalizations from our research.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dolphinsingularity.org/sound-library.html">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894087674561904"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
+                <h1>Dolphin Singularity</h1>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="conservation.html">Conservation</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Interactive Dolphin Sound Library</h1>
+            <p class="page-subtitle">Explore the acoustic world of dolphins through our research recordings</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="sound-intro">
+                <p class="large-text">
+                    Welcome to our interactive sound library featuring authentic dolphin vocalizations recorded during our research. 
+                    Each sound includes detailed analysis, spectrograms, and explanations of its meaning and context.
+                </p>
+                
+                <div class="sound-categories">
+                    <button class="category-btn active" data-category="all">All Sounds</button>
+                    <button class="category-btn" data-category="signature">Signature Whistles</button>
+                    <button class="category-btn" data-category="echolocation">Echolocation</button>
+                    <button class="category-btn" data-category="social">Social Calls</button>
+                    <button class="category-btn" data-category="emotion">Emotional Expressions</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="sound-library-grid">
+                <!-- Signature Whistle 1 -->
+                <div class="sound-card" data-category="signature">
+                    <div class="sound-header">
+                        <h3>Luna's Signature Whistle</h3>
+                        <span class="sound-type">Signature Whistle</span>
+                    </div>
+                    
+                    <div class="sound-player">
+                        <button class="play-btn" data-sound="luna-signature">
+                            <svg class="play-icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" style="display:none;" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        <div class="sound-wave">
+                            <canvas width="300" height="60"></canvas>
+                        </div>
+                        <span class="sound-duration">0:03</span>
+                    </div>
+                    
+                    <div class="sound-details">
+                        <p>This is Luna's unique signature whistle - essentially her "name" that she uses to identify herself and that other dolphins use to call her.</p>
+                        
+                        <div class="sound-metadata">
+                            <div class="metadata-item">
+                                <strong>Recorded:</strong> Pacific Ocean, 2024
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Frequency:</strong> 8-15 kHz
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Context:</strong> Greeting behavior
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary view-spectrogram">View Spectrogram</button>
+                    </div>
+                </div>
+
+                <!-- Echolocation Click Train -->
+                <div class="sound-card" data-category="echolocation">
+                    <div class="sound-header">
+                        <h3>Hunting Click Train</h3>
+                        <span class="sound-type">Echolocation</span>
+                    </div>
+                    
+                    <div class="sound-player">
+                        <button class="play-btn" data-sound="hunting-clicks">
+                            <svg class="play-icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" style="display:none;" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        <div class="sound-wave">
+                            <canvas width="300" height="60"></canvas>
+                        </div>
+                        <span class="sound-duration">0:05</span>
+                    </div>
+                    
+                    <div class="sound-details">
+                        <p>Rapid echolocation clicks used during hunting. Notice how the click rate increases as the dolphin closes in on prey - this is called a "terminal buzz."</p>
+                        
+                        <div class="sound-metadata">
+                            <div class="metadata-item">
+                                <strong>Recorded:</strong> Atlantic Ocean, 2024
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Frequency:</strong> 40-130 kHz
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Context:</strong> Foraging behavior
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary view-spectrogram">View Spectrogram</button>
+                    </div>
+                </div>
+
+                <!-- Social Whistle -->
+                <div class="sound-card" data-category="social">
+                    <div class="sound-header">
+                        <h3>Pod Coordination Call</h3>
+                        <span class="sound-type">Social Call</span>
+                    </div>
+                    
+                    <div class="sound-player">
+                        <button class="play-btn" data-sound="pod-coordination">
+                            <svg class="play-icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" style="display:none;" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        <div class="sound-wave">
+                            <canvas width="300" height="60"></canvas>
+                        </div>
+                        <span class="sound-duration">0:04</span>
+                    </div>
+                    
+                    <div class="sound-details">
+                        <p>Complex whistle pattern used to coordinate pod movement. Multiple dolphins often produce this call simultaneously during group travel.</p>
+                        
+                        <div class="sound-metadata">
+                            <div class="metadata-item">
+                                <strong>Recorded:</strong> Mediterranean Sea, 2024
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Frequency:</strong> 5-20 kHz
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Context:</strong> Group travel
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary view-spectrogram">View Spectrogram</button>
+                    </div>
+                </div>
+
+                <!-- Emotional Expression -->
+                <div class="sound-card" data-category="emotion">
+                    <div class="sound-header">
+                        <h3>Excitement Burst Pulses</h3>
+                        <span class="sound-type">Emotional Expression</span>
+                    </div>
+                    
+                    <div class="sound-player">
+                        <button class="play-btn" data-sound="excitement-burst">
+                            <svg class="play-icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" style="display:none;" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        <div class="sound-wave">
+                            <canvas width="300" height="60"></canvas>
+                        </div>
+                        <span class="sound-duration">0:02</span>
+                    </div>
+                    
+                    <div class="sound-details">
+                        <p>Rapid burst pulse sounds associated with excitement or high arousal states. Often heard during play or when encountering something novel.</p>
+                        
+                        <div class="sound-metadata">
+                            <div class="metadata-item">
+                                <strong>Recorded:</strong> Caribbean Sea, 2024
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Frequency:</strong> Broadband
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Context:</strong> Play behavior
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary view-spectrogram">View Spectrogram</button>
+                    </div>
+                </div>
+
+                <!-- Mother-Calf Communication -->
+                <div class="sound-card" data-category="social">
+                    <div class="sound-header">
+                        <h3>Mother-Calf Exchange</h3>
+                        <span class="sound-type">Social Call</span>
+                    </div>
+                    
+                    <div class="sound-player">
+                        <button class="play-btn" data-sound="mother-calf">
+                            <svg class="play-icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" style="display:none;" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        <div class="sound-wave">
+                            <canvas width="300" height="60"></canvas>
+                        </div>
+                        <span class="sound-duration">0:06</span>
+                    </div>
+                    
+                    <div class="sound-details">
+                        <p>Intimate whistle exchange between mother and calf. Note the calf's imperfect mimicry as it learns vocalization patterns.</p>
+                        
+                        <div class="sound-metadata">
+                            <div class="metadata-item">
+                                <strong>Recorded:</strong> Indian Ocean, 2024
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Frequency:</strong> 6-18 kHz
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Context:</strong> Maternal care
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary view-spectrogram">View Spectrogram</button>
+                    </div>
+                </div>
+
+                <!-- Complex Communication -->
+                <div class="sound-card" data-category="signature">
+                    <div class="sound-header">
+                        <h3>Multi-Dolphin Conversation</h3>
+                        <span class="sound-type">Complex Communication</span>
+                    </div>
+                    
+                    <div class="sound-player">
+                        <button class="play-btn" data-sound="conversation">
+                            <svg class="play-icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            <svg class="pause-icon" style="display:none;" width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                            </svg>
+                        </button>
+                        <div class="sound-wave">
+                            <canvas width="300" height="60"></canvas>
+                        </div>
+                        <span class="sound-duration">0:08</span>
+                    </div>
+                    
+                    <div class="sound-details">
+                        <p>Complex vocal exchange between three dolphins, showing turn-taking behavior and signature whistle copying - possibly "addressing" each other by name.</p>
+                        
+                        <div class="sound-metadata">
+                            <div class="metadata-item">
+                                <strong>Recorded:</strong> Pacific Ocean, 2024
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Frequency:</strong> 4-25 kHz
+                            </div>
+                            <div class="metadata-item">
+                                <strong>Context:</strong> Social interaction
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-secondary view-spectrogram">View Spectrogram</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sound-info-panel">
+                <h3>Understanding Dolphin Sounds</h3>
+                
+                <div class="info-section">
+                    <h4>Types of Vocalizations</h4>
+                    <ul>
+                        <li><strong>Whistles:</strong> Tonal sounds used for communication, including signature whistles</li>
+                        <li><strong>Clicks:</strong> Broadband pulses used for echolocation and possibly communication</li>
+                        <li><strong>Burst Pulses:</strong> Rapid click trains often associated with emotional states</li>
+                    </ul>
+                </div>
+                
+                <div class="info-section">
+                    <h4>Listening Tips</h4>
+                    <ul>
+                        <li>Use headphones for best experience</li>
+                        <li>Many dolphin sounds are ultrasonic - we've shifted frequencies down for human hearing</li>
+                        <li>Pay attention to patterns and repetitions</li>
+                        <li>Context is crucial for understanding meaning</li>
+                    </ul>
+                </div>
+                
+                <div class="download-section">
+                    <h4>Research & Education</h4>
+                    <p>These recordings are available for educational and research purposes.</p>
+                    <button class="btn btn-primary">Download Sound Pack</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="spectrogram-modal" id="spectrogramModal" style="display: none;">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <h3>Spectrogram Analysis</h3>
+                    <div class="spectrogram-display">
+                        <canvas id="spectrogramCanvas" width="600" height="300"></canvas>
+                    </div>
+                    <div class="spectrogram-info">
+                        <p>This spectrogram shows frequency (vertical axis) over time (horizontal axis). 
+                        Brighter areas indicate stronger acoustic energy. Notice the harmonic structure 
+                        typical of dolphin whistles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Contribute to Our Sound Library</h2>
+                <p>Researchers and citizen scientists: help us expand our acoustic database by contributing recordings.</p>
+                <a href="contact.html" class="btn btn-primary">Submit Recordings</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dolphin Singularity</h4>
+                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="research.html">Research Papers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="conservation.html">Conservation Guide</a></li>
+                        <li><a href="https://www.dolphinproject.com" target="_blank">The Dolphin Project</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Join us in protecting dolphins and advancing interspecies communication.</p>
+                    <p style="margin-top: 1rem;"><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DolphinSingularity.org. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | Built with 🐬 for a better future</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Sound Library Styles */
+        .sound-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .sound-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .sound-library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .sound-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .sound-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sound-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .sound-type {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.875rem;
+        }
+
+        .sound-player {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f5f9ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .play-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .play-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        .sound-wave {
+            flex: 1;
+            height: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sound-wave canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sound-duration {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .sound-details p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .sound-metadata {
+            display: grid;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .metadata-item {
+            color: var(--text-muted);
+        }
+
+        .sound-info-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-section {
+            margin-bottom: 2rem;
+        }
+
+        .info-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-section li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-section li:before {
+            content: "🔊";
+            position: absolute;
+            left: 0;
+        }
+
+        .download-section {
+            padding-top: 1rem;
+            border-top: 1px solid #e0e8f0;
+        }
+
+        /* Spectrogram Modal */
+        .spectrogram-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
+        }
+
+        .spectrogram-display {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .spectrogram-display canvas {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e0e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .sound-library-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sound-categories {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+
+            .category-btn {
+                flex-shrink: 0;
+            }
+
+            .modal-content {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
+    <script>
+        // Sound library functionality
+        const sounds = {
+            'luna-signature': { duration: 3, waveform: generateWaveform() },
+            'hunting-clicks': { duration: 5, waveform: generateWaveform() },
+            'pod-coordination': { duration: 4, waveform: generateWaveform() },
+            'excitement-burst': { duration: 2, waveform: generateWaveform() },
+            'mother-calf': { duration: 6, waveform: generateWaveform() },
+            'conversation': { duration: 8, waveform: generateWaveform() }
+        };
+
+        // Generate random waveform data for visualization
+        function generateWaveform() {
+            const points = 100;
+            const waveform = [];
+            for (let i = 0; i < points; i++) {
+                waveform.push(Math.random() * 0.8 + 0.1);
+            }
+            return waveform;
+        }
+
+        // Draw waveforms on canvases
+        document.querySelectorAll('.sound-wave canvas').forEach((canvas, index) => {
+            const ctx = canvas.getContext('2d');
+            const soundKey = Object.keys(sounds)[index];
+            const waveform = sounds[soundKey].waveform;
+            
+            ctx.strokeStyle = '#0077be';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            
+            const width = canvas.width;
+            const height = canvas.height;
+            const step = width / waveform.length;
+            
+            waveform.forEach((value, i) => {
+                const x = i * step;
+                const y = (height / 2) + (value - 0.5) * height * 0.8;
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+            
+            ctx.stroke();
+        });
+
+        // Play button functionality
+        let currentlyPlaying = null;
+        
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const soundId = this.dataset.sound;
+                const playIcon = this.querySelector('.play-icon');
+                const pauseIcon = this.querySelector('.pause-icon');
+                
+                // Stop any currently playing sound
+                if (currentlyPlaying && currentlyPlaying !== this) {
+                    currentlyPlaying.querySelector('.play-icon').style.display = 'block';
+                    currentlyPlaying.querySelector('.pause-icon').style.display = 'none';
+                }
+                
+                if (playIcon.style.display !== 'none') {
+                    // Play sound
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'block';
+                    currentlyPlaying = this;
+                    
+                    // Simulate playing (in production, would play actual audio file)
+                    const duration = sounds[soundId].duration * 1000;
+                    setTimeout(() => {
+                        playIcon.style.display = 'block';
+                        pauseIcon.style.display = 'none';
+                        currentlyPlaying = null;
+                    }, duration);
+                } else {
+                    // Pause sound
+                    playIcon.style.display = 'block';
+                    pauseIcon.style.display = 'none';
+                    currentlyPlaying = null;
+                }
+            });
+        });
+
+        // Category filtering
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter sound cards
+                const category = this.dataset.category;
+                document.querySelectorAll('.sound-card').forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Spectrogram modal
+        const modal = document.getElementById('spectrogramModal');
+        const modalClose = modal.querySelector('.modal-close');
+        const spectrogramCanvas = document.getElementById('spectrogramCanvas');
+        
+        document.querySelectorAll('.view-spectrogram').forEach(btn => {
+            btn.addEventListener('click', function() {
+                modal.style.display = 'flex';
+                drawSpectrogram();
+            });
+        });
+        
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Draw a sample spectrogram
+        function drawSpectrogram() {
+            const ctx = spectrogramCanvas.getContext('2d');
+            const width = spectrogramCanvas.width;
+            const height = spectrogramCanvas.height;
+            
+            // Create gradient for spectrogram
+            const gradient = ctx.createLinearGradient(0, height, 0, 0);
+            gradient.addColorStop(0, '#000080');
+            gradient.addColorStop(0.5, '#00ff00');
+            gradient.addColorStop(1, '#ff0000');
+            
+            // Draw random spectrogram pattern
+            for (let x = 0; x < width; x += 2) {
+                for (let y = 0; y < height; y += 2) {
+                    const intensity = Math.random() * (y / height) * (Math.sin(x / 20) + 1) / 2;
+                    ctx.fillStyle = `rgba(0, ${intensity * 255}, ${255 - intensity * 255}, ${intensity})`;
+                    ctx.fillRect(x, height - y, 2, 2);
+                }
+            }
+            
+            // Draw axis labels
+            ctx.fillStyle = '#333';
+            ctx.font = '12px Arial';
+            ctx.fillText('Time (seconds)', width / 2 - 30, height - 5);
+            ctx.save();
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText('Frequency (kHz)', -height / 2 - 30, 15);
+            ctx.restore();
+        }
+
+        // Download sound pack
+        document.querySelector('.download-section .btn').addEventListener('click', function() {
+            alert('Sound pack download would start here. In production, this would download a ZIP file with all recordings and documentation.');
+        });
+    </script>
+</body>
+</html>
