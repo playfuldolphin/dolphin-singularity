@@ -1,0 +1,234 @@
+/* Reusable Components */
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover:before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 201, 255, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-color);
+    color: var(--darker-bg);
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-normal);
+}
+
+.card-link:hover {
+    color: var(--secondary-color);
+}
+
+.highlight-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-normal);
+}
+
+.highlight-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Grids */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Icons */
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.icon-lg { width: 1.5em; height: 1.5em; }
+.icon-xl { width: 2em; height: 2em; }
+.icon-2xl { width: 3em; height: 3em; }
+
+.icon-primary { color: var(--primary-color); }
+.icon-secondary { color: var(--secondary-color); }
+.icon-white { color: white; }
+.icon-muted { color: var(--text-muted); }
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-muted);
+}
+
+.feature-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(0, 201, 255, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--text-light);
+    transition: background var(--transition-normal), transform var(--transition-normal);
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.social-links svg {
+    width: 20px;
+    height: 20px;
+}

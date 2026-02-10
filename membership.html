@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Premium Membership | Dolphin Singularity</title>
+    <meta name="description" content="Join our premium membership program and get exclusive access to research updates, ad-free experience, and direct researcher access.">
+    
+    <link rel="canonical" href="https://dolphinsingularity.org/membership.html">
+    <link rel="icon" type="image/png" href="/images/logo5.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .membership-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2744 100%);
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .membership-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .pricing-toggle {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .toggle-btn {
+            padding: 0.75rem 2rem;
+            background: rgba(0, 201, 255, 0.1);
+            border: 2px solid var(--secondary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .pricing-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid var(--secondary-color);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .tier-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tier-description {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            min-height: 60px;
+        }
+        
+        .tier-price {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .tier-price span {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+        
+        .price-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .features-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .features-list li.unavailable {
+            opacity: 0.4;
+        }
+        
+        .features-list li.unavailable::before {
+            content: '—';
+            color: var(--text-muted);
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 201, 255, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--text-dark);
+        }
+        
+        .cta-button.secondary:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .comparison-table {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+        }
+        
+        .comparison-table h2 {
+            font-family: var(--font-heading);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .comparison-table th {
+            font-weight: 600;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 500;
+        }
+        
+        .comparison-table td:not(:first-child) {
+            text-align: center;
+        }
+        
+        .check-mark {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+        
+        .testimonials {
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 201, 255, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .comparison-table {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
+                <h1>Dolphin Singularity</h1>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="membership.html" style="color: var(--secondary-color);">Membership</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="membership-hero">
+        <div class="container">
+            <h1>💎 Premium Membership</h1>
+            <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                Support groundbreaking research and get exclusive access to our dolphin communication discoveries
+            </p>
+        </div>
+    </div>
+
+    <div class="pricing-container">
+        <div class="pricing-toggle">
+            <button class="toggle-btn active" data-period="monthly">Monthly</button>
+            <button class="toggle-btn" data-period="annual">
+                Annual <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.75rem; margin-left: 0.5rem;">SAVE 20%</span>
+            </button>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Free Tier -->
+            <div class="pricing-card">
+                <h3 class="tier-name">Explorer</h3>
+                <p class="tier-description">Perfect for casual learners and dolphin enthusiasts</p>
+                
+                <div class="tier-price">
+                    $0<span>/month</span>
+                </div>
+                <p class="price-note">Forever free</p>
+                
+                <ul class="features-list">
+                    <li>All website content</li>
+                    <li>Basic newsletter</li>
+                    <li>Community access</li>
+                    <li>Interactive visualizer</li>
+                    <li>Sci-fi story access</li>
+                    <li class="unavailable">Ad-free experience</li>
+                    <li class="unavailable">Early access to content</li>
+                    <li class="unavailable">Research reports</li>
+                </ul>
+                
+                <button class="cta-button secondary" onclick="window.location.href='/'">
+                    Get Started Free
+                </button>
+            </div>
+
+            <!-- Supporter Tier -->
+            <div class="pricing-card featured">
+                <h3 class="tier-name">Supporter</h3>
+                <p class="tier-description">For dedicated fans who want to support our mission</p>
+                
+                <div class="tier-price">
+                    <span class="monthly-price">$5</span><span class="annual-price" style="display:none;">$4</span><span>/month</span>
+                </div>
+                <p class="price-note monthly-note">Billed monthly</p>
+                <p class="price-note annual-note" style="display:none;">$48/year - Save $12!</p>
+                
+                <ul class="features-list">
+                    <li>Everything in Explorer</li>
+                    <li>Ad-free experience</li>
+                    <li>Early access to content</li>
+                    <li>Exclusive newsletters</li>
+                    <li>Member badge</li>
+                    <li>Monthly webinar access</li>
+                    <li>Supporter recognition</li>
+                    <li class="unavailable">Direct researcher Q&A</li>
+                </ul>
+                
+                <button class="cta-button" onclick="window.location.href='/checkout.html?tier=supporter'">
+                    Become a Supporter
+                </button>
+            </div>
+
+            <!-- Research Partner Tier -->
+            <div class="pricing-card">
+                <h3 class="tier-name">Research Partner</h3>
+                <p class="tier-description">Deep dive into cutting-edge dolphin research</p>
+                
+                <div class="tier-price">
+                    <span class="monthly-price">$25</span><span class="annual-price" style="display:none;">$20</span><span>/month</span>
+                </div>
+                <p class="price-note monthly-note">Billed monthly</p>
+                <p class="price-note annual-note" style="display:none;">$240/year - Save $60!</p>
+                
+                <ul class="features-list">
+                    <li>Everything in Supporter</li>
+                    <li>Quarterly research reports</li>
+                    <li>Direct researcher Q&A</li>
+                    <li>Beta feature access</li>
+                    <li>Adoption program discount</li>
+                    <li>Exclusive Discord channel</li>
+                    <li>Data visualization access</li>
+                    <li>Name in annual report</li>
+                </ul>
+                
+                <button class="cta-button" onclick="window.location.href='/checkout.html?tier=partner'">
+                    Join as Partner
+                </button>
+            </div>
+
+            <!-- Conservation Hero Tier -->
+            <div class="pricing-card">
+                <h3 class="tier-name">Conservation Hero</h3>
+                <p class="tier-description">Maximum impact for serious conservation advocates</p>
+                
+                <div class="tier-price">
+                    <span class="monthly-price">$100</span><span class="annual-price" style="display:none;">$80</span><span>/month</span>
+                </div>
+                <p class="price-note monthly-note">Billed monthly</p>
+                <p class="price-note annual-note" style="display:none;">$960/year - Save $240!</p>
+                
+                <ul class="features-list">
+                    <li>Everything in Research Partner</li>
+                    <li>Name prominently on website</li>
+                    <li>Annual report dedication</li>
+                    <li>1-on-1 researcher calls (quarterly)</li>
+                    <li>Exclusive field trip opportunities</li>
+                    <li>VIP event access</li>
+                    <li>Priority support</li>
+                    <li>Custom research requests</li>
+                </ul>
+                
+                <button class="cta-button" onclick="window.location.href='/checkout.html?tier=hero'">
+                    Become a Hero
+                </button>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 1rem;">
+                What Members Say
+            </h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                Join hundreds of supporters making a difference
+            </p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "The research reports are fascinating! I love getting early access to new discoveries."
+                    </p>
+                    <p class="testimonial-author">— Sarah M., Research Partner</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Best $5/month I spend. Ad-free browsing and exclusive content are worth it."
+                    </p>
+                    <p class="testimonial-author">— James T., Supporter</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "The quarterly calls with researchers are incredible. Truly inside access!"
+                    </p>
+                    <p class="testimonial-author">— Dr. Elena R., Research Partner</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 style="font-family: var(--font-heading); text-align: center; margin-bottom: 2rem;">
+                Frequently Asked Questions
+            </h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I cancel anytime?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! You can cancel your membership at any time with no penalties. You'll retain access until the end of your billing period.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How does the annual plan work?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Annual plans give you 2 months free (20% discount) and are billed once per year. You can switch between monthly and annual at any time.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is my membership tax-deductible?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! Dolphin Singularity is a registered non-profit. You'll receive a tax receipt for your membership contributions.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I upgrade or downgrade my tier?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! You can change tiers anytime from your account dashboard. Changes take effect immediately.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    We accept all major credit cards, PayPal, and Apple Pay through our secure Stripe payment processor.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dolphin Singularity</h4>
+                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DolphinSingularity.org | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="js/analytics.js"></script>
+    <script>
+        // Pricing toggle
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const period = this.getAttribute('data-period');
+                const isAnnual = period === 'annual';
+                
+                // Toggle prices
+                document.querySelectorAll('.monthly-price, .monthly-note').forEach(el => {
+                    el.style.display = isAnnual ? 'none' : 'inline';
+                });
+                
+                document.querySelectorAll('.annual-price, .annual-note').forEach(el => {
+                    el.style.display = isAnnual ? 'inline' : 'none';
+                });
+            });
+        });
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                const isOpen = item.classList.contains('open');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                
+                // Open clicked
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+        
+        // Track membership page view
+        if (window.analytics) {
+            analytics.trackEvent('view_pricing', {
+                event_category: 'engagement',
+                event_label: 'viewed_membership_page'
+            });
+        }
+    </script>
+</body>
+</html>

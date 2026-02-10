@@ -1,0 +1,44 @@
+/* TEAM */
+
+Project Lead: Dolphin Singularity Research Team
+Site: https://dolphinsingularity.org
+Location: Global
+
+/* THANKS */
+
+Marine Biology Advisors: For their expertise in cetacean behavior and communication
+AI/ML Contributors: For advancing machine learning applications in bioacoustics
+Conservation Partners: The Dolphin Project and partner organizations worldwide
+Web Community: For support and feedback on this mission
+All Dolphins: The true inspiration behind this work
+
+/* SITE */
+
+Last update: 2026/02/06
+Standards: HTML5, CSS3, ECMAScript 6+
+Components: Vanilla JavaScript, No external frameworks
+Software: Built with care for accessibility and performance
+Ideology: Open science, ethical AI, conservation first
+Mission: Achieving the dolphin singularity - bidirectional human-dolphin communication
+
+/* TECHNOLOGY */
+
+Architecture: Static HTML/CSS/JS website
+Hosting: Netlify
+Version Control: Git
+Analytics: Privacy-respecting analytics
+Performance: Optimized images, lazy loading, service worker caching
+Accessibility: WCAG 2.1 AA compliant, semantic HTML, ARIA labels
+
+/* ACKNOWLEDGMENTS */
+
+This site exists to advance understanding between humans and dolphins.
+We believe in a future where interspecies communication transforms
+our relationship with ocean intelligence and fosters collaborative
+conservation for the benefit of all beings.
+
+Thank you for visiting and supporting this work.
+
+"The more clearly we can focus our attention on the wonders and 
+realities of the universe about us, the less taste we shall have 
+for destruction." - Rachel Carson

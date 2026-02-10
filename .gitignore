@@ -1,0 +1,83 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# API Keys and Secrets
+*secret*
+*Secret*
+*SECRET*
+api-keys.txt
+credentials.json
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+backups/
+backups_html/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Netlify
+.netlify/
+
+# Local development
+*.local
+
+# Database
+*.sqlite
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Mac specific
+.AppleDouble
+.LSOverride
+Icon?

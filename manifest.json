@@ -1,0 +1,68 @@
+{
+  "name": "Dolphin Singularity - AI-Powered Dolphin Research",
+  "short_name": "DolphinSing",
+  "description": "Explore AI-powered dolphin communication research, interactive visualizations, and join the conservation movement.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#00c9ff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/images/logo5.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo5.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/hero-background.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["education", "science", "conservation"],
+  "shortcuts": [
+    {
+      "name": "Story",
+      "short_name": "Story",
+      "description": "Read the Digital Breach sci-fi story",
+      "url": "/story.html",
+      "icons": [{ "src": "/images/logo5.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Visualizer",
+      "short_name": "Visualizer",
+      "description": "Interactive sound visualizer",
+      "url": "/visualizer.html",
+      "icons": [{ "src": "/images/logo5.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Research",
+      "short_name": "Research",
+      "description": "Latest dolphin research",
+      "url": "/research.html",
+      "icons": [{ "src": "/images/logo5.png", "sizes": "192x192" }]
+    }
+  ],
+  "share_target": {
+    "action": "/share-encounter.html",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

@@ -17,6 +17,13 @@
     <meta property="og:description" content="Support groundbreaking AI-powered dolphin communication research and conservation efforts.">
     <meta property="og:image" content="https://dolphinsingularity.org/images/hero-background.png">
     
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://dolphinsingularity.org/donate.html">
+    <meta name="twitter:title" content="Donate to Support Dolphin Research">
+    <meta name="twitter:description" content="Support groundbreaking AI-powered dolphin communication research and conservation efforts.">
+    <meta name="twitter:image" content="https://dolphinsingularity.org/images/hero-background.png">
+    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://dolphinsingularity.org/donate.html">
     
@@ -614,7 +621,22 @@
         }
     </style>
 
-    <script src="script.js"></script>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DonateAction",
+        "name": "Support Dolphin Singularity Research",
+        "description": "Donate to support AI-powered dolphin communication research and marine conservation efforts",
+        "recipient": {
+            "@type": "Organization",
+            "name": "Dolphin Singularity"
+        },
+        "url": "https://dolphinsingularity.org/donate.html"
+    }
+    </script>
+    
+    <script src="script.js" defer></script>
     <script>
         // Donation amount selection
         const amountBtns = document.querySelectorAll('.amount-btn');
@@ -636,6 +658,15 @@
             });
         });
 
+        // PayPal Donation Integration
+        // TO ENABLE: 
+        // 1. Create PayPal Business account at https://www.paypal.com/business
+        // 2. Get your PayPal.me link (e.g., paypal.me/dolphinsingularity)
+        // 3. Replace 'YOUR_PAYPAL_ME_USERNAME' below with your actual username
+        
+        const PAYPAL_ME_USERNAME = 'YOUR_PAYPAL_ME_USERNAME'; // TODO: Replace this!
+        const PAYPAL_ENABLED = PAYPAL_ME_USERNAME !== 'YOUR_PAYPAL_ME_USERNAME';
+        
         // Donation button handlers
         const donateBtns = document.querySelectorAll('.donate-btn');
         donateBtns.forEach(btn => {
@@ -649,8 +680,20 @@
                     return;
                 }
                 
-                // In production, this would integrate with payment processors
-                alert(`Redirecting to ${method} for $${amount} donation...`);
+                // PayPal Integration (Simple - uses PayPal.me)
+                if (method === 'PayPal' && PAYPAL_ENABLED) {
+                    // Redirect to PayPal.me with amount
+                    window.open(`https://paypal.me/${PAYPAL_ME_USERNAME}/${amount}USD`, '_blank');
+                } else if (method === 'Credit Card' || method === 'Debit Card') {
+                    // For now, redirect to PayPal which accepts cards
+                    if (PAYPAL_ENABLED) {
+                        window.open(`https://paypal.me/${PAYPAL_ME_USERNAME}/${amount}USD`, '_blank');
+                    } else {
+                        alert('Donation processing coming soon! Please email dolphinsingularity@gmail.com to donate via ' + method);
+                    }
+                } else {
+                    alert('Donation processing coming soon! Please email dolphinsingularity@gmail.com to donate via ' + method);
+                }
             });
         });
 
@@ -658,14 +701,31 @@
         document.querySelectorAll('.option .btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const option = this.closest('.option').querySelector('h4').textContent;
-                alert(`Information about ${option} donations will be displayed here.`);
+                const contactInfo = {
+                    'Cryptocurrency': 'Email dolphinsingularity@gmail.com for wallet addresses (BTC, ETH, etc.)',
+                    'Bank Transfer': 'Email dolphinsingularity@gmail.com for wire transfer details',
+                    'Check': 'Make checks payable to: Dolphin Singularity Research\\nMail to: [Your Mailing Address]\\n\\nEmail dolphinsingularity@gmail.com for mailing address',
+                    'Stock Donation': 'Email dolphinsingularity@gmail.com for brokerage account information',
+                    'Corporate Matching': 'Many employers match charitable donations! Check with your HR department.\\nEmail dolphinsingularity@gmail.com with questions.'
+                };
+                
+                const message = contactInfo[option] || 'Email dolphinsingularity@gmail.com for information about ' + option;
+                alert(message);
             });
         });
 
-        // Monthly giving
-        document.querySelector('.donation-card.featured .btn').addEventListener('click', function() {
-            alert('Monthly giving signup form would open here.');
-        });
+        // Monthly giving - redirect to PayPal subscription
+        const monthlyBtn = document.querySelector('.donation-card.featured .btn');
+        if (monthlyBtn) {
+            monthlyBtn.addEventListener('click', function() {
+                if (PAYPAL_ENABLED) {
+                    alert('Redirecting to PayPal to set up monthly donations...');
+                    window.open(`https://paypal.me/${PAYPAL_ME_USERNAME}`, '_blank');
+                } else {
+                    alert('Monthly giving setup coming soon!\\n\\nFor now, email dolphinsingularity@gmail.com to set up recurring donations.');
+                }
+            });
+        }
     </script>
 </body>
 </html>

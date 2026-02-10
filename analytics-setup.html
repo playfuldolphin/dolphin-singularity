@@ -1,0 +1,42 @@
+<!-- Google Analytics Setup Instructions -->
+<!-- 
+TO ENABLE GOOGLE ANALYTICS:
+
+1. Go to https://analytics.google.com
+2. Create account → Add property for dolphinsingularity.org
+3. Get your Measurement ID (format: G-XXXXXXXXXX)
+4. Copy the code below and add it to the <head> section of ALL HTML files
+5. Replace 'G-XXXXXXXXXX' with your actual Measurement ID
+
+PASTE THIS INTO <head> OF EVERY HTML FILE:
+-->
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<!-- End Google Analytics -->
+
+<!--
+QUICK COMMAND TO ADD TO ALL FILES:
+(Run from project root after getting your tracking ID)
+
+for file in *.html blog/*.html; do
+  [ -f "$file" ] && sed -i '' '/<\/head>/i\
+  <!-- Google Analytics -->\
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>\
+  <script>\
+    window.dataLayer = window.dataLayer || [];\
+    function gtag(){dataLayer.push(arguments);}\
+    gtag("js", new Date());\
+    gtag("config", "G-XXXXXXXXXX");\
+  </script>\
+  ' "$file"
+done
+
+Don't forget to replace G-XXXXXXXXXX with your actual tracking ID!
+-->

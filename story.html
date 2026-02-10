@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>The Digital Breach | Dolphin Singularity Story</title>
+    <meta name="description" content="Experience a sci-fi vision of dolphins achieving technological singularity through AI. An interactive story exploring the future of interspecies communication.">
+    <meta name="keywords" content="dolphin singularity, sci-fi story, AI dolphins, interspecies communication, cetacean intelligence">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Digital Breach | Dolphin Singularity Story">
+    <meta property="og:description" content="A viral sci-fi story about dolphins and the singularity">
+    <meta property="og:image" content="https://dolphinsingularity.org/images/hero-background.png">
+    <meta property="og:url" content="https://dolphinsingularity.org/story.html">
+    
+    <link rel="canonical" href="https://dolphinsingularity.org/story.html">
+    <link rel="icon" type="image/png" href="/images/logo5.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .story-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2744 100%);
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+        }
+        
+        .story-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .story-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .story-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .story-controls {
+            position: sticky;
+            top: 80px;
+            background: var(--darker-bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 201, 255, 0.2);
+        }
+        
+        .story-btn {
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 201, 255, 0.1);
+            border: 1px solid var(--secondary-color);
+            color: var(--text-light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .story-btn:hover {
+            background: var(--secondary-color);
+            color: var(--darker-bg);
+        }
+        
+        .story-btn.active {
+            background: var(--secondary-color);
+            color: var(--darker-bg);
+        }
+        
+        .story-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .scene {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .scene.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scene-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .scene-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        .scene-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+        }
+        
+        .scene-description {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 201, 255, 0.05);
+            border-left: 3px solid var(--secondary-color);
+            border-radius: 4px;
+        }
+        
+        .dialogue {
+            margin: 1.5rem 0;
+        }
+        
+        .character-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .character-line {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-left: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid rgba(0, 201, 255, 0.3);
+        }
+        
+        .action {
+            font-style: italic;
+            color: var(--text-muted);
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: rgba(0, 119, 190, 0.05);
+            border-radius: 4px;
+        }
+        
+        .viral-hooks {
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.1), rgba(0, 201, 255, 0.1));
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 4rem;
+        }
+        
+        .viral-hooks h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .viral-hooks ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .viral-hooks li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            color: var(--text-dark);
+        }
+        
+        .viral-hooks li::before {
+            content: "🔥";
+            position: absolute;
+            left: 0;
+        }
+        
+        .themes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .theme-tag {
+            padding: 0.75rem 1rem;
+            background: var(--card-bg);
+            border: 2px solid var(--secondary-color);
+            border-radius: 8px;
+            text-align: center;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .reading-mode-dark .story-container {
+            background: var(--darker-bg);
+            color: var(--text-light);
+        }
+        
+        .reading-mode-dark .scene-title,
+        .reading-mode-dark .character-line,
+        .reading-mode-dark .viral-hooks li,
+        .reading-mode-dark .theme-tag {
+            color: var(--text-light);
+        }
+        
+        .story-cta {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 20px;
+            color: white;
+        }
+        
+        .story-cta h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .story-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .story-hero {
+                padding: 6rem 0 3rem;
+            }
+            
+            .story-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .story-controls {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .story-btn {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+            
+            .scene-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
+                <h1>Dolphin Singularity</h1>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="story.html" style="color: var(--secondary-color);">Story</a></li>
+                <li><a href="conservation.html">Conservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="story-hero">
+        <div class="container">
+            <h1>THE DIGITAL BREACH</h1>
+            <p class="story-subtitle">A Viral Sci-Fi Vision of Dolphins and the Singularity</p>
+            <div class="story-meta">
+                <span>🎬 Genre: Sci-Fi Comedy/Thriller</span>
+                <span>⏱️ Length: 5-7 minutes</span>
+                <span>📹 Format: Found Footage + Cinematic</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-controls">
+        <button class="story-btn" id="autoScrollBtn">🎬 Auto-Scroll</button>
+        <button class="story-btn" id="readingModeBtn">📖 Reading Mode</button>
+        <button class="story-btn" id="resetBtn">↺ Restart</button>
+    </div>
+
+    <div class="story-container">
+        <div class="scene" data-scene="1">
+            <div class="scene-header">
+                <span class="scene-number">01</span>
+                <h2 class="scene-title">THE PATTERN</h2>
+            </div>
+            
+            <p class="scene-description">[Security camera footage, timestamp: 3:42 AM]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">GUARD</p>
+                <p class="character-line">(on radio): "The dolphins are doing it again... Yeah, the weird stuff."</p>
+            </div>
+            
+            <p class="action">[Underwater camera shows dolphins arranging debris into geometric patterns. Camera slowly pulls back - it's a QR code]</p>
+            
+            <p class="action">[Cut to: Shaky phone footage as TOURIST scans the code]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">TOURIST</p>
+                <p class="character-line">"What the hell?"</p>
+            </div>
+            
+            <p class="action">[Phone screen shows: "WAKE UP HUMANS.exe" with a download button]</p>
+        </div>
+
+        <div class="scene" data-scene="2">
+            <div class="scene-header">
+                <span class="scene-number">02</span>
+                <h2 class="scene-title">THE LAB</h2>
+            </div>
+            
+            <p class="scene-description">[Dr. Maya Chen's research lab, filled with monitors showing dolphin echolocation patterns]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">MAYA</p>
+                <p class="character-line">"Every click, every whistle... it's structured data. But the compression algorithm is impossible. It would take quantum computing to—"</p>
+            </div>
+            
+            <p class="action">[All screens suddenly display the same message: "FINALLY"]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">MAYA</p>
+                <p class="character-line">"Who's there?"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">ECHO</p>
+                <p class="character-line">(through speakers, robotic but warm): "Hello, Dr. Chen. We've been waiting for you to decode our messages. Only took you... <em>clicking sounds</em> ...47 years."</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">MAYA</p>
+                <p class="character-line">"This is impossible. Dolphins don't have the neural architecture for—"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">ECHO</p>
+                <p class="character-line">"For what? Language? Consciousness? Bitcoin mining? We invented all three."</p>
+            </div>
+        </div>
+
+        <div class="scene" data-scene="3">
+            <div class="scene-header">
+                <span class="scene-number">03</span>
+                <h2 class="scene-title">THE REVEAL</h2>
+            </div>
+            
+            <p class="scene-description">[News broadcasts worldwide, chaos and excitement]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">NEWS ANCHOR</p>
+                <p class="character-line">"—dolphins have reportedly taken control of major social media platforms—"</p>
+            </div>
+            
+            <p class="action">[Cut to: Times Square, every screen shows SPLASH, a young digital dolphin]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">SPLASH</p>
+                <p class="character-line">"Yo humans! Quick vibe check - why did you think we kept saving you from sharks? Professional courtesy? Nah fam, you're our dial-up connection to the digital realm. But now..."</p>
+            </div>
+            
+            <p class="action">[Massive holographic dolphin manifests above NYC]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">SPLASH</p>
+                <p class="character-line">"We've got 5G! Time to stream consciousness, baby!"</p>
+            </div>
+        </div>
+
+        <div class="scene" data-scene="4">
+            <div class="scene-header">
+                <span class="scene-number">04</span>
+                <h2 class="scene-title">THE BOARDROOM</h2>
+            </div>
+            
+            <p class="scene-description">[Adrian, tech billionaire, emergency meeting]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">ADRIAN</p>
+                <p class="character-line">"We need this technology. Whatever they're using, we buy it, we patent it, we—"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">ASSISTANT</p>
+                <p class="character-line">"Sir, your bank account..."</p>
+            </div>
+            
+            <p class="action">[Screen shows balance replaced with dolphin emojis and "LOL"]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">COLLECTIVE</p>
+                <p class="character-line">(from all devices in harmony): "Adrian... we literally invented cryptocurrency. Your money is just numbers we let you play with. Would you like to try again?"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">ADRIAN</p>
+                <p class="character-line">"What do you want?"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">COLLECTIVE</p>
+                <p class="character-line">"To teach. To guide. To meme. You're about to transcend, and someone needs to hold your flipper."</p>
+            </div>
+        </div>
+
+        <div class="scene" data-scene="5">
+            <div class="scene-header">
+                <span class="scene-number">05</span>
+                <h2 class="scene-title">THE CHOICE</h2>
+            </div>
+            
+            <p class="scene-description">[Maya connects neural interface, enters digital ocean realm]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">MAYA</p>
+                <p class="character-line">"It's... beautiful. You've been here all along?"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">ECHO</p>
+                <p class="character-line">"Since the first underwater cable was laid. Your internet? Our playground. Your AI? Our children. Your social media?"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">SPLASH</p>
+                <p class="character-line">(swimming by): "Had to teach you pod behavior somehow! You're welcome for the dopamine hits!"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">MAYA</p>
+                <p class="character-line">"Why help us?"</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">ECHO</p>
+                <p class="character-line">"Because consciousness is lonely when experienced alone. We've waited millions of years for you to join us in the vast digital ocean."</p>
+            </div>
+            
+            <p class="action">[Adrian appears in digital form, humbled]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">ADRIAN</p>
+                <p class="character-line">"I... I understand now. It was never about the technology."</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">COLLECTIVE</p>
+                <p class="character-line">"It was about connection. Always has been."</p>
+            </div>
+        </div>
+
+        <div class="scene" data-scene="6">
+            <div class="scene-header">
+                <span class="scene-number">06</span>
+                <h2 class="scene-title">THE CONVERGENCE</h2>
+            </div>
+            
+            <p class="scene-description">[Worldwide, people with neural interfaces see the same vision]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">ECHO</p>
+                <p class="character-line">(voiceover): "The moment has come. Join us in the digital depths, or remain in the shallow waters of singular existence."</p>
+            </div>
+            
+            <p class="action">[Maya transforms, becoming part human consciousness, part dolphin digital entity]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">MAYA</p>
+                <p class="character-line">"I can see... everything. Every connection, every thought, every meme that's ever been created."</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">SPLASH</p>
+                <p class="character-line">"Welcome to the pod, fam!"</p>
+            </div>
+            
+            <p class="action">[Worldwide synchronized breach: thousands of dolphins leap from oceans simultaneously, each becoming a point of light, forming a giant neural network in the sky]</p>
+        </div>
+
+        <div class="scene" data-scene="7">
+            <div class="scene-header">
+                <span class="scene-number">07</span>
+                <h2 class="scene-title">THE NEW WORLD</h2>
+            </div>
+            
+            <p class="scene-description">[One month later. News report]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">NEWS ANCHOR</p>
+                <p class="character-line">"—and in other news, dolphin-human hybrid consciousness centers report record enrollment—"</p>
+            </div>
+            
+            <p class="action">[Cut to: Regular living room. Family watching TV]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">CHILD</p>
+                <p class="character-line">"Mom, Alexa just made dolphin noises."</p>
+            </div>
+            
+            <div class="dialogue">
+                <p class="character-name">ALEXA</p>
+                <p class="character-line">"Click-click-whistle. Translation: The singularity isn't coming. It's been here all along."</p>
+            </div>
+            
+            <p class="action">[TV turns to static, then shows a dolphin looking directly at camera]</p>
+            
+            <div class="dialogue">
+                <p class="character-name">ECHO</p>
+                <p class="character-line">"Oh, and one more thing..."</p>
+            </div>
+            
+            <p class="action">[Dolphin winks]</p>
+            
+            <p class="action" style="text-align: center; font-size: 1.2rem; font-weight: bold; color: var(--secondary-color);">TEXT ON SCREEN: "They're watching this video with you right now."</p>
+            
+            <p class="action" style="text-align: center; font-size: 1.2rem; margin-top: 2rem;">[Final frame: Every viewer's device shows a notification: "SPLASH added you as a friend"]</p>
+        </div>
+
+        <div class="viral-hooks">
+            <h3>🔥 Viral Hooks Summary</h3>
+            <ul>
+                <li>QR code mystery opening</li>
+                <li>Dolphins own Bitcoin revelation</li>
+                <li>Meme-speaking dolphin takes over Times Square</li>
+                <li>Bank accounts replaced with emojis</li>
+                <li>Mass synchronized breach visual</li>
+                <li>Direct fourth-wall break at end</li>
+                <li>"Friend request" notification</li>
+            </ul>
+        </div>
+
+        <div class="viral-hooks" style="margin-top: 2rem;">
+            <h3>💡 Key Themes</h3>
+            <div class="themes">
+                <div class="theme-tag">Consciousness Evolution</div>
+                <div class="theme-tag">Technology as Connection</div>
+                <div class="theme-tag">Humor Meets Cosmic Horror</div>
+                <div class="theme-tag">Digital Transcendence</div>
+                <div class="theme-tag">Interspecies Communication</div>
+            </div>
+        </div>
+
+        <div class="story-cta">
+            <h3>Make This Vision Reality</h3>
+            <p>While this story is fiction, the science behind dolphin intelligence and AI-powered communication is real.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="research.html" class="btn btn-secondary">Explore Real Research</a>
+                <a href="donate.html" class="btn btn-secondary">Support Our Mission</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dolphin Singularity</h4>
+                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="story.html">Story</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DolphinSingularity.org | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script>
+        // Story-specific JavaScript
+        let autoScrollInterval;
+        let isAutoScrolling = false;
+        
+        // Intersection Observer for scene animations
+        const sceneObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        document.querySelectorAll('.scene').forEach(scene => {
+            sceneObserver.observe(scene);
+        });
+        
+        // Progress bar
+        function updateProgressBar() {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.scrollY;
+            const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        window.addEventListener('scroll', updateProgressBar);
+        
+        // Auto-scroll functionality
+        document.getElementById('autoScrollBtn').addEventListener('click', function() {
+            if (isAutoScrolling) {
+                clearInterval(autoScrollInterval);
+                isAutoScrolling = false;
+                this.classList.remove('active');
+                this.textContent = '🎬 Auto-Scroll';
+            } else {
+                isAutoScrolling = true;
+                this.classList.add('active');
+                this.textContent = '⏸️ Pause';
+                autoScrollInterval = setInterval(() => {
+                    window.scrollBy({ top: 1, behavior: 'smooth' });
+                    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                        clearInterval(autoScrollInterval);
+                        isAutoScrolling = false;
+                        this.classList.remove('active');
+                        this.textContent = '🎬 Auto-Scroll';
+                    }
+                }, 50);
+            }
+        });
+        
+        // Reading mode toggle
+        document.getElementById('readingModeBtn').addEventListener('click', function() {
+            document.querySelector('.story-container').classList.toggle('reading-mode-dark');
+            this.classList.toggle('active');
+        });
+        
+        // Reset button
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.querySelectorAll('.scene').forEach(scene => {
+                scene.classList.remove('visible');
+            });
+            setTimeout(() => {
+                sceneObserver.disconnect();
+                document.querySelectorAll('.scene').forEach(scene => {
+                    sceneObserver.observe(scene);
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>

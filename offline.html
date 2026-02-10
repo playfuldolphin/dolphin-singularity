@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Dolphin Singularity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2744 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .offline-container {
+            text-align: center;
+            max-width: 600px;
+        }
+        
+        .dolphin-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00c9ff, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .retry-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #0077be, #00c9ff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .retry-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .cached-pages {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+        
+        .cached-pages h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .page-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .page-list a {
+            padding: 0.75rem;
+            background: rgba(0, 201, 255, 0.1);
+            border: 1px solid rgba(0, 201, 255, 0.3);
+            border-radius: 8px;
+            color: #00c9ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .page-list a:hover {
+            background: rgba(0, 201, 255, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="dolphin-icon">🐬</div>
+        <h1>You're Offline</h1>
+        <p>
+            It looks like you've lost your connection to the ocean... er, internet. 
+            Don't worry, you can still explore some cached content!
+        </p>
+        <button class="retry-btn" onclick="window.location.reload()">
+            🔄 Try Again
+        </button>
+        
+        <div class="cached-pages">
+            <h2>📱 Available Offline</h2>
+            <ul class="page-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/story.html">Story</a></li>
+                <li><a href="/visualizer.html">Visualizer</a></li>
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/research.html">Research</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

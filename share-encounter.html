@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Share Your Dolphin Encounter | Dolphin Singularity</title>
+    <meta name="description" content="Have you had a memorable encounter with dolphins? Share your story with the Dolphin Singularity community.">
+    
+    <link rel="canonical" href="https://dolphinsingularity.org/share-encounter.html">
+    <link rel="icon" type="image/png" href="/images/logo5.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .encounter-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2744 100%);
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .encounter-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .encounter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .encounter-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .encounter-intro p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        
+        .encounter-form {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+        }
+        
+        .form-section h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .file-upload-area {
+            border: 2px dashed var(--secondary-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(0, 201, 255, 0.05);
+        }
+        
+        .file-upload-area:hover {
+            background: rgba(0, 201, 255, 0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .file-upload-area input[type="file"] {
+            display: none;
+        }
+        
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .guidelines {
+            background: rgba(0, 201, 255, 0.05);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .guidelines h4 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .guidelines ul {
+            padding-left: 1.5rem;
+        }
+        
+        .guidelines li {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
+                <h1>Dolphin Singularity</h1>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="conservation.html">Conservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="encounter-hero">
+        <div class="container">
+            <h1>🐬 Share Your Encounter</h1>
+            <p style="color: var(--text-muted); font-size: 1.2rem;">Your story helps us understand human-dolphin connections</p>
+        </div>
+    </div>
+
+    <div class="encounter-container">
+        <div class="encounter-intro">
+            <p>
+                Have you witnessed dolphins in the wild? Had an unexpected encounter? 
+                Experienced something unusual or profound? We'd love to hear your story.
+            </p>
+            <p>
+                Your encounters help us document dolphin behavior, migration patterns, 
+                and the profound connections between humans and cetaceans.
+            </p>
+        </div>
+
+        <form name="dolphin-encounter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="encounter-form">
+            <!-- Netlify form detection -->
+            <input type="hidden" name="form-name" value="dolphin-encounter">
+            
+            <!-- Honeypot for spam protection -->
+            <p style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            </p>
+
+            <div class="form-section">
+                <h3>About You</h3>
+                
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Your Location</label>
+                    <input type="text" id="location" name="location" placeholder="City, State/Country">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>The Encounter</h3>
+                
+                <div class="form-group">
+                    <label for="encounter-location">Where did this happen? *</label>
+                    <input type="text" id="encounter-location" name="encounter-location" placeholder="Beach name, coordinates, or general area" required>
+                </div>
+
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="date">Date of Encounter *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Approximate Time</label>
+                        <input type="time" id="time" name="time">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Tell Us Your Story *</label>
+                    <textarea id="description" name="description" rows="8" placeholder="Describe what you saw, heard, or experienced. Include details like number of dolphins, their behavior, sounds they made, and how it made you feel." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="species">Dolphin Species (if known)</label>
+                    <select id="species" name="species">
+                        <option value="">Not sure</option>
+                        <option value="bottlenose">Bottlenose Dolphin</option>
+                        <option value="common">Common Dolphin</option>
+                        <option value="spinner">Spinner Dolphin</option>
+                        <option value="spotted">Spotted Dolphin</option>
+                        <option value="orca">Orca (Killer Whale)</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="behavior">Notable Behaviors</label>
+                    <textarea id="behavior" name="behavior" rows="3" placeholder="E.g., breaching, bow riding, vocalizations, approaching boat, synchronized swimming"></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Photo or Video (Optional)</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                    If you have photos or videos from your encounter, please share them with us.
+                </p>
+                
+                <label for="photo" class="file-upload-area">
+                    <div class="upload-icon">📸</div>
+                    <div style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">
+                        Click to upload photo or video
+                    </div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">
+                        JPG, PNG, GIF, MP4 up to 10MB
+                    </div>
+                    <input type="file" id="photo" name="photo" accept="image/*,video/*">
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="consent" required>
+                    <span style="color: var(--text-muted); font-size: 0.95rem;">
+                        I consent to sharing my story and photo/video on the Dolphin Singularity website and social media *
+                    </span>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" name="newsletter">
+                    <span style="color: var(--text-muted); font-size: 0.95rem;">
+                        Keep me updated on dolphin research and conservation
+                    </span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">Share My Story</button>
+        </form>
+
+        <div class="guidelines">
+            <h4>Guidelines for Sharing</h4>
+            <ul>
+                <li>Please be as detailed as possible - even small observations can be scientifically valuable</li>
+                <li>Include location information to help us track dolphin populations and movements</li>
+                <li>Only share content you own or have permission to share</li>
+                <li>Your submission may be used for research, education, and conservation efforts</li>
+                <li>We respect your privacy - your email will not be shared publicly</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dolphin Singularity</h4>
+                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DolphinSingularity.org | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="js/analytics.js"></script>
+    <script>
+        // File upload preview
+        document.getElementById('photo').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const uploadArea = document.querySelector('.file-upload-area');
+                const fileName = file.name;
+                const fileSize = (file.size / 1024 / 1024).toFixed(2);
+                uploadArea.querySelector('.upload-icon').textContent = '✓';
+                uploadArea.querySelector('div[style*="font-weight: 600"]').textContent = fileName;
+                uploadArea.querySelector('div[style*="font-size: 0.85rem"]').textContent = `${fileSize} MB`;
+                uploadArea.style.borderColor = 'var(--primary-color)';
+                uploadArea.style.background = 'rgba(0, 201, 255, 0.15)';
+            }
+        });
+
+        // Form submission tracking
+        document.querySelector('.encounter-form').addEventListener('submit', function() {
+            if (window.analytics) {
+                analytics.trackFormSubmission('dolphin-encounter');
+            }
+        });
+    </script>
+</body>
+</html>

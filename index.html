@@ -68,6 +68,35 @@
     </script>
 </head>
 <body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- SVG Icon Sprite -->
+    <div style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <symbol id="icon-brain" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 3C9.2 3 6.2 5.9 6 9.7 4.3 9.9 3 11.3 3 13c0 1.1.5 2.1 1.4 2.6-.2.6-.4 1.2-.4 1.9 0 2.5 2 4.5 4.5 4.5 1.6 0 3-.8 3.8-2.1.5.1 1 .1 1.5.1 1.4 0 2.6-.4 3.7-1 .5 1.5 2 2.5 3.5 2.5 2.2 0 4-1.8 4-4 0-.8-.2-1.5-.6-2.1.6-.6 1.1-1.5 1.1-2.4 0-1.8-1.5-3.3-3.3-3.3-.3 0-.7.1-1 .2C20.3 6.1 17 3 13 3zm0 2c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6z"/>
+                </symbol>
+                <symbol id="icon-wave" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 12c-1.1 0-2.2-.3-3-1-1.6 1.4-4.4 1.4-6 0-.8.7-1.9 1-3 1s-2.2-.3-3-1c-.3-.2-.7-.2-1 0s-.3.7 0 1c1.1 1 2.5 1.5 4 1.5 1.1 0 2.2-.3 3-1 1.6 1.4 4.4 1.4 6 0 .8.7 1.9 1 3 1 1.5 0 2.9-.5 4-1.5.3-.3.3-.8 0-1-.3-.2-.7-.2-1 0-.8.7-1.9 1-3 1zm0-4c-1.1 0-2.2-.3-3-1-1.6 1.4-4.4 1.4-6 0-.8.7-1.9 1-3 1s-2.2-.3-3-1c-.3-.2-.7-.2-1 0s-.3.7 0 1c1.1 1 2.5 1.5 4 1.5 1.1 0 2.2-.3 3-1 1.6 1.4 4.4 1.4 6 0 .8.7 1.9 1 3 1 1.5 0 2.9-.5 4-1.5.3-.3.3-.8 0-1-.3-.2-.7-.2-1 0-.8.7-1.9 1-3 1zm0 8c-1.1 0-2.2-.3-3-1-1.6 1.4-4.4 1.4-6 0-.8.7-1.9 1-3 1s-2.2-.3-3-1c-.3-.2-.7-.2-1 0s-.3.7 0 1c1.1 1 2.5 1.5 4 1.5 1.1 0 2.2-.3 3-1 1.6 1.4 4.4 1.4 6 0 .8.7 1.9 1 3 1 1.5 0 2.9-.5 4-1.5.3-.3.3-.8 0-1-.3-.2-.7-.2-1 0-.8.7-1.9 1-3 1z"/>
+                </symbol>
+                <symbol id="icon-dolphin" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.4 0 2.7-.3 3.9-.8.5-.2.7-.8.5-1.3-.2-.5-.8-.7-1.3-.5-1 .4-2 .6-3.1.6-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8c0 .6-.1 1.1-.2 1.6-.1.5.2 1.1.7 1.2.5.1 1.1-.2 1.2-.7.2-.7.3-1.4.3-2.1 0-5.5-4.5-10-10-10zm5.5 7c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5zm-7 0c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5zm1.5 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                </symbol>
+                <symbol id="icon-research" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 2v2h1v14c0 2.2 1.8 4 4 4s4-1.8 4-4V4h1V2H7zm5 18c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2zm2-4h-4v-2h4v2zm0-4h-4V8h4v4zm0-6h-4V4h4v2z"/>
+                </symbol>
+                <symbol id="icon-chart" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
+                </symbol>
+                <symbol id="icon-education" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+                </symbol>
+            </defs>
+        </svg>
+    </div>
+    
     <!-- Page Loader -->
     <div class="page-loader" id="pageLoader">
         <div class="loader-content">
@@ -106,30 +135,62 @@
                 <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
                 <h1>Dolphin Singularity</h1>
             </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="story.html">Story</a></li>
                 <li><a href="conservation.html">Conservation</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="sound-library.html">Sounds</a></li>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Learn <span class="dropdown-arrow">▼</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="sound-library.html">Sounds</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-dropdown-toggle">Support <span class="dropdown-arrow">▼</span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="store.html">Store</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-background">
-            <img src="images/hero-background.png" alt="Dolphin Singularity" class="hero-image">
+            <picture>
+                <source srcset="images/hero-background.jpg" type="image/jpeg">
+                <img src="images/hero-background.png" alt="Dolphin in ocean representing AI-powered communication research" class="hero-image" width="1920" height="1080" loading="eager">
+            </picture>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -142,6 +203,7 @@
         </div>
     </header>
 
+    <main id="main-content">
     <section id="mission" class="section">
         <div class="container">
             <h2 class="section-title">The Dolphin Singularity</h2>
@@ -152,23 +214,56 @@
             <div class="grid-3">
                 <div class="highlight-card">
                     <div class="card-icon">
-                        <img src="images/brainlogo.png" alt="AI Brain" class="card-icon-img">
+                        <picture>
+                            <source srcset="images/brainlogo.jpg" type="image/jpeg">
+                            <img src="images/brainlogo.png" alt="AI Brain representing neural network analysis" class="card-icon-img" width="80" height="80" loading="lazy">
+                        </picture>
                     </div>
                     <h3>AI-Powered Research</h3>
                     <p>Using advanced machine learning to decode dolphin vocalizations and reveal the structure of cetacean communication.</p>
                     <a href="research.html" class="card-link">Learn More →</a>
                 </div>
                 <div class="highlight-card">
-                    <div class="card-icon">🌊</div>
+                    <div class="card-icon">
+                        <svg class="icon" width="48" height="48">
+                            <use xlink:href="#icon-wave"></use>
+                        </svg>
+                    </div>
                     <h3>Conservation Impact</h3>
                     <p>Understanding dolphin intelligence strengthens the case for protection and informs global conservation efforts.</p>
                     <a href="conservation.html" class="card-link">Take Action →</a>
                 </div>
                 <div class="highlight-card">
-                    <div class="card-icon">🐬</div>
+                    <div class="card-icon">
+                        <svg class="icon" width="48" height="48">
+                            <use xlink:href="#icon-dolphin"></use>
+                        </svg>
+                    </div>
                     <h3>First Contact</h3>
                     <p>Working toward meaningful bidirectional communication between humans and dolphins through AI technology.</p>
                     <a href="about.html" class="card-link">Our Mission →</a>
+                </div>
+            </div>
+            
+            <!-- New: Featured Tools & Resources -->
+            <div class="features-showcase" style="margin-top: 4rem; padding: 3rem; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow);">
+                <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--primary-color);">Explore Our Interactive Tools</h3>
+                <div class="grid-3" style="gap: 2rem;">
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">🎵 Sound Library</h4>
+                        <p style="margin-bottom: 1rem; color: var(--text-muted);">Listen to real dolphin vocalizations, from signature whistles to echolocation clicks</p>
+                        <a href="sound-library.html" class="btn btn-secondary">Explore Sounds →</a>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">📊 Acoustic Visualizer</h4>
+                        <p style="margin-bottom: 1rem; color: var(--text-muted);">See dolphin sound patterns in real-time with interactive spectrograms</p>
+                        <a href="visualizer.html" class="btn btn-secondary">Try Visualizer →</a>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">🤖 AI Knowledge Base</h4>
+                        <p style="margin-bottom: 1rem; color: var(--text-muted);">Ask questions about dolphin research and get AI-powered answers</p>
+                        <a href="knowledge-explorer.html" class="btn btn-secondary">Ask AI →</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,7 +274,11 @@
             <h2 class="section-title">Current Focus</h2>
             <div class="grid-2">
                 <div class="card">
-                    <div class="card-icon">🧠</div>
+                    <div class="card-icon">
+                        <svg class="icon" width="48" height="48">
+                            <use xlink:href="#icon-brain"></use>
+                        </svg>
+                    </div>
                     <h3>DolphinGemma Project</h3>
                     <p>Advanced AI models analyzing dolphin vocalizations and behavioral patterns to decode their complex communication systems. Machine learning algorithms are revealing unprecedented insights into dolphin language structure.</p>
                     <ul class="feature-list">
@@ -220,15 +319,27 @@
                 
                 <div class="newsletter-benefits">
                     <div class="benefit-item">
-                        <span class="benefit-icon">📊</span>
+                        <span class="benefit-icon">
+                            <svg class="icon" width="32" height="32">
+                                <use xlink:href="#icon-chart"></use>
+                            </svg>
+                        </span>
                         <span>Research Updates</span>
                     </div>
                     <div class="benefit-item">
-                        <span class="benefit-icon">🌊</span>
+                        <span class="benefit-icon">
+                            <svg class="icon" width="32" height="32">
+                                <use xlink:href="#icon-wave"></use>
+                            </svg>
+                        </span>
                         <span>Conservation News</span>
                     </div>
                     <div class="benefit-item">
-                        <span class="benefit-icon">🎯</span>
+                        <span class="benefit-icon">
+                            <svg class="icon" width="32" height="32">
+                                <use xlink:href="#icon-arrow-right"></use>
+                            </svg>
+                        </span>
                         <span>Action Alerts</span>
                     </div>
                     <div class="benefit-item">
@@ -254,6 +365,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -300,12 +412,12 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 DolphinSingularity.org. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | Built with 🐬 for a better future</p>
+                <p>&copy; 2025 DolphinSingularity.org. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="humans.txt">Humans</a> | Built with 🐬 for a better future</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     
     <!-- Additional Structured Data for Homepage -->
     <script type="application/ld+json">

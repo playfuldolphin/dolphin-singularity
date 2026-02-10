@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Dolphin Intelligence Knowledge Explorer | AI-Powered Research Database</title>
+    <meta name="description" content="Explore the world's most comprehensive AI-powered dolphin research database. Ask questions, discover patterns, and access decades of cetacean intelligence research.">
+    <meta name="keywords" content="dolphin research, AI knowledge base, cetacean intelligence, marine biology database, dolphin communication">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dolphin Intelligence Knowledge Explorer">
+    <meta property="og:description" content="AI-powered research database for dolphin intelligence and communication">
+    <meta property="og:image" content="https://dolphinsingularity.org/images/hero-background.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo5.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .knowledge-explorer {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a1128 0%, #001f54 50%, #034078 100%);
+            padding: 2rem 0;
+        }
+        
+        .explorer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .explorer-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+            padding-top: 4rem;
+        }
+        
+        .explorer-header h1 {
+            font-size: 3rem;
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff, #0077be);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .explorer-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .search-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .search-box {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1.5rem 4rem 1.5rem 1.5rem;
+            font-size: 1.1rem;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #0077be, #00d4ff);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-button:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+        }
+        
+        .search-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .quick-queries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        
+        .quick-query-btn {
+            padding: 0.6rem 1.2rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .quick-query-btn:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            transform: translateY(-2px);
+        }
+        
+        .results-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            min-height: 400px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .result-question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0077be;
+        }
+        
+        .result-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .result-content {
+            line-height: 1.8;
+            color: #1e293b;
+            font-size: 1.05rem;
+        }
+        
+        .result-content h3 {
+            color: #0077be;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .result-content ul {
+            margin-left: 1.5rem;
+        }
+        
+        .citations {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .citations h4 {
+            color: #0077be;
+            margin-bottom: 1rem;
+        }
+        
+        .citation {
+            padding: 1rem;
+            background: #f8fafc;
+            border-left: 3px solid #00d4ff;
+            margin-bottom: 0.75rem;
+            border-radius: 4px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #e5e7eb;
+            border-top: 4px solid #00d4ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #64748b;
+        }
+        
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #00d4ff;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-description {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .explorer-header h1 {
+                font-size: 2rem;
+            }
+            
+            .search-input {
+                padding-right: 1.5rem;
+            }
+            
+            .search-button {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .search-button:hover {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="/images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
+                <h1>Dolphin Singularity</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="knowledge-explorer.html" class="active">Knowledge Base</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="knowledge-explorer">
+        <div class="explorer-container">
+            <!-- Header -->
+            <div class="explorer-header">
+                <h1>🐬 Dolphin Intelligence Knowledge Explorer</h1>
+                <p>Ask anything about dolphin communication, cognition, behavior, or conservation. Powered by AI and decades of research.</p>
+            </div>
+
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        class="search-input" 
+                        placeholder="Ask a question about dolphins..."
+                        aria-label="Search dolphin research"
+                    >
+                    <button id="searchButton" class="search-button">Ask AI</button>
+                </div>
+                
+                <div class="quick-queries">
+                    <button class="quick-query-btn" data-query="How do dolphins communicate with each other?">🎵 Communication</button>
+                    <button class="quick-query-btn" data-query="How intelligent are dolphins compared to other animals?">🧠 Intelligence</button>
+                    <button class="quick-query-btn" data-query="What are signature whistles and how do they work?">📢 Signature Whistles</button>
+                    <button class="quick-query-btn" data-query="How does echolocation work in dolphins?">📡 Echolocation</button>
+                    <button class="quick-query-btn" data-query="What are the main threats to dolphin populations?">⚠️ Conservation</button>
+                    <button class="quick-query-btn" data-query="Do dolphins have culture and traditions?">🌊 Culture</button>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section">
+                <div class="empty-state">
+                    <div class="empty-state-icon">🔍</div>
+                    <h3>Ready to explore dolphin intelligence?</h3>
+                    <p>Ask a question above or click one of the quick query buttons to get started.</p>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <div class="feature-title">Research Database</div>
+                    <div class="feature-description">
+                        Access synthesized findings from thousands of peer-reviewed papers on dolphin intelligence and behavior.
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-title">AI-Powered Analysis</div>
+                    <div class="feature-description">
+                        Advanced AI interprets complex research and provides clear, accurate answers to your questions.
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <div class="feature-title">Expert Knowledge</div>
+                    <div class="feature-description">
+                        Responses based on 30+ years of marine biology research and field observations worldwide.
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <div class="feature-title">Citations Included</div>
+                    <div class="feature-description">
+                        All answers cite relevant research so you can dive deeper into the scientific literature.
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <div class="feature-title">Always Learning</div>
+                    <div class="feature-description">
+                        Updated with the latest discoveries and research as the field of cetacean intelligence evolves.
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <div class="feature-title">For Everyone</div>
+                    <div class="feature-description">
+                        From students to researchers, our knowledge base adapts to your level of expertise.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dolphin Singularity</h3>
+                    <p>Advancing dolphin intelligence research through AI technology</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                        <li><a href="donate.html">Support Our Work</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DolphinSingularity.org | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Knowledge Explorer JavaScript
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const resultsSection = document.getElementById('resultsSection');
+        const quickQueryButtons = document.querySelectorAll('.quick-query-btn');
+
+        // Handle search
+        searchButton.addEventListener('click', handleSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSearch();
+        });
+
+        // Handle quick queries
+        quickQueryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const query = btn.getAttribute('data-query');
+                searchInput.value = query;
+                handleSearch();
+            });
+        });
+
+        async function handleSearch() {
+            const query = searchInput.value.trim();
+            if (!query) return;
+
+            // Show loading state
+            showLoading();
+            searchButton.disabled = true;
+
+            try {
+                // In production, this would call your API
+                // For demo, simulate API call
+                await simulateAPICall(query);
+                
+            } catch (error) {
+                showError(error.message);
+            } finally {
+                searchButton.disabled = false;
+            }
+        }
+
+        function showLoading() {
+            resultsSection.innerHTML = `
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Analyzing research database...</p>
+                </div>
+            `;
+        }
+
+        function showError(message) {
+            resultsSection.innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">❌</div>
+                    <h3>Oops! Something went wrong</h3>
+                    <p>${message}</p>
+                    <p>Please try again or contact support if the issue persists.</p>
+                </div>
+            `;
+        }
+
+        async function simulateAPICall(query) {
+            // Simulate network delay
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Demo response
+            const demoResponse = {
+                question: query,
+                answer: `This is a demonstration of the Dolphin Intelligence Knowledge Explorer. 
+                
+In production, this would connect to Claude AI via API to provide comprehensive, research-based answers about dolphin intelligence, communication, behavior, and conservation.
+
+The system would:
+• Analyze your question using natural language processing
+• Search through thousands of research papers
+• Synthesize findings from multiple studies
+• Provide citations to original research
+• Explain complex concepts at your level
+
+To activate the full knowledge base, you'll need to:
+1. Set up a backend API endpoint
+2. Add your Anthropic API key
+3. Connect to the Claude AI integration library
+4. Deploy the knowledge base service
+
+For now, explore the quick query buttons above or check out our blog posts for detailed information about dolphin research!`,
+                citations: [
+                    "Janik, V.M. & Slater, P.J.B. (1998). Context-specific use suggests that bottlenose dolphin signature whistles are cohesion calls. Animal Behaviour.",
+                    "King, S.L. & Janik, V.M. (2013). Bottlenose dolphins can use learned vocal labels to address each other. PNAS.",
+                    "Herman, L.M. et al. (1984). Comprehension of sentences by bottlenose dolphins. Cognition."
+                ],
+                usage: { tokens: 1234, time: 2.1 }
+            };
+
+            displayResult(demoResponse);
+        }
+
+        function displayResult(data) {
+            const citationsHTML = data.citations.map(c => 
+                `<div class="citation">${c}</div>`
+            ).join('');
+
+            resultsSection.innerHTML = `
+                <div class="result-header">
+                    <div class="result-question">${data.question}</div>
+                    <div class="result-meta">
+                        <span>⏱️ ${data.usage.time}s</span>
+                        <span>📊 ${data.usage.tokens} tokens</span>
+                    </div>
+                </div>
+                <div class="result-content">
+                    ${formatAnswer(data.answer)}
+                </div>
+                ${data.citations.length > 0 ? `
+                    <div class="citations">
+                        <h4>📚 References</h4>
+                        ${citationsHTML}
+                    </div>
+                ` : ''}
+            `;
+        }
+
+        function formatAnswer(text) {
+            // Convert markdown-style formatting to HTML
+            return text
+                .split('\n\n')
+                .map(para => `<p>${para.replace(/\n/g, '<br>')}</p>`)
+                .join('');
+        }
+
+        // Track analytics
+        if (window.analytics) {
+            analytics.trackEvent('page_view', {
+                page: 'knowledge_explorer'
+            });
+        }
+    </script>
+</body>
+</html>

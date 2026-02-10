@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Dolphin Singularity</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/logo5.png">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+        .error-content {
+            background: white;
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #667eea;
+            margin: 0;
+            line-height: 1;
+        }
+        .error-title {
+            font-size: 2rem;
+            margin: 1rem 0;
+            color: #333;
+        }
+        .error-message {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 1.5rem 0;
+            line-height: 1.6;
+        }
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .error-links a {
+            padding: 0.75rem 2rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .error-links a:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .error-links a.secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        .error-links a.secondary:hover {
+            background: #f0f4ff;
+        }
+        .dolphin-emoji {
+            font-size: 4rem;
+            margin: 1rem 0;
+        }
+        .search-box {
+            margin: 2rem 0;
+        }
+        .search-box input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .search-box input:focus {
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="dolphin-emoji">🐬</div>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">This Page Swam Away</h2>
+            <p class="error-message">
+                Like a dolphin diving into the deep blue, the page you're looking for has disappeared beneath the waves.
+                <br><br>
+                Don't worry - there's plenty more to explore!
+            </p>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search the site..." onkeypress="handleSearch(event)">
+            </div>
+
+            <div class="error-links">
+                <a href="/">Go Home</a>
+                <a href="/research.html" class="secondary">View Research</a>
+                <a href="/blog.html" class="secondary">Read Blog</a>
+                <a href="/contact.html" class="secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSearch(e) {
+            if (e.key === 'Enter') {
+                const query = document.getElementById('searchInput').value;
+                if (query) {
+                    // Redirect to Google search for your site
+                    window.location.href = `https://www.google.com/search?q=site:dolphinsingularity.org ${encodeURIComponent(query)}`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

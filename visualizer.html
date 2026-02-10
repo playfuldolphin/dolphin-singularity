@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Interactive Dolphin Sound Visualizer | Dolphin Singularity</title>
+    <meta name="description" content="Experience dolphin communication through interactive audio visualization. See signature whistles, echolocation clicks, and burst pulses in real-time.">
+    
+    <link rel="canonical" href="https://dolphinsingularity.org/visualizer.html">
+    <link rel="icon" type="image/png" href="/images/logo5.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .visualizer-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2744 100%);
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+            text-align: center;
+        }
+        
+        .visualizer-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .visualizer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .visualizer-main {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+        }
+        
+        #visualizerCanvas {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            background: #0a1628;
+        }
+        
+        .visualizer-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .viz-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .viz-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .viz-btn.active {
+            background: var(--secondary-color);
+            box-shadow: 0 0 20px rgba(0, 201, 255, 0.5);
+        }
+        
+        .sound-library {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .sound-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .sound-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .sound-card h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .sound-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .sound-player {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .play-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 201, 255, 0.5);
+        }
+        
+        .sound-info {
+            flex: 1;
+        }
+        
+        .frequency-range {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: monospace;
+        }
+        
+        .demo-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 201, 255, 0.1);
+            border: 1px solid var(--secondary-color);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, rgba(0, 119, 190, 0.1), rgba(0, 201, 255, 0.1));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .info-card h4 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card p {
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .visualizer-hero {
+                padding: 6rem 0 3rem;
+            }
+            
+            #visualizerCanvas {
+                height: 250px;
+            }
+            
+            .visualizer-controls {
+                gap: 0.5rem;
+            }
+            
+            .viz-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
+                <h1>Dolphin Singularity</h1>
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="story.html">Story</a></li>
+                <li><a href="visualizer.html" style="color: var(--secondary-color);">Visualizer</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="visualizer-hero">
+        <div class="container">
+            <h1>🐬 Interactive Sound Visualizer</h1>
+            <p style="color: var(--text-muted); font-size: 1.2rem;">Experience dolphin communication through real-time audio visualization</p>
+        </div>
+    </div>
+
+    <div class="visualizer-container">
+        <div class="visualizer-main">
+            <canvas id="visualizerCanvas"></canvas>
+            
+            <div class="visualizer-controls">
+                <button class="viz-btn active" data-type="waveform">🌊 Waveform</button>
+                <button class="viz-btn" data-type="frequency">📊 Frequency Bars</button>
+                <button class="viz-btn" data-type="spectrogram">🎨 Spectrogram</button>
+                <button class="viz-btn" data-type="circular">⭕ Circular</button>
+            </div>
+        </div>
+
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: var(--text-dark);">
+            Dolphin Vocalization Library
+        </h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">
+            Click play on any sound to see it visualized in real-time. These are synthesized demonstrations of typical dolphin vocalizations.
+        </p>
+
+        <div class="sound-library">
+            <div class="sound-card">
+                <h3>🎵 Signature Whistle</h3>
+                <p>Each dolphin has a unique signature whistle, like a name. These frequency-modulated whistles typically sweep from 5-15 kHz and last 0.5-2 seconds.</p>
+                <div class="frequency-range">Frequency: 5-15 kHz | Duration: 1.0s</div>
+                <span class="demo-badge">SYNTHESIZED DEMO</span>
+                <div class="sound-player">
+                    <button class="play-btn" data-sound="signature">▶</button>
+                    <div class="sound-info">
+                        <div style="font-weight: 600; color: var(--text-dark);">Signature Whistle</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Individual identification</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sound-card">
+                <h3>🔊 Echolocation Clicks</h3>
+                <p>Dolphins use rapid click trains for navigation and hunting. These ultrasonic bursts can reach frequencies up to 150 kHz and provide detailed information about their environment.</p>
+                <div class="frequency-range">Frequency: 40-150 kHz | Rate: 10-600 clicks/s</div>
+                <span class="demo-badge">SYNTHESIZED DEMO</span>
+                <div class="sound-player">
+                    <button class="play-btn" data-sound="echolocation">▶</button>
+                    <div class="sound-info">
+                        <div style="font-weight: 600; color: var(--text-dark);">Echolocation Clicks</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Navigation & hunting</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sound-card">
+                <h3>💥 Burst Pulses</h3>
+                <p>Rapid click sequences used in social contexts, often indicating excitement or aggression. Can sound like a creaking door or squeaky toy.</p>
+                <div class="frequency-range">Frequency: 0.2-170 kHz | Variable rate</div>
+                <span class="demo-badge">COMING SOON</span>
+                <div class="sound-player">
+                    <button class="play-btn" data-sound="burst" disabled style="opacity: 0.5;">▶</button>
+                    <div class="sound-info">
+                        <div style="font-weight: 600; color: var(--text-dark);">Burst Pulses</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Social communication</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin: 3rem 0 1rem; color: var(--text-dark);">
+            Understanding Dolphin Acoustics
+        </h2>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>📡 How Dolphins "See" with Sound</h4>
+                <p>Dolphin echolocation is so precise they can detect objects the size of a golf ball from 50 meters away and can even determine an object's internal structure.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>🎼 Vocal Learning</h4>
+                <p>Dolphins are one of the few mammals capable of vocal learning, meaning they can modify their vocalizations based on what they hear - similar to how humans learn language.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>🧠 Complex Communication</h4>
+                <p>Research suggests dolphins can combine whistles in meaningful ways, potentially forming a proto-language with syntax and grammar-like structures.</p>
+            </div>
+
+            <div class="info-card">
+                <h4>🤖 AI Analysis</h4>
+                <p>Modern machine learning is helping us decode dolphin communication patterns, potentially allowing for real interspecies communication in the near future.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem; padding: 3rem 2rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 20px; color: white;">
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Support Dolphin Communication Research</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">Help us decode the language of the ocean</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="research.html" class="btn btn-secondary">Learn More</a>
+                <a href="donate.html" class="btn btn-secondary">Donate</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dolphin Singularity</h4>
+                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="visualizer.html">Visualizer</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DolphinSingularity.org | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="js/sound-visualizer.js"></script>
+    <script>
+        // Initialize visualizer
+        let visualizer;
+        let currentAudio = null;
+        let soundGenerator;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            visualizer = new DolphinSoundVisualizer('visualizerCanvas');
+            soundGenerator = new DolphinSoundGenerator();
+            
+            // Visualization type switcher
+            document.querySelectorAll('.viz-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.viz-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const type = this.getAttribute('data-type');
+                    visualizer.setVisualizationType(type);
+                });
+            });
+            
+            // Sound players
+            document.querySelectorAll('.play-btn').forEach(btn => {
+                btn.addEventListener('click', async function() {
+                    if (this.disabled) return;
+                    
+                    const soundType = this.getAttribute('data-sound');
+                    const isPlaying = this.textContent === '⏸';
+                    
+                    // Stop any currently playing sound
+                    document.querySelectorAll('.play-btn').forEach(b => b.textContent = '▶');
+                    
+                    if (isPlaying) {
+                        this.textContent = '▶';
+                        return;
+                    }
+                    
+                    this.textContent = '⏸';
+                    
+                    // Generate and play sound
+                    let buffer;
+                    switch(soundType) {
+                        case 'signature':
+                            buffer = soundGenerator.generateSignatureWhistle(2.0);
+                            break;
+                        case 'echolocation':
+                            buffer = soundGenerator.generateEcholocationClicks(2.0, 20);
+                            break;
+                    }
+                    
+                    if (buffer) {
+                        const source = soundGenerator.playBuffer(buffer);
+                        
+                        // Create temporary audio element for visualization
+                        if (!currentAudio) {
+                            currentAudio = new Audio();
+                            currentAudio.volume = 0; // Mute since we're playing via buffer
+                            await visualizer.initialize(currentAudio);
+                        }
+                        
+                        source.onended = () => {
+                            this.textContent = '▶';
+                        };
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

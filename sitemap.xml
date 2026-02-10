@@ -1,104 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
     <url>
         <loc>https://dolphinsingularity.org/</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+    
+    <!-- Main Pages -->
     <url>
         <loc>https://dolphinsingularity.org/about.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/research.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/conservation.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://dolphinsingularity.org/story.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Blog & Articles -->
+    <url>
         <loc>https://dolphinsingularity.org/blog.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/blog/translation-breakthrough.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2025-10-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/blog/ethics-communication.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2025-10-05</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/blog/dolphingemma-progress.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2025-09-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/blog/dolphins-teach-ai.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2025-09-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/blog/signature-paradox.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2025-08-22</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/blog/conservation-understanding.html</loc>
-        <lastmod>2025-11-20</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
+    
+    <!-- Interactive Features -->
+    <url>
+        <loc>https://dolphinsingularity.org/sound-library.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dolphinsingularity.org/visualizer.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dolphinsingularity.org/knowledge-explorer.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://dolphinsingularity.org/share-encounter.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Resources & Information -->
     <url>
         <loc>https://dolphinsingularity.org/resources.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/faq.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://dolphinsingularity.org/contact.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <loc>https://dolphinsingularity.org/team.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Support & Engagement -->
+    <url>
+        <loc>https://dolphinsingularity.org/donate.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dolphinsingularity.org/membership.html</loc>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/store.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://dolphinsingularity.org/contact.html</loc>
+        <lastmod>2026-02-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Legal Pages -->
+    <url>
         <loc>https://dolphinsingularity.org/privacy.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://dolphinsingularity.org/terms.html</loc>
-        <lastmod>2024-11-07</lastmod>
+        <lastmod>2026-02-06</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>

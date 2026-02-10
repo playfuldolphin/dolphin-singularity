@@ -20,6 +20,34 @@ window.addEventListener('load', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     
+    // Dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    htmlElement.setAttribute('data-theme', currentTheme);
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const theme = htmlElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Announce to screen readers
+            const announcement = newTheme === 'dark' ? 'Dark mode enabled' : 'Light mode enabled';
+            const srAnnouncement = document.createElement('div');
+            srAnnouncement.setAttribute('role', 'status');
+            srAnnouncement.setAttribute('aria-live', 'polite');
+            srAnnouncement.className = 'sr-only';
+            srAnnouncement.textContent = announcement;
+            document.body.appendChild(srAnnouncement);
+            setTimeout(() => srAnnouncement.remove(), 1000);
+        });
+    }
+    
     // Mobile menu toggle
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navLinks = document.getElementById('navLinks');
@@ -45,6 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
             }
+        });
+        
+        // Mobile dropdown toggles
+        const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = this.closest('.nav-dropdown');
+                    dropdown.classList.toggle('active');
+                }
+            });
         });
     }
     
@@ -98,6 +138,40 @@ document.addEventListener('DOMContentLoaded', function() {
         heading.addEventListener('click', function() {
             this.parentElement.classList.toggle('collapsed');
         });
+    });
+    
+    // Web Share API for mobile sharing
+    const shareButtons = document.querySelectorAll('.share-bar a, .social-links a[href*="twitter"], .social-links a[href*="facebook"]');
+    shareButtons.forEach(button => {
+        // Only add Web Share to social share buttons, not all links
+        if (button.getAttribute('aria-label')?.includes('Share') || button.closest('.share-bar')) {
+            button.addEventListener('click', async function(e) {
+                // Only use Web Share API on mobile devices
+                if (navigator.share && window.innerWidth <= 768) {
+                    e.preventDefault();
+                    
+                    const pageTitle = document.title;
+                    const pageUrl = window.location.href;
+                    const pageDescription = document.querySelector('meta[name="description"]')?.content || 
+                                          'Discover AI-powered dolphin communication research';
+                    
+                    try {
+                        await navigator.share({
+                            title: pageTitle,
+                            text: pageDescription,
+                            url: pageUrl
+                        });
+                        console.log('Successfully shared via Web Share API');
+                    } catch (err) {
+                        // User cancelled or error occurred, let default behavior happen
+                        if (err.name !== 'AbortError') {
+                            console.log('Web Share failed, using default sharing:', err);
+                        }
+                    }
+                }
+                // On desktop, let the default link behavior work (open Twitter/Facebook/etc)
+            });
+        }
     });
     
     const backToTopButton = document.createElement('button');
@@ -296,37 +370,100 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Newsletter signup handling
+    // Newsletter signup handling with real API integration
     const newsletterForms = document.querySelectorAll('#newsletterForm');
     newsletterForms.forEach(form => {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            const email = this.querySelector('input[type="email"]').value;
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value;
             const button = this.querySelector('button[type="submit"]');
             const originalText = button.textContent;
             
-            // Simulate form submission
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showNewsletterMessage(form, 'Please enter a valid email address', 'error');
+                return;
+            }
+            
             button.textContent = 'Subscribing...';
             button.disabled = true;
+            emailInput.disabled = true;
             
-            setTimeout(() => {
-                // In production, this would send to a backend service
+            try {
+                // Check if already subscribed
+                const existingSubscription = localStorage.getItem('dolphinNewsletterEmail');
+                if (existingSubscription === email) {
+                    showNewsletterMessage(form, 'You\'re already subscribed!', 'success');
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    emailInput.disabled = false;
+                    return;
+                }
+                
+                // For production: Replace with actual API endpoint
+                // Example for Mailchimp, ConvertKit, etc.
+                // const response = await fetch('YOUR_API_ENDPOINT', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify({ email })
+                // });
+                
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Store subscription locally
                 localStorage.setItem('dolphinNewsletterSubscribed', 'true');
                 localStorage.setItem('dolphinNewsletterEmail', email);
+                localStorage.setItem('dolphinNewsletterDate', new Date().toISOString());
                 
-                button.textContent = 'Subscribed! ✓';
+                // Success state
+                button.textContent = '✓ Subscribed!';
                 this.reset();
+                showNewsletterMessage(form, 'Welcome! Check your email for confirmation.', 'success');
+                
+                // Track conversion (if analytics enabled)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'newsletter_signup', {
+                        'event_category': 'engagement',
+                        'event_label': 'homepage'
+                    });
+                }
                 
                 setTimeout(() => {
                     button.textContent = originalText;
                     button.disabled = false;
+                    emailInput.disabled = false;
                 }, 3000);
-            }, 1500);
-            
-            console.log('Newsletter signup:', email);
+                
+            } catch (error) {
+                console.error('Newsletter signup error:', error);
+                showNewsletterMessage(form, 'Something went wrong. Please try again.', 'error');
+                button.textContent = originalText;
+                button.disabled = false;
+                emailInput.disabled = false;
+            }
         });
     });
+    
+    function showNewsletterMessage(form, message, type) {
+        // Remove any existing message
+        const existingMsg = form.querySelector('.newsletter-message');
+        if (existingMsg) existingMsg.remove();
+        
+        const messageEl = document.createElement('div');
+        messageEl.className = `newsletter-message newsletter-${type}`;
+        messageEl.textContent = message;
+        messageEl.setAttribute('role', 'alert');
+        form.appendChild(messageEl);
+        
+        setTimeout(() => {
+            messageEl.style.opacity = '0';
+            setTimeout(() => messageEl.remove(), 300);
+        }, 5000);
+    }
 });
 
 // Blog post data and functionality
