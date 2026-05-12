@@ -75,11 +75,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Mobile dropdown toggles
+        // Mobile dropdown toggles — threshold matches the CSS hamburger breakpoint
+        const MOBILE_BREAKPOINT = 1150;
         const dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
         dropdownToggles.forEach(toggle => {
             toggle.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= MOBILE_BREAKPOINT) {
                     e.preventDefault();
                     const dropdown = this.closest('.nav-dropdown');
                     dropdown.classList.toggle('active');
