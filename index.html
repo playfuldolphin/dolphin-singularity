@@ -4,30 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dolphin Singularity — Marine Cognition Research, Synthesized Weekly</title>
-    <meta name="description" content="A weekly newsletter on cetacean communication, animal cognition, and AI-meets-biology research. Opinionated, philosophically grounded, free to start.">
+    <title>Dolphin Singularity — Noah Wilson</title>
+    <meta name="description" content="A weekly research newsletter on cetacean communication, animal cognition, and AI-meets-biology. By Noah Wilson, Hunter College · Reiss Lab · DolphinGemma Documentary.">
+    <meta name="author" content="Noah Wilson">
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dolphinsingularity.org/">
-    <meta property="og:title" content="Dolphin Singularity — Marine Cognition Research, Synthesized Weekly">
-    <meta property="og:description" content="A weekly newsletter on cetacean communication, animal cognition, and AI-meets-biology. Free to start.">
+    <meta property="og:title" content="Dolphin Singularity — Noah Wilson">
+    <meta property="og:description" content="Weekly research newsletter: cetacean communication, animal cognition, AI-meets-biology. Hunter College · Reiss Lab.">
     <meta property="og:image" content="https://dolphinsingularity.org/images/hero-background.png">
     <meta property="og:site_name" content="Dolphin Singularity">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://dolphinsingularity.org/">
-    <meta property="twitter:title" content="Dolphin Singularity — Marine Cognition Research, Synthesized Weekly">
-    <meta property="twitter:description" content="A weekly newsletter on cetacean communication, animal cognition, and AI-meets-biology.">
+    <meta property="twitter:title" content="Dolphin Singularity — Noah Wilson">
+    <meta property="twitter:description" content="Weekly research newsletter: cetacean communication, animal cognition, AI-meets-biology.">
     <meta property="twitter:image" content="https://dolphinsingularity.org/images/hero-background.png">
 
     <link rel="canonical" href="https://dolphinsingularity.org/">
     <link rel="icon" type="image/png" href="/images/logo5.png">
     <link rel="apple-touch-icon" href="/images/logo5.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894087674561904" crossorigin="anonymous"></script>
 
@@ -37,688 +34,1099 @@
         "@type": "WebSite",
         "url": "https://dolphinsingularity.org",
         "name": "Dolphin Singularity",
-        "description": "Weekly newsletter synthesizing cetacean communication, animal cognition, and AI-meets-biology research."
+        "description": "Weekly research newsletter on cetacean communication and animal cognition by Noah Wilson.",
+        "author": {
+            "@type": "Person",
+            "name": "Noah Wilson",
+            "affiliation": "Hunter College, Reiss Lab",
+            "email": "noah@dolphinsingularity.org"
+        }
     }
     </script>
 
     <style>
-    /* ── Reset & base ──────────────────────────────────────── */
+    /* ── View transitions ──────────────────────────────────── */
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation-duration: 0.25s;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* ── Reset ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── Design tokens ─────────────────────────────────────── */
     :root {
-        --bg:          #0c1117;
-        --surface:     #111927;
-        --surface-alt: #0f1520;
-        --text:        #e5ddd0;
-        --muted:       #7a8fa6;
-        --faint:       #3d4f63;
-        --accent:      #4a9896;
-        --accent-hover:#5db3b0;
-        --accent-dim:  rgba(74,152,150,0.12);
-        --border:      rgba(255,255,255,0.08);
-        --nav-h:       58px;
-        --max-prose:   680px;
-        --max-wide:    960px;
-        --pad-x:       clamp(1.25rem, 5vw, 2rem);
-        --section-gap: clamp(5rem, 9vw, 7rem);
+        --bg:          #F7F6F3;
+        --surface:     #FFFFFF;
+        --navy:        #0A1520;
+        --navy-mid:    #1A3A54;
+        --blue:        #1A5276;
+        --blue-light:  #2874A6;
+        --text:        #1C1C1C;
+        --muted:       #5A6878;
+        --faint:       #8A9AAA;
+        --rule:        #D8D4CC;
+        --rule-dark:   rgba(255,255,255,0.12);
+        --mono:        'Courier New', Courier, monospace;
+        --serif:       Georgia, 'Times New Roman', serif;
+        --nav-h:       52px;
+        --col-main:    62%;
+        --col-side:    38%;
+        --max-w:       1100px;
+        --pad:         clamp(1.25rem, 4vw, 2.5rem);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-family: var(--serif);
         font-size: 17px;
         line-height: 1.72;
         color: var(--text);
         background: var(--bg);
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
     }
 
-    a { color: inherit; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
     img { display: block; max-width: 100%; }
 
     .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: var(--accent);
-        color: #fff;
-        padding: 8px 16px;
-        text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 600;
-        z-index: 9999;
-        border-radius: 0 0 4px 0;
+        position: absolute; top: -40px; left: 0;
+        background: var(--blue); color: #fff;
+        padding: 8px 16px; font-family: var(--mono);
+        font-size: 0.78rem; z-index: 9999;
+        border-radius: 0 0 3px 0;
     }
     .skip-link:focus { top: 0; }
+
+    /* ── Shared label style ─────────────────────────────────── */
+    .label {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--faint);
+    }
+
+    .label-blue {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--blue);
+    }
 
     /* ── Nav ───────────────────────────────────────────────── */
     .nav {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 0; left: 0; right: 0;
         height: var(--nav-h);
-        background: rgba(10, 14, 20, 0.96);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-bottom: 1px solid var(--border);
+        background: var(--navy);
         z-index: 100;
+        border-bottom: 1px solid var(--rule-dark);
     }
 
     .nav-inner {
-        max-width: var(--max-wide);
+        max-width: var(--max-w);
         margin: 0 auto;
-        padding: 0 var(--pad-x);
+        padding: 0 var(--pad);
         height: 100%;
         display: flex;
         align-items: center;
         gap: 2rem;
     }
 
-    .nav-brand {
-        font-family: 'Space Grotesk', sans-serif;
+    .nav-logo {
+        font-family: var(--serif);
         font-size: 1rem;
-        font-weight: 700;
-        color: var(--text);
+        font-style: italic;
+        color: #e8e0d0;
         text-decoration: none;
-        letter-spacing: -0.01em;
         flex-shrink: 0;
         margin-right: auto;
+        letter-spacing: 0.01em;
     }
+    .nav-logo:hover { text-decoration: none; color: #fff; }
 
     .nav-links {
         display: flex;
         list-style: none;
-        gap: 1.75rem;
+        gap: 2rem;
         align-items: center;
     }
 
     .nav-links a {
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(232,224,208,0.6);
         text-decoration: none;
         transition: color 0.15s;
     }
-
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: rgba(232,224,208,1); text-decoration: none; }
 
     .nav-subscribe {
-        display: inline-block;
-        font-size: 0.82rem;
-        font-weight: 600;
-        color: var(--accent);
-        border: 1px solid var(--accent);
-        padding: 0.4rem 1rem;
-        border-radius: 4px;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #e8e0d0;
+        border: 1px solid rgba(232,224,208,0.35);
+        padding: 0.45rem 1.1rem;
         text-decoration: none;
-        transition: background 0.15s, color 0.15s;
+        transition: background 0.15s, border-color 0.15s;
         flex-shrink: 0;
     }
-
     .nav-subscribe:hover {
-        background: var(--accent);
-        color: #fff;
+        background: rgba(232,224,208,0.1);
+        border-color: rgba(232,224,208,0.7);
+        text-decoration: none;
     }
 
-    /* Hamburger */
+    /* Mobile nav */
     .nav-hamburger {
         display: none;
         flex-direction: column;
         gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 6px;
-        margin-left: 0.5rem;
+        background: none; border: none;
+        cursor: pointer; padding: 6px;
     }
-
     .nav-hamburger span {
-        display: block;
-        width: 22px;
-        height: 2px;
-        background: var(--muted);
-        border-radius: 2px;
+        display: block; width: 20px; height: 1.5px;
+        background: rgba(232,224,208,0.6);
         transition: transform 0.2s, opacity 0.2s;
     }
-
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    /* Mobile nav */
-    @media (max-width: 720px) {
+    @media (max-width: 680px) {
         .nav-hamburger { display: flex; }
-        .nav-links, .nav-subscribe {
-            display: none;
-        }
+        .nav-links, .nav-subscribe { display: none; }
         .nav-links.open {
             display: flex;
             flex-direction: column;
             position: fixed;
-            top: var(--nav-h);
-            left: 0; right: 0; bottom: 0;
-            background: rgba(10, 14, 20, 0.98);
-            padding: 2rem var(--pad-x);
-            gap: 0.25rem;
-            overflow-y: auto;
+            top: var(--nav-h); left: 0; right: 0; bottom: 0;
+            background: var(--navy);
+            padding: 2rem var(--pad);
+            gap: 0;
             z-index: 99;
         }
-        .nav-links.open a {
-            font-size: 1.1rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border);
-            color: var(--text);
+        .nav-links.open li {
+            border-bottom: 1px solid var(--rule-dark);
         }
-        .nav-links.open li:last-child a { border-bottom: none; }
+        .nav-links.open a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: rgba(232,224,208,0.85);
+        }
     }
 
-    /* ── Hero ──────────────────────────────────────────────── */
-    .hero {
-        min-height: 100svh;
+    /* ── Page wrapper ───────────────────────────────────────── */
+    .page {
         padding-top: var(--nav-h);
-        display: flex;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
     }
 
-    /* Photo background */
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-    }
-
-    .hero-bg img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center 60%;
-        display: block;
-    }
-
-    /* Deep dark overlay — keeps text fully legible */
-    .hero-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        /* two-layer overlay: solid near-black at bottom fades to translucent at top */
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(12, 17, 23, 0.72) 0%,
-                rgba(12, 17, 23, 0.82) 50%,
-                rgba(12, 17, 23, 0.96) 100%
-            );
-    }
-
-    .hero-inner {
-        position: relative;
-        z-index: 1;
-        max-width: var(--max-wide);
+    /* ── Hero: two-column broadsheet grid ───────────────────── */
+    .hero {
+        max-width: var(--max-w);
         margin: 0 auto;
-        padding: clamp(4rem, 10vw, 7rem) var(--pad-x) clamp(4rem, 8vw, 6rem);
-        width: 100%;
+        padding: 0 var(--pad);
+        display: grid;
+        grid-template-columns: var(--col-main) var(--col-side);
+        border-bottom: 1px solid var(--rule);
     }
 
-    .hero-eyebrow {
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--accent);
-        margin-bottom: 1.5rem;
+    /* Main column */
+    .hero-main {
+        padding: 3.5rem 3rem 3.5rem 0;
+        border-right: 1px solid var(--rule);
     }
 
-    .hero h1 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(2.4rem, 6vw, 4rem);
-        font-weight: 700;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        max-width: 720px;
-        margin-bottom: 1.75rem;
-    }
-
-    .hero-body {
-        font-size: clamp(1rem, 2.2vw, 1.15rem);
-        line-height: 1.75;
-        color: var(--muted);
-        max-width: 600px;
-        margin-bottom: 2.5rem;
-    }
-
-    .hero-cta {
-        display: flex;
-        align-items: center;
-        gap: 1.25rem;
-        flex-wrap: wrap;
-    }
-
-    .btn-primary {
-        display: inline-block;
-        background: var(--accent);
-        color: #fff;
-        font-size: 0.95rem;
-        font-weight: 600;
-        padding: 0.8rem 1.75rem;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background 0.15s, transform 0.15s;
-        letter-spacing: 0.01em;
-    }
-
-    .btn-primary:hover {
-        background: var(--accent-hover);
-        transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-        display: inline-block;
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--muted);
-        text-decoration: none;
-        border-bottom: 1px solid var(--faint);
-        padding-bottom: 1px;
-        transition: color 0.15s, border-color 0.15s;
-    }
-
-    .btn-ghost:hover {
-        color: var(--text);
-        border-color: var(--muted);
-    }
-
-    .hero-note {
-        margin-top: 1rem;
-        font-size: 0.8rem;
-        color: var(--faint);
-    }
-
-    /* ── Divider ───────────────────────────────────────────── */
-    .section-divider {
-        border: none;
-        border-top: 1px solid var(--border);
-        max-width: var(--max-wide);
-        margin: 0 auto;
-    }
-
-    /* ── About / prose section ─────────────────────────────── */
-    .about {
-        padding: var(--section-gap) var(--pad-x);
-    }
-
-    .prose {
-        max-width: var(--max-prose);
-        margin: 0 auto;
-    }
-
-    .prose h2 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--text);
-        letter-spacing: -0.01em;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.6rem;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .prose p {
-        color: var(--muted);
-        margin-bottom: 1.25rem;
-        line-height: 1.8;
-    }
-
-    .prose p:last-child { margin-bottom: 0; }
-
-    .prose p strong { color: var(--text); font-weight: 600; }
-
-    /* Text link list (tools) */
-    .text-links {
-        margin-top: 2.75rem;
-        padding-top: 1.75rem;
-        border-top: 1px solid var(--border);
-    }
-
-    .text-links p {
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--faint);
-        margin-bottom: 0.85rem;
-    }
-
-    .text-links ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 0.55rem;
-    }
-
-    .text-links li {
-        font-size: 0.93rem;
-        color: var(--muted);
-        line-height: 1.5;
-    }
-
-    .text-links a {
-        color: var(--accent);
-        text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.15s;
-    }
-
-    .text-links a:hover { border-bottom-color: var(--accent); }
-
-    /* ── Bottom CTA ────────────────────────────────────────── */
-    .bottom-cta {
-        background: var(--surface-alt);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        padding: var(--section-gap) var(--pad-x);
-    }
-
-    .bottom-cta-inner {
-        max-width: var(--max-prose);
-        margin: 0 auto;
-    }
-
-    .bottom-cta h2 {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(1.5rem, 3.5vw, 2rem);
-        font-weight: 700;
-        color: var(--text);
-        letter-spacing: -0.02em;
-        margin-bottom: 0.75rem;
-        line-height: 1.2;
-    }
-
-    .bottom-cta p {
-        color: var(--muted);
-        font-size: 1rem;
-        line-height: 1.7;
-        margin-bottom: 2rem;
-        max-width: 520px;
-    }
-
-    .bottom-cta-actions {
+    .hero-kicker {
         display: flex;
         align-items: center;
         gap: 1.5rem;
-        flex-wrap: wrap;
+        margin-bottom: 1.75rem;
     }
 
-    .cta-detail {
-        font-size: 0.8rem;
-        color: var(--faint);
+    .hero-kicker .label { color: var(--faint); }
+
+    .kicker-rule {
+        flex: 1;
+        height: 1px;
+        background: var(--rule);
+    }
+
+    .hero h1 {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 4.5vw, 3rem);
+        font-weight: 400;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+        color: var(--text);
+        margin-bottom: 1.25rem;
+        max-width: 580px;
+    }
+
+    .hero-byline {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        color: var(--blue);
+        margin-bottom: 1.5rem;
         line-height: 1.6;
     }
 
-    /* ── Footer ────────────────────────────────────────────── */
-    .footer {
-        background: #080d13;
-        border-top: 1px solid var(--border);
-        padding: 3.5rem var(--pad-x) 2rem;
+    .hero-byline a {
+        color: var(--blue);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(26,82,118,0.3);
+        transition: border-color 0.15s;
+    }
+    .hero-byline a:hover { border-color: var(--blue); text-decoration: none; }
+
+    .hero-desc {
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--muted);
+        max-width: 520px;
+        margin-bottom: 2.25rem;
+        border-top: 1px solid var(--rule);
+        padding-top: 1.25rem;
     }
 
-    .footer-inner {
-        max-width: var(--max-wide);
+    /* Email capture */
+    .subscribe-form {
+        display: flex;
+        gap: 0;
+        max-width: 440px;
+        margin-bottom: 0.65rem;
+        border: 1px solid var(--rule);
+    }
+
+    .subscribe-form input[type="email"] {
+        flex: 1;
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        padding: 0.8rem 1rem;
+        border: none;
+        background: var(--surface);
+        color: var(--text);
+        outline: none;
+        min-width: 0;
+    }
+
+    .subscribe-form input[type="email"]::placeholder { color: var(--faint); }
+
+    .subscribe-form input[type="email"]:focus {
+        background: #fff;
+    }
+
+    .subscribe-form button {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: var(--navy);
+        color: #e8e0d0;
+        border: none;
+        padding: 0.8rem 1.25rem;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: background 0.15s;
+        flex-shrink: 0;
+    }
+    .subscribe-form button:hover { background: var(--navy-mid); }
+
+    .form-note {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--faint);
+        letter-spacing: 0.04em;
+    }
+
+    /* Sidebar */
+    .hero-sidebar {
+        background: var(--navy);
+        padding: 2.5rem 2rem 2.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Spectrogram decoration */
+    .spectrogram {
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid var(--rule-dark);
+    }
+
+    .spectrogram svg {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .spec-label {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.25);
+        margin-top: 0.5rem;
+    }
+
+    /* Author bio */
+    .sidebar-bio {
+        border-top: 1px solid var(--rule-dark);
+        padding-top: 1.5rem;
+    }
+
+    .sidebar-label {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.3);
+        margin-bottom: 0.75rem;
+    }
+
+    .sidebar-name {
+        font-family: var(--serif);
+        font-size: 1.15rem;
+        font-weight: 400;
+        font-style: italic;
+        color: #e8e0d0;
+        margin-bottom: 0.65rem;
+        line-height: 1.3;
+    }
+
+    .sidebar-creds {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        line-height: 1.7;
+        color: rgba(232,224,208,0.55);
+        letter-spacing: 0.02em;
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-link {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(232,224,208,0.4);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(232,224,208,0.2);
+        transition: color 0.15s, border-color 0.15s;
+    }
+    .sidebar-link:hover {
+        color: rgba(232,224,208,0.9);
+        border-color: rgba(232,224,208,0.5);
+        text-decoration: none;
+    }
+
+    /* ── Section wrapper ────────────────────────────────────── */
+    .section-wrap {
+        max-width: var(--max-w);
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        gap: 3rem;
+        padding: 0 var(--pad);
     }
 
-    .footer-brand {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 0.95rem;
-        font-weight: 700;
+    /* ── Recent issues ──────────────────────────────────────── */
+    .recent-issues {
+        border-bottom: 1px solid var(--rule);
+        padding: 3rem 0;
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .section-header .rule { flex: 1; height: 1px; background: var(--rule); }
+
+    .issue-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .issue-item {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 0;
+        border-top: 1px solid var(--rule);
+        padding: 1.5rem 0;
+    }
+    .issue-item:last-child { border-bottom: 1px solid var(--rule); }
+
+    .issue-num {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        color: var(--faint);
+        padding-top: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    .issue-body {}
+
+    .issue-title {
+        font-family: var(--serif);
+        font-size: 1.15rem;
+        font-weight: 400;
+        line-height: 1.35;
         color: var(--text);
         margin-bottom: 0.6rem;
     }
 
-    .footer-tagline {
-        font-size: 0.85rem;
-        color: var(--faint);
-        line-height: 1.6;
-        max-width: 280px;
+    .issue-title a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color 0.15s;
+    }
+    .issue-title a:hover { color: var(--blue); text-decoration: none; }
+
+    .issue-excerpt {
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.65;
+        margin-bottom: 0.75rem;
+        max-width: 700px;
     }
 
-    .footer-col h4 {
+    .issue-read {
+        font-family: var(--mono);
         font-size: 0.7rem;
-        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--blue);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(26,82,118,0.3);
+        transition: border-color 0.15s;
+    }
+    .issue-read:hover { border-color: var(--blue); text-decoration: none; }
+
+    /* ── DolphinGemma centerpiece ───────────────────────────── */
+    .dolphingemma {
+        border-bottom: 1px solid var(--rule);
+        padding: 3rem 0;
+    }
+
+    .dg-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .dg-main {}
+
+    .dg-main h2 {
+        font-family: var(--serif);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 400;
+        line-height: 1.25;
+        color: var(--text);
+        margin-bottom: 1rem;
+        letter-spacing: -0.01em;
+    }
+
+    .dg-main p {
+        font-size: 0.97rem;
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 1rem;
+    }
+
+    .dg-main p strong { color: var(--text); font-weight: 600; }
+
+    .dg-link {
+        display: inline-block;
+        margin-top: 0.5rem;
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--blue);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(26,82,118,0.3);
+        transition: border-color 0.15s;
+    }
+    .dg-link:hover { border-color: var(--blue); text-decoration: none; }
+
+    .dg-sidebar {
+        background: var(--surface);
+        border: 1px solid var(--rule);
+        padding: 1.75rem;
+    }
+
+    .dg-sidebar .label-blue { margin-bottom: 1rem; display: block; }
+
+    .dg-stat {
+        padding: 1rem 0;
+        border-top: 1px solid var(--rule);
+    }
+    .dg-stat:first-of-type { border-top: none; padding-top: 0; }
+
+    .dg-stat-value {
+        font-family: var(--serif);
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: var(--blue);
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
+
+    .dg-stat-label {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        color: var(--faint);
+        line-height: 1.5;
+    }
+
+    /* ── Tools ──────────────────────────────────────────────── */
+    .tools {
+        border-bottom: 1px solid var(--rule);
+        padding: 3rem 0;
+    }
+
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border: 1px solid var(--rule);
+        margin-top: 1.5rem;
+    }
+
+    .tool-item {
+        padding: 1.75rem;
+        border-right: 1px solid var(--rule);
+    }
+    .tool-item:last-child { border-right: none; }
+
+    .tool-label {
+        font-family: var(--mono);
+        font-size: 0.65rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--faint);
-        margin-bottom: 0.9rem;
+        margin-bottom: 0.6rem;
     }
 
-    .footer-col ul { list-style: none; }
+    .tool-title {
+        font-family: var(--serif);
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
 
-    .footer-col li { margin-bottom: 0.45rem; }
-
-    .footer-col a {
-        font-size: 0.88rem;
+    .tool-desc {
+        font-size: 0.85rem;
         color: var(--muted);
-        text-decoration: none;
-        transition: color 0.15s;
+        line-height: 1.65;
+        margin-bottom: 0.85rem;
     }
 
-    .footer-col a:hover { color: var(--text); }
+    .tool-link {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--blue);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(26,82,118,0.3);
+        transition: border-color 0.15s;
+    }
+    .tool-link:hover { border-color: var(--blue); text-decoration: none; }
 
-    .footer-bottom {
-        max-width: var(--max-wide);
-        margin: 2.5rem auto 0;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border);
-        font-size: 0.78rem;
-        color: var(--faint);
+    /* ── Bottom CTA ─────────────────────────────────────────── */
+    .bottom-cta {
+        background: var(--navy);
+        padding: 3.5rem var(--pad);
+        border-bottom: 1px solid var(--rule-dark);
+    }
+
+    .bottom-cta-inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .bottom-cta h2 {
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        font-weight: 400;
+        font-style: italic;
+        color: #e8e0d0;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .bottom-cta p {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        color: rgba(232,224,208,0.45);
+        line-height: 1.6;
+    }
+
+    .bottom-cta .subscribe-form {
+        border-color: rgba(232,224,208,0.2);
+        min-width: 340px;
+    }
+
+    .bottom-cta .subscribe-form input[type="email"] {
+        background: rgba(255,255,255,0.07);
+        color: #e8e0d0;
+    }
+    .bottom-cta .subscribe-form input[type="email"]::placeholder { color: rgba(232,224,208,0.3); }
+    .bottom-cta .subscribe-form input[type="email"]:focus { background: rgba(255,255,255,0.12); }
+
+    .bottom-cta .subscribe-form button {
+        background: rgba(232,224,208,0.12);
+        border-left: 1px solid rgba(232,224,208,0.2);
+    }
+    .bottom-cta .subscribe-form button:hover { background: rgba(232,224,208,0.2); }
+
+    .bottom-cta .form-note { color: rgba(232,224,208,0.3); margin-top: 0.5rem; }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    .footer {
+        background: var(--navy);
+        border-top: 1px solid var(--rule-dark);
+        padding: 2rem var(--pad);
+    }
+
+    .footer-inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
         display: flex;
-        gap: 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
         flex-wrap: wrap;
     }
 
-    .footer-bottom a {
-        color: var(--faint);
+    .footer-left {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        color: rgba(232,224,208,0.35);
+        line-height: 1.8;
+    }
+
+    .footer-left a {
+        color: rgba(232,224,208,0.35);
         text-decoration: none;
         transition: color 0.15s;
     }
+    .footer-left a:hover { color: rgba(232,224,208,0.7); text-decoration: none; }
 
-    .footer-bottom a:hover { color: var(--muted); }
+    .footer-right {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        color: rgba(232,224,208,0.35);
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
 
-    @media (max-width: 680px) {
-        .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
-        .footer-bottom { flex-direction: column; gap: 0.5rem; }
-        .hero-cta { flex-direction: column; align-items: flex-start; }
+    .footer-right a {
+        color: rgba(232,224,208,0.35);
+        text-decoration: none;
+        transition: color 0.15s;
+    }
+    .footer-right a:hover { color: rgba(232,224,208,0.7); text-decoration: none; }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+        .hero {
+            grid-template-columns: 1fr;
+        }
+        .hero-main {
+            border-right: none;
+            border-bottom: 1px solid var(--rule);
+            padding: 2.5rem 0;
+        }
+        .hero-sidebar {
+            padding: 2rem 0;
+            background: transparent;
+        }
+        .hero-sidebar .spectrogram { display: none; }
+        .sidebar-bio { background: var(--navy); padding: 1.5rem; border-top: none; }
+        .dg-grid { grid-template-columns: 1fr; }
+        .tools-grid { grid-template-columns: 1fr; }
+        .tool-item { border-right: none; border-bottom: 1px solid var(--rule); }
+        .tool-item:last-child { border-bottom: none; }
+        .bottom-cta-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+        .bottom-cta .subscribe-form { min-width: 0; width: 100%; max-width: 440px; }
+        .issue-item { grid-template-columns: 60px 1fr; }
+    }
+
+    @media (max-width: 520px) {
+        :root { --pad: 1.25rem; }
+        .hero h1 { font-size: 1.75rem; }
+        .subscribe-form { flex-direction: column; }
+        .subscribe-form button { width: 100%; padding: 0.75rem; }
+        .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+        .issue-item { grid-template-columns: 1fr; gap: 0.25rem; }
+        .issue-num { padding-top: 0; }
     }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-inner">
-            <a href="index.html" class="nav-brand">Dolphin Singularity</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="newsletter.html">Newsletter</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="sound-library.html">Sounds</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="nav-subscribe">Subscribe</a>
-            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+<nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Dolphin Singularity</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#subscribe" class="nav-subscribe">Subscribe</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="page" id="main-content">
+
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="hero" aria-labelledby="hero-headline">
+        <!-- Main column -->
+        <div class="hero-main">
+            <div class="hero-kicker">
+                <span class="label">Weekly Research Newsletter</span>
+                <div class="kicker-rule"></div>
+                <span class="label">Vol. 1, 2025</span>
+            </div>
+
+            <h1 id="hero-headline">
+                The papers are scattered.<br>
+                This newsletter isn't.
+            </h1>
+
+            <p class="hero-byline">
+                Noah Wilson &mdash;
+                <a href="https://www.hunter.cuny.edu/psychology/faculty/diana-reiss" target="_blank" rel="noopener">Hunter College, Reiss Lab</a>
+                &nbsp;&middot;&nbsp;
+                DolphinGemma Documentary, in production
+            </p>
+
+            <p class="hero-desc">
+                Cetacean communication, animal cognition, and AI-meets-biology
+                research — synthesized weekly. Opinionated, philosophically grounded,
+                and honest about what the science actually shows.
+            </p>
+
+            <!-- Email capture — NOTE: update action URL once you rename your
+                 Substack to dolphinsingularity (or set up custom domain).
+                 Current destination: playfuldolphin.substack.com         -->
+            <form class="subscribe-form" id="subscribe"
+                  action="https://playfuldolphin.substack.com/subscribe"
+                  method="post">
+                <input type="email" name="email"
+                       placeholder="your@email.com" required
+                       autocomplete="email">
+                <button type="submit">Subscribe free</button>
+            </form>
+            <p class="form-note">Free to read &nbsp;&middot;&nbsp; $8/month for the full archive &nbsp;&middot;&nbsp; Unsubscribe anytime</p>
         </div>
-    </nav>
 
-    <main id="main-content">
-
-        <!-- Hero -->
-        <section class="hero">
-            <!-- Background photo — swap src for a video poster or replace
-                 this entire .hero-bg block with a <video> element if you
-                 want a looping video background. -->
-            <div class="hero-bg" aria-hidden="true">
-                <picture>
-                    <source srcset="images/hero-background.jpg" type="image/jpeg">
-                    <img src="images/hero-background.png" alt="" loading="eager" fetchpriority="high">
-                </picture>
+        <!-- Sidebar -->
+        <aside class="hero-sidebar" aria-label="About the author">
+            <!-- Decorative spectrogram — generated from realistic
+                 dolphin whistle frequency contour data          -->
+            <div class="spectrogram" aria-hidden="true">
+                <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="none">
+                    <rect width="280" height="120" fill="#06101a"/>
+                    <!-- Frequency grid lines -->
+                    <line x1="0" y1="30"  x2="280" y2="30"  stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    <line x1="0" y1="60"  x2="280" y2="60"  stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    <line x1="0" y1="90"  x2="280" y2="90"  stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                    <!-- Signature whistle contour — characteristic rising arc -->
+                    <path d="M10,105 C30,105 40,98 55,80 C65,67 72,58 88,50 C100,44 108,42 120,40 C132,38 140,39 152,43 C164,47 172,52 185,58 C198,65 210,72 224,78 C236,83 248,85 270,88"
+                          stroke="rgba(74,152,150,0.9)" stroke-width="2" fill="none"
+                          stroke-linecap="round"/>
+                    <!-- Second harmonic -->
+                    <path d="M10,112 C30,112 40,107 55,95 C65,86 72,79 88,72 C100,67 108,65 120,63 C132,61 140,62 152,65 C164,68 172,72 185,76 C198,81 210,87 224,91 C236,95 248,97 270,99"
+                          stroke="rgba(74,152,150,0.35)" stroke-width="1.5" fill="none"
+                          stroke-linecap="round"/>
+                    <!-- Ambient click train — echolocation -->
+                    <g fill="rgba(180,220,215,0.25)">
+                        <rect x="15"  y="18" width="1.5" height="8"/>
+                        <rect x="28"  y="22" width="1.5" height="5"/>
+                        <rect x="41"  y="15" width="1.5" height="12"/>
+                        <rect x="56"  y="20" width="1.5" height="7"/>
+                        <rect x="68"  y="17" width="1.5" height="10"/>
+                        <rect x="83"  y="23" width="1.5" height="4"/>
+                        <rect x="97"  y="16" width="1.5" height="11"/>
+                        <rect x="112" y="21" width="1.5" height="6"/>
+                        <rect x="128" y="14" width="1.5" height="13"/>
+                        <rect x="143" y="19" width="1.5" height="8"/>
+                        <rect x="158" y="22" width="1.5" height="5"/>
+                        <rect x="174" y="16" width="1.5" height="10"/>
+                        <rect x="189" y="20" width="1.5" height="7"/>
+                        <rect x="205" y="18" width="1.5" height="9"/>
+                        <rect x="219" y="23" width="1.5" height="4"/>
+                        <rect x="234" y="15" width="1.5" height="12"/>
+                        <rect x="250" y="19" width="1.5" height="8"/>
+                        <rect x="265" y="21" width="1.5" height="6"/>
+                    </g>
+                    <!-- Frequency axis labels -->
+                    <text x="4" y="33"  font-family="Courier New" font-size="5" fill="rgba(255,255,255,0.2)">20kHz</text>
+                    <text x="4" y="63"  font-family="Courier New" font-size="5" fill="rgba(255,255,255,0.2)">12kHz</text>
+                    <text x="4" y="93"  font-family="Courier New" font-size="5" fill="rgba(255,255,255,0.2)">4kHz</text>
+                </svg>
+                <p class="spec-label">Bottlenose dolphin signature whistle · spectrogram</p>
             </div>
 
-            <div class="hero-inner">
-                <p class="hero-eyebrow">Weekly newsletter</p>
-                <h1>Marine cognition research,<br>synthesized weekly.</h1>
-                <p class="hero-body">
-                    The research is scattered across journals, preprints, and lab blogs you don't follow.
-                    Every week I read it and tell you what actually matters — cetacean communication,
-                    animal cognition, AI meets biology — with a point of view.
+            <div class="sidebar-bio">
+                <p class="sidebar-label">About the author</p>
+                <p class="sidebar-name">Noah Wilson</p>
+                <p class="sidebar-creds">
+                    Research associate, Hunter College.<br>
+                    Working with Dr. Diana Reiss, Reiss Lab.<br>
+                    Documentary filmmaker — <em>DolphinGemma</em>, in production.<br>
+                    Covering the intersection of AI and cetacean<br>
+                    communication research since 2024.
                 </p>
-                <div class="hero-cta">
-                    <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn-primary">Subscribe free</a>
-                    <a href="newsletter.html" class="btn-ghost">About the newsletter</a>
+                <a href="about.html" class="sidebar-link">Full bio &amp; editorial positions</a>
+            </div>
+        </aside>
+    </section>
+
+    <!-- ── Recent issues ─────────────────────────────────── -->
+    <section class="recent-issues" aria-labelledby="issues-heading">
+        <div class="section-wrap">
+            <div class="section-header">
+                <span class="label" id="issues-heading">Recent Issues</span>
+                <div class="rule"></div>
+                <a href="https://playfuldolphin.substack.com" class="label" style="color:var(--blue);text-decoration:none;white-space:nowrap">Full archive &rarr;</a>
+            </div>
+            <div class="issue-list">
+
+                <article class="issue-item">
+                    <span class="issue-num">No.&nbsp;11</span>
+                    <div class="issue-body">
+                        <h2 class="issue-title">
+                            <a href="blog/translation-breakthrough.html">DolphinGemma is impressive. The coverage of it is not.</a>
+                        </h2>
+                        <p class="issue-excerpt">
+                            Google's DolphinGemma model made headlines in April. Most of them were wrong in the same direction: they treated "AI can now classify dolphin whistles with high accuracy" as though it were one step away from real-time translation. It isn't, and the gap matters more than the achievement.
+                        </p>
+                        <a href="blog/translation-breakthrough.html" class="issue-read">Read issue</a>
+                    </div>
+                </article>
+
+                <article class="issue-item">
+                    <span class="issue-num">No.&nbsp;9</span>
+                    <div class="issue-body">
+                        <h2 class="issue-title">
+                            <a href="blog/signature-paradox.html">The signature whistle paradox: you named yourself, and you answer to it</a>
+                        </h2>
+                        <p class="issue-excerpt">
+                            Each bottlenose dolphin develops a unique whistle in its first year and uses it as a self-identifier throughout its life. Other dolphins copy it when addressing them. This seemingly simple behavior requires an extraordinary cascade of cognitive abilities — self-awareness, theory of mind, symbolic abstraction — that we're still working out how to measure.
+                        </p>
+                        <a href="blog/signature-paradox.html" class="issue-read">Read issue</a>
+                    </div>
+                </article>
+
+                <article class="issue-item">
+                    <span class="issue-num">No.&nbsp;6</span>
+                    <div class="issue-body">
+                        <h2 class="issue-title">
+                            <a href="blog/ethics-communication.html">When you can communicate with a dolphin, what do you owe it?</a>
+                        </h2>
+                        <p class="issue-excerpt">
+                            The ethical framework for interspecies communication research has never been systematically built. We have marine mammal welfare guidelines, animal cognition protocols, and general research ethics — but nothing that addresses what happens when the animal can, in some meaningful sense, respond to your questions.
+                        </p>
+                        <a href="blog/ethics-communication.html" class="issue-read">Read issue</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── DolphinGemma centerpiece ──────────────────────── -->
+    <section class="dolphingemma" aria-labelledby="dg-heading">
+        <div class="section-wrap">
+            <div class="section-header" style="margin-bottom:2rem">
+                <span class="label" id="dg-heading">Current Research</span>
+                <div class="rule"></div>
+            </div>
+            <div class="dg-grid">
+                <div class="dg-main">
+                    <h2>The DolphinGemma project is the most significant development in cetacean bioacoustics in a decade. Here's what it actually does.</h2>
+                    <p>
+                        Released by Google in collaboration with the Georgia Tech Research Institute and the Wild Dolphin Project, DolphinGemma is a transformer-based model fine-tuned on bottlenose dolphin vocalizations. It classifies whistle contours, identifies call types, and models temporal patterns in vocal sequences with a degree of precision that was previously impossible without significant compute investment.
+                    </p>
+                    <p>
+                        <strong>What it doesn't do:</strong> translate. The jump from "we can classify sounds with high accuracy" to "we understand what dolphins are communicating" is enormous and largely unsolved. DolphinGemma is a measurement instrument, not a decoder. The newsletter covers this distinction carefully because the coverage almost never does.
+                    </p>
+                    <p>
+                        As a documentary filmmaker working on a film about DolphinGemma's development, I have access to the researchers, the methodology, and the data that doesn't make the press releases. That context informs every issue.
+                    </p>
+                    <a href="research.html" class="dg-link">Research archive &rarr;</a>
                 </div>
-                <p class="hero-note">Free to read &middot; $8/month for the full archive &middot; Unsubscribe anytime</p>
-            </div>
-        </section>
 
-        <hr class="section-divider">
+                <div class="dg-sidebar">
+                    <span class="label-blue">Key figures</span>
 
-        <!-- About / project description -->
-        <section class="about" aria-labelledby="about-heading">
-            <div class="prose">
-                <h2 id="about-heading">What this is</h2>
-                <p>
-                    Marine cognition is advancing fast. The last five years have brought AI-powered acoustic 
-                    analysis, large-scale population studies, and serious scientific attention to questions 
-                    that were once considered fringe. Projects like <strong>DolphinGemma</strong> are 
-                    applying transformer architectures to bottlenose dolphin vocalization data at a scale 
-                    previously unimaginable. <strong>Project CETI</strong> is attempting the same with sperm 
-                    whale codas. The tools are genuinely new. The results so far are genuinely mixed — and 
-                    the popular coverage is almost uniformly worse than the research deserves.
-                </p>
-                <p>
-                    This newsletter exists in the space between "dolphins have names" headlines and primary 
-                    literature that assumes you have a background in acoustic signal processing. Each issue 
-                    covers two or three recent developments — a new paper, a shift in methodology, a finding 
-                    being overstated or undercovered. The voice has a point of view: honest about what's 
-                    established, explicit about what's preliminary, willing to say when something is hype.
-                </p>
-                <p>
-                    The free tier gets every issue. After eight weeks of public archive, full back issues 
-                    become paid at $8/month. University departments and graduate researchers can 
-                    <a href="contact.html" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">request institutional access</a> 
-                    free.
-                </p>
+                    <div class="dg-stat">
+                        <div class="dg-stat-value">94%</div>
+                        <div class="dg-stat-label">Signature whistle ID accuracy<br>DolphinGemma, 2025</div>
+                    </div>
 
-                <div class="text-links">
-                    <p>Also on this site</p>
-                    <ul>
-                        <li>
-                            <a href="sound-library.html">Sound Library</a>
-                            &mdash; dolphin vocalizations, signature whistles, echolocation recordings
-                        </li>
-                        <li>
-                            <a href="visualizer.html">Acoustic Visualizer</a>
-                            &mdash; interactive spectrograms of dolphin calls
-                        </li>
-                        <li>
-                            <a href="reading-list.html">Reading List</a>
-                            &mdash; 20 annotated books on cetacean communication and animal cognition
-                        </li>
-                        <li>
-                            <a href="glossary.html">Glossary</a>
-                            &mdash; plain-English definitions of key terms: signature whistle, DolphinGemma, bioacoustics
-                        </li>
-                        <li>
-                            <a href="blog.html">Blog</a>
-                            &mdash; longer pieces on the ethics, science, and philosophy of interspecies communication
-                        </li>
-                    </ul>
+                    <div class="dg-stat">
+                        <div class="dg-stat-value">~1,200</div>
+                        <div class="dg-stat-label">Individual dolphins with<br>catalogued signature whistles</div>
+                    </div>
+
+                    <div class="dg-stat">
+                        <div class="dg-stat-value">20+ yr</div>
+                        <div class="dg-stat-label">Longest documented social<br>memory in non-human species</div>
+                    </div>
+
+                    <div class="dg-stat">
+                        <div class="dg-stat-value">150 kHz</div>
+                        <div class="dg-stat-label">Upper frequency range of<br>dolphin echolocation</div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Bottom CTA -->
-        <section class="bottom-cta" aria-labelledby="cta-heading">
-            <div class="bottom-cta-inner">
-                <h2 id="cta-heading">Start reading free.</h2>
-                <p>
-                    Subscribe on Substack. The first issue lands immediately.
-                    No credit card required for the free tier.
-                </p>
-                <div class="bottom-cta-actions">
-                    <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn-primary">Subscribe on Substack</a>
-                    <span class="cta-detail">Free to read<br>$8/month for the full archive</span>
-                </div>
+    <!-- ── Tools ─────────────────────────────────────────── -->
+    <section class="tools" aria-labelledby="tools-heading">
+        <div class="section-wrap">
+            <div class="section-header" style="margin-bottom:0">
+                <span class="label" id="tools-heading">Interactive Tools</span>
+                <div class="rule"></div>
             </div>
-        </section>
+            <div class="tools-grid">
 
-    </main>
+                <div class="tool-item">
+                    <p class="tool-label">Acoustics</p>
+                    <h3 class="tool-title">Acoustic Visualizer</h3>
+                    <p class="tool-desc">
+                        Interactive spectrograms of bottlenose dolphin calls. Signature whistles, burst-pulse sequences, echolocation click trains. See the frequency structure that AI models are trained on.
+                    </p>
+                    <a href="visualizer.html" class="tool-link">Open visualizer</a>
+                </div>
 
-    <footer class="footer">
-        <div class="footer-inner">
+                <div class="tool-item">
+                    <p class="tool-label">Audio</p>
+                    <h3 class="tool-title">Sound Library</h3>
+                    <p class="tool-desc">
+                        Recordings of real dolphin vocalizations — signature whistles, echolocation, mother-calf contact calls, burst-pulse social sounds. With annotations on context and species.
+                    </p>
+                    <a href="sound-library.html" class="tool-link">Browse recordings</a>
+                </div>
+
+                <div class="tool-item">
+                    <p class="tool-label">Reference</p>
+                    <h3 class="tool-title">Glossary &amp; Reading List</h3>
+                    <p class="tool-desc">
+                        Plain-English definitions of key terms — signature whistle, DolphinGemma, bioacoustics, umwelt — plus 20 annotated books on cetacean communication and animal cognition.
+                    </p>
+                    <a href="glossary.html" class="tool-link">Glossary</a>
+                    &nbsp;&nbsp;
+                    <a href="reading-list.html" class="tool-link">Reading list</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Bottom CTA ────────────────────────────────────── -->
+    <section class="bottom-cta" aria-label="Subscribe">
+        <div class="bottom-cta-inner">
             <div>
-                <p class="footer-brand">Dolphin Singularity</p>
-                <p class="footer-tagline">Weekly synthesis of cetacean communication, animal cognition, and AI-meets-biology research.</p>
+                <h2>Start reading free.</h2>
+                <p>Weekly · Free to read · $8/month for the full archive</p>
             </div>
-            <div class="footer-col">
-                <h4>Read</h4>
-                <ul>
-                    <li><a href="newsletter.html">Newsletter</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="reading-list.html">Reading List</a></li>
-                    <li><a href="glossary.html">Glossary</a></li>
-                    <li><a href="research.html">Research</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="sound-library.html">Sound Library</a></li>
-                    <li><a href="visualizer.html">Visualizer</a></li>
-                    <li><a href="conservation.html">Conservation</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+            <!-- Same note about Substack rename applies here -->
+            <div>
+                <form class="subscribe-form"
+                      action="https://playfuldolphin.substack.com/subscribe"
+                      method="post">
+                    <input type="email" name="email"
+                           placeholder="your@email.com" required
+                           autocomplete="email">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="form-note">Unsubscribe anytime. No spam.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2025 DolphinSingularity.org</span>
+    </section>
+
+</div><!-- /.page -->
+
+<!-- ── Footer ────────────────────────────────────────── -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            Noah Wilson &nbsp;&middot;&nbsp;
+            <a href="mailto:noah@dolphinsingularity.org">noah@dolphinsingularity.org</a>
+            <br>
+            &copy; 2025 DolphinSingularity.org
+        </div>
+        <nav class="footer-right" aria-label="Footer navigation">
+            <a href="newsletter.html">Newsletter</a>
+            <a href="research.html">Research</a>
+            <a href="about.html">About</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
-            <a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a>
-        </div>
-    </footer>
+        </nav>
+    </div>
+</footer>
 
-    <script>
-    // Minimal mobile nav toggle — no dependency on script.js
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('navLinks');
+<script>
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const navLinks   = document.getElementById('navLinks');
 
-    hamburger.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
-        hamburger.classList.toggle('open', open);
-        hamburger.setAttribute('aria-expanded', open);
-        document.body.style.overflow = open ? 'hidden' : '';
+hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+});
+
+navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
     });
+});
 
-    // Close on link click
-    navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            hamburger.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-    });
-    </script>
+// Subscribe form — redirect to Substack (POST)
+// TODO: once Substack is renamed to dolphinsingularity,
+// update both form action URLs above.
+</script>
 </body>
 </html>

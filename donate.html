@@ -320,7 +320,7 @@
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <p>Join us in protecting dolphins and advancing interspecies communication.</p>
-                    <p style="margin-top: 1rem;"><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
+                    <p style="margin-top: 1rem;"><a href="mailto:noah@dolphinsingularity.org">noah@dolphinsingularity.org</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -689,10 +689,10 @@
                     if (PAYPAL_ENABLED) {
                         window.open(`https://paypal.me/${PAYPAL_ME_USERNAME}/${amount}USD`, '_blank');
                     } else {
-                        alert('Donation processing coming soon! Please email dolphinsingularity@gmail.com to donate via ' + method);
+                        alert('Donation processing coming soon! Please email noah@dolphinsingularity.org to donate via ' + method);
                     }
                 } else {
-                    alert('Donation processing coming soon! Please email dolphinsingularity@gmail.com to donate via ' + method);
+                    alert('Donation processing coming soon! Please email noah@dolphinsingularity.org to donate via ' + method);
                 }
             });
         });
@@ -702,14 +702,14 @@
             btn.addEventListener('click', function() {
                 const option = this.closest('.option').querySelector('h4').textContent;
                 const contactInfo = {
-                    'Cryptocurrency': 'Email dolphinsingularity@gmail.com for wallet addresses (BTC, ETH, etc.)',
-                    'Bank Transfer': 'Email dolphinsingularity@gmail.com for wire transfer details',
-                    'Check': 'Make checks payable to: Dolphin Singularity Research\\nMail to: [Your Mailing Address]\\n\\nEmail dolphinsingularity@gmail.com for mailing address',
-                    'Stock Donation': 'Email dolphinsingularity@gmail.com for brokerage account information',
-                    'Corporate Matching': 'Many employers match charitable donations! Check with your HR department.\\nEmail dolphinsingularity@gmail.com with questions.'
+                    'Cryptocurrency': 'Email noah@dolphinsingularity.org for wallet addresses (BTC, ETH, etc.)',
+                    'Bank Transfer': 'Email noah@dolphinsingularity.org for wire transfer details',
+                    'Check': 'Make checks payable to: Dolphin Singularity Research\\nMail to: [Your Mailing Address]\\n\\nEmail noah@dolphinsingularity.org for mailing address',
+                    'Stock Donation': 'Email noah@dolphinsingularity.org for brokerage account information',
+                    'Corporate Matching': 'Many employers match charitable donations! Check with your HR department.\\nEmail noah@dolphinsingularity.org with questions.'
                 };
                 
-                const message = contactInfo[option] || 'Email dolphinsingularity@gmail.com for information about ' + option;
+                const message = contactInfo[option] || 'Email noah@dolphinsingularity.org for information about ' + option;
                 alert(message);
             });
         });
@@ -722,7 +722,7 @@
                     alert('Redirecting to PayPal to set up monthly donations...');
                     window.open(`https://paypal.me/${PAYPAL_ME_USERNAME}`, '_blank');
                 } else {
-                    alert('Monthly giving setup coming soon!\\n\\nFor now, email dolphinsingularity@gmail.com to set up recurring donations.');
+                    alert('Monthly giving setup coming soon!\\n\\nFor now, email noah@dolphinsingularity.org to set up recurring donations.');
                 }
             });
         }
