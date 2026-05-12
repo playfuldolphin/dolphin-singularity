@@ -3090,3 +3090,276 @@ body {
     }
 }
 
+
+/* ============================================================
+   DESIGN REFRESH — clean aesthetics + nav fix
+   ============================================================ */
+
+/* ── Root refinements ─────────────────────────────────────── */
+:root {
+    --light-bg: #f7f8fa;        /* neutral, not blue-tinted */
+    --card-bg: #ffffff;
+    --border-subtle: rgba(0, 0, 0, 0.07);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+}
+
+[data-theme="dark"] {
+    --light-bg: #0b1422;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+}
+
+/* ── Fix: nav-controls must come last visually ─────────────── */
+/* HTML order is: nav-brand | nav-controls | nav-links         */
+/* We reorder with flex `order` so controls go to the far right */
+.navbar .container {
+    flex-wrap: nowrap;
+}
+
+.nav-brand   { order: 1; }
+.nav-links   { order: 2; flex: 1; justify-content: flex-end; }
+.nav-controls { order: 3; flex-shrink: 0; margin-left: 1rem; }
+
+/* Tighten nav link spacing — we have many items now */
+.nav-links {
+    gap: 1.25rem;
+}
+
+.nav-links a {
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+}
+
+/* Show hamburger earlier — nav is crowded above 9 items */
+@media (max-width: 1150px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 68px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 68px);
+        background: var(--darker-bg);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem 1.5rem;
+        gap: 0.25rem;
+        transition: left 0.28s ease;
+        overflow-y: auto;
+        flex: none;
+    }
+    .nav-links.active { left: 0; }
+    .nav-links a {
+        font-size: 1.05rem;
+        padding: 0.65rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-links li:last-child a { border-bottom: none; }
+    /* Inline Subscribe button becomes full-width in mobile menu */
+    .nav-links .btn.btn-primary {
+        display: block;
+        text-align: center;
+        margin-top: 0.5rem;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* ── Navbar polish ─────────────────────────────────────────── */
+.navbar {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(5, 11, 20, 0.97);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-shadow: none;
+}
+
+.navbar .container {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Shrink the bobbing logo — it's distracting at 55px */
+.nav-logo {
+    height: 38px;
+    max-width: 38px;
+    animation: none; /* remove the constant bobbing */
+}
+
+.nav-brand h1 {
+    font-size: 1.2rem;
+}
+
+/* Slim theme toggle */
+.theme-toggle {
+    width: 34px;
+    height: 34px;
+    padding: 0.4rem;
+    border-radius: var(--radius-sm);
+}
+
+/* ── Buttons — refined, not pill-shaped ──────────────────── */
+.btn {
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1.75rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+}
+
+/* Remove the ripple pseudo-element — it's tacky */
+.btn:before { display: none; }
+
+.btn-primary {
+    background: var(--primary-color);
+    background-image: none; /* remove gradient */
+}
+
+.btn-primary:hover {
+    background: #0069aa;
+    box-shadow: 0 4px 16px rgba(0, 119, 190, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    border-width: 1.5px;
+    color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(0, 201, 255, 0.1);
+    color: var(--secondary-color);
+}
+
+/* ── Cards — less rounded, crisper ──────────────────────── */
+.card,
+.highlight-card,
+.blog-card,
+.research-card,
+.action-card,
+.mission-card,
+.contact-form {
+    border-radius: var(--radius-md);
+}
+
+.card:hover,
+.highlight-card:hover {
+    transform: translateY(-3px); /* subtler lift */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+/* ── Section spacing — less aggressive padding ───────────── */
+.section {
+    padding: 5rem 0;
+}
+
+/* Fix: sections start invisible until JS fires — bad for no-JS */
+/* Override to start visible; JS will re-add the fade animation */
+.section {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Section titles — smaller on desktop */
+.section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    margin-bottom: 2.5rem;
+}
+
+/* ── Background and surface refinements ─────────────────── */
+.section-alt {
+    background: #f0f4f9; /* subtle cool-grey instead of white */
+}
+
+[data-theme="dark"] .section-alt {
+    background: #0e1a2d;
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+body {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.large-text {
+    font-size: 1.1rem;
+    line-height: 1.85;
+}
+
+/* ── Footer — cleaner ────────────────────────────────────── */
+.footer {
+    background: #020c1b;
+    padding-top: 4rem;
+}
+
+.footer-section h4 {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    font-size: 0.92rem;
+    line-height: 1.9;
+}
+
+.footer-bottom {
+    font-size: 0.82rem;
+    border-top-color: rgba(255,255,255,0.06);
+}
+
+/* ── Hero subtitle — lighter colour ─────────────────────── */
+.hero-subtitle {
+    color: rgba(224, 232, 240, 0.72);
+}
+
+/* ── Page loader — faster, less obtrusive ───────────────── */
+.page-loader {
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* ── Highlight cards (homepage feature grid) ─────────────── */
+.highlight-card {
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+[data-theme="dark"] .highlight-card {
+    border-color: rgba(255,255,255,0.06);
+}
+
+/* ── Blog cards ──────────────────────────────────────────── */
+.blog-card {
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+}
+
+/* ── Remove the distracting floating share bar ───────────── */
+.share-bar {
+    display: none;
+}
+
+/* ── Page header (inner pages) ───────────────────────────── */
+.page-header {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+/* ── Mobile tidy-ups ─────────────────────────────────────── */
+@media (max-width: 768px) {
+    .section { padding: 3.5rem 0; }
+    .hero-title { font-size: clamp(1.8rem, 7vw, 2.8rem); }
+    .blog-post-title { font-size: 1.9rem; }
+}
