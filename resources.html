@@ -33,6 +33,7 @@
     <link rel="icon" type="image/png" href="/images/logo5.png">
     
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="design.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -43,20 +44,20 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
-                <h1>Dolphin Singularity</h1>
+                <a href="index.html" class="nav-brand-link">Dolphin Singularity</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+            <div class="nav-controls">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="newsletter.html">Newsletter</a></li>
                 <li><a href="research.html">Research</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="reading-list.html">Reading List</a></li>
-                <li><a href="glossary.html">Glossary</a></li>
-                <li><a href="conservation.html">Conservation</a></li>
-                <li><a href="resources.html">Resources</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.45rem 1rem;font-size:0.72rem;letter-spacing:0.09em;text-transform:uppercase;border-radius:0">Subscribe</a></li>
             </ul>
         </div>
     </nav>
@@ -564,25 +565,30 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Dolphin Singularity</h4>
-                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                    <p>Weekly research newsletter — cetacean communication, animal cognition, AI-meets-biology.</p>
+                    <p style="margin-top:0.75rem">Noah Wilson &nbsp;&middot;&nbsp; <a href="mailto:noah@dolphinsingularity.org">noah@dolphinsingularity.org</a></p>
                 </div>
                 <div class="footer-section">
-                    <h4>Resources</h4>
+                    <h4>Read</h4>
                     <ul>
-                        <li><a href="https://www.dolphinproject.com" target="_blank">The Dolphin Project</a></li>
-                        <li><a href="research.html">Research Papers</a></li>
-                        <li><a href="conservation.html">Conservation Guide</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="reading-list.html">Reading List</a></li>
+                        <li><a href="glossary.html">Glossary</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
-                    <p>Join us in protecting dolphins and advancing interspecies communication.</p>
-                    <p style="margin-top: 1rem;"><a href="mailto:noah@dolphinsingularity.org">noah@dolphinsingularity.org</a></p>
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="sound-library.html">Sound Library</a></li>
+                        <li><a href="visualizer.html">Visualizer</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 DolphinSingularity.org. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | Built with 🐬 for a better future</p>
+                <p>&copy; 2025 DolphinSingularity.org &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a></p>
             </div>
         </div>
     </footer>

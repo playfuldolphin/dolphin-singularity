@@ -31,6 +31,7 @@
     <link rel="apple-touch-icon" href="/images/logo5.png">
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="design.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -379,26 +380,9 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
-                <h1>Dolphin Singularity</h1>
+                <a href="index.html" class="nav-brand-link">Dolphin Singularity</a>
             </div>
             <div class="nav-controls">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
                     <span></span>
                     <span></span>
@@ -406,25 +390,10 @@
                 </button>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="newsletter.html">Newsletter</a></li>
                 <li><a href="research.html">Research</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="reading-list.html" class="active">Reading List</a></li>
-                <li><a href="glossary.html">Glossary</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="nav-dropdown-toggle">More <span class="dropdown-arrow">▼</span></a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="conservation.html">Conservation</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="sound-library.html">Sounds</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="donate.html">Donate</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.45rem 1.1rem; font-size: 0.9rem;">Subscribe</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.45rem 1rem;font-size:0.72rem;letter-spacing:0.09em;text-transform:uppercase;border-radius:0">Subscribe</a></li>
             </ul>
         </div>
     </nav>
@@ -1106,30 +1075,30 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Dolphin Singularity</h4>
-                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
+                    <p>Weekly research newsletter — cetacean communication, animal cognition, AI-meets-biology.</p>
+                    <p style="margin-top:0.75rem">Noah Wilson &nbsp;&middot;&nbsp; <a href="mailto:noah@dolphinsingularity.org">noah@dolphinsingularity.org</a></p>
                 </div>
                 <div class="footer-section">
-                    <h4>Reading</h4>
+                    <h4>Read</h4>
                     <ul>
-                        <li><a href="reading-list.html">Reading List</a></li>
                         <li><a href="newsletter.html">Newsletter</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="research.html">Research</a></li>
+                        <li><a href="reading-list.html">Reading List</a></li>
+                        <li><a href="glossary.html">Glossary</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Site</h4>
+                    <h4>Explore</h4>
                     <ul>
-                        <li><a href="conservation.html">Conservation</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="sound-library.html">Sound Library</a></li>
+                        <li><a href="visualizer.html">Visualizer</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="donate.html">Donate</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 DolphinSingularity.org. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="humans.txt">Humans</a></p>
-                <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">This page contains Amazon affiliate links. We earn a small commission on purchases at no extra cost to you.</p>
+                <p>&copy; 2025 DolphinSingularity.org &nbsp;&middot;&nbsp; <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms</a></p>
             </div>
         </div>
     </footer>

@@ -1,0 +1,462 @@
+/*
+ * design.css — global design system override
+ * Loaded after styles.css on every inner page.
+ * Applies the newspaper/journal aesthetic from index.html.
+ */
+
+/* ── Design tokens ─────────────────────────────────────────── */
+:root {
+    --primary-color:   #1A5276;
+    --secondary-color: #2874A6;
+    --accent-color:    #4a9896;
+    --dark-bg:         #0A1520;
+    --darker-bg:       #060e17;
+    --light-bg:        #F7F6F3;
+    --text-dark:       #1C1C1C;
+    --text-light:      #e8e0d0;
+    --text-muted:      #5A6878;
+    --card-bg:         #FFFFFF;
+    --shadow:          0 1px 3px rgba(0,0,0,0.07);
+    --shadow-lg:       0 4px 16px rgba(0,0,0,0.10);
+    --rule:            #D8D4CC;
+    --serif:           Georgia, 'Times New Roman', serif;
+    --mono:            'Courier New', Courier, monospace;
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #F7F6F3;
+    color: #1C1C1C;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--primary-color); }
+
+/* ── Navbar ────────────────────────────────────────────────── */
+.navbar {
+    background: #060e17 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.navbar .container {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 52px;
+    align-items: center;
+}
+
+/* Logo image hidden — text only */
+.nav-logo { display: none !important; }
+
+.nav-brand {
+    gap: 0;
+    align-items: center;
+}
+
+/* Brand name as italic serif text */
+.nav-brand h1,
+.nav-brand-link {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem !important;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    color: #e8e0d0 !important;
+    text-decoration: none;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #e8e0d0 !important;
+    background-clip: unset !important;
+}
+
+/* Nav links — monospace uppercase */
+.nav-links {
+    gap: 1.75rem;
+}
+
+.nav-links a {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 0.72rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(232,224,208,0.55) !important;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: rgba(232,224,208,1) !important;
+    text-decoration: none;
+}
+
+/* Subscribe button in nav */
+.nav-links .btn.btn-primary,
+.nav-subscribe-btn {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 0.72rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    background: transparent !important;
+    background-image: none !important;
+    border: 1px solid rgba(232,224,208,0.3) !important;
+    border-radius: 0 !important;
+    color: #e8e0d0 !important;
+    padding: 0.45rem 1rem !important;
+    transition: background 0.15s, border-color 0.15s !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.nav-links .btn.btn-primary:hover,
+.nav-subscribe-btn:hover {
+    background: rgba(232,224,208,0.08) !important;
+    border-color: rgba(232,224,208,0.6) !important;
+    transform: none !important;
+    text-decoration: none;
+}
+
+/* Mobile hamburger lines */
+.mobile-menu-toggle span {
+    background: rgba(232,224,208,0.6);
+}
+
+/* Mobile menu open state */
+@media (max-width: 1150px) {
+    .nav-links {
+        background: rgba(5, 11, 20, 0.99) !important;
+        border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-links a {
+        font-size: 0.85rem !important;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+}
+
+/* ── Page header (inner pages) ─────────────────────────────── */
+.page-header {
+    background: #0A1520;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.page-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    color: #e8e0d0;
+}
+
+.page-subtitle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(232,224,208,0.45);
+}
+
+/* Breadcrumb */
+.breadcrumb,
+.breadcrumb a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: rgba(232,224,208,0.4);
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+.btn {
+    border-radius: 0 !important;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    transition: background 0.15s, color 0.15s, border-color 0.15s !important;
+}
+
+.btn::before { display: none !important; }
+
+.btn-primary {
+    background: var(--primary-color) !important;
+    background-image: none !important;
+    color: #fff !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-primary:hover {
+    background: #174567 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+.btn-secondary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-secondary:hover {
+    background: rgba(26,82,118,0.08) !important;
+    color: var(--primary-color) !important;
+    transform: none !important;
+}
+
+/* ── Section titles ────────────────────────────────────────── */
+.section-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.card,
+.highlight-card,
+.blog-card,
+.research-card,
+.action-card {
+    border-radius: 0 !important;
+    border: 1px solid var(--rule);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+
+.card:hover,
+.highlight-card:hover,
+.blog-card:hover {
+    transform: none !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.09) !important;
+    border-color: #b8b4ac;
+}
+
+.card h3,
+.highlight-card h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+/* ── Blog grid ─────────────────────────────────────────────── */
+.blog-date {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.blog-card h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+}
+
+.blog-read-more {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+/* ── Blog post ─────────────────────────────────────────────── */
+.blog-post-header {
+    background: #0A1520;
+}
+
+.blog-post-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.blog-post-meta span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.blog-post-body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.05rem;
+    line-height: 1.82;
+    color: #1C1C1C;
+}
+
+.blog-post-body h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+}
+
+.blog-post-body h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+}
+
+.blog-nav-links a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Newsletter CTA inside posts */
+.newsletter-cta-post h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* ── Sections ──────────────────────────────────────────────── */
+.section-alt {
+    background: #EDECE9;
+}
+
+[data-theme="dark"] .section-alt {
+    background: #0e1a2d;
+}
+
+/* ── Feature list ──────────────────────────────────────────── */
+.feature-list li {
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.feature-list li::before {
+    content: "—";
+    color: var(--primary-color);
+}
+
+/* ── Stat numbers ──────────────────────────────────────────── */
+.stat-number {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+}
+
+/* ── Footer — new minimal version ─────────────────────────── */
+.footer {
+    background: #060e17 !important;
+}
+
+.footer-section h4 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(232,224,208,0.3);
+    font-weight: 400;
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section li a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    color: rgba(232,224,208,0.45);
+}
+
+.footer-section a:hover,
+.footer-section li a:hover {
+    color: rgba(232,224,208,0.85);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    border-top-color: rgba(255,255,255,0.06);
+    color: rgba(232,224,208,0.3);
+}
+
+.footer-bottom a {
+    color: rgba(232,224,208,0.3);
+}
+
+.footer-bottom a:hover {
+    color: rgba(232,224,208,0.7);
+    text-decoration: none;
+}
+
+/* Remove the dolphin emoji from footer bottom */
+.footer-bottom p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ── Remove page loader (never show on inner pages) ────────── */
+.page-loader { display: none !important; }
+
+/* ── No floating share bar ─────────────────────────────────── */
+.share-bar { display: none !important; }
+
+/* ── Form inputs ───────────────────────────────────────────── */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    border-color: var(--rule);
+}
+
+.form-group label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* ── Reading list page ─────────────────────────────────────── */
+.book-card {
+    border-radius: 0 !important;
+    border: 1px solid var(--rule);
+    box-shadow: none !important;
+}
+
+.book-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+}
+
+.book-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* ── Glossary page ─────────────────────────────────────────── */
+.gl-term dt {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* ── Animations — remove all except opacity ───────────────── */
+.card, .highlight-card, .blog-card,
+.research-card, .action-card,
+.book-card, .btn {
+    transition: border-color 0.15s, box-shadow 0.15s !important;
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
