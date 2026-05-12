@@ -221,9 +221,43 @@
         padding-top: var(--nav-h);
         display: flex;
         align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Photo background */
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 60%;
+        display: block;
+    }
+
+    /* Deep dark overlay — keeps text fully legible */
+    .hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        /* two-layer overlay: solid near-black at bottom fades to translucent at top */
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(12, 17, 23, 0.72) 0%,
+                rgba(12, 17, 23, 0.82) 50%,
+                rgba(12, 17, 23, 0.96) 100%
+            );
     }
 
     .hero-inner {
+        position: relative;
+        z-index: 1;
         max-width: var(--max-wide);
         margin: 0 auto;
         padding: clamp(4rem, 10vw, 7rem) var(--pad-x) clamp(4rem, 8vw, 6rem);
@@ -529,6 +563,16 @@
 
         <!-- Hero -->
         <section class="hero">
+            <!-- Background photo — swap src for a video poster or replace
+                 this entire .hero-bg block with a <video> element if you
+                 want a looping video background. -->
+            <div class="hero-bg" aria-hidden="true">
+                <picture>
+                    <source srcset="images/hero-background.jpg" type="image/jpeg">
+                    <img src="images/hero-background.png" alt="" loading="eager" fetchpriority="high">
+                </picture>
+            </div>
+
             <div class="hero-inner">
                 <p class="hero-eyebrow">Weekly newsletter</p>
                 <h1>Marine cognition research,<br>synthesized weekly.</h1>
