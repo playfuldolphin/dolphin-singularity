@@ -3,458 +3,678 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Meta Tags -->
-    <title>Dolphin Singularity | Newsletter on Marine Cognition & AI Research</title>
-    <meta name="title" content="Dolphin Singularity | Newsletter on Marine Cognition & AI Research">
-    <meta name="description" content="A weekly newsletter synthesizing cetacean communication research, animal cognition, and AI-meets-biology. Opinionated, philosophically grounded, free to start. Dolphin Singularity.">
-    <meta name="keywords" content="dolphin communication, AI research, cetacean intelligence, marine conservation, DolphinGemma, dolphin language, signature whistles, ocean protection, machine learning, bioacoustics">
-    <meta name="author" content="Dolphin Singularity Research Team">
+
+    <title>Dolphin Singularity — Marine Cognition Research, Synthesized Weekly</title>
+    <meta name="description" content="A weekly newsletter on cetacean communication, animal cognition, and AI-meets-biology research. Opinionated, philosophically grounded, free to start.">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    
-    <!-- Open Graph / Facebook -->
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dolphinsingularity.org/">
-    <meta property="og:title" content="Dolphin Singularity | AI-Powered Dolphin Communication Research">
-    <meta property="og:description" content="Exploring the convergence of AI technology and dolphin communication to advance conservation and understanding of cetacean intelligence.">
+    <meta property="og:title" content="Dolphin Singularity — Marine Cognition Research, Synthesized Weekly">
+    <meta property="og:description" content="A weekly newsletter on cetacean communication, animal cognition, and AI-meets-biology. Free to start.">
     <meta property="og:image" content="https://dolphinsingularity.org/images/hero-background.png">
     <meta property="og:site_name" content="Dolphin Singularity">
-    
-    <!-- Twitter -->
+
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://dolphinsingularity.org/">
-    <meta property="twitter:title" content="Dolphin Singularity | AI-Powered Dolphin Communication Research">
-    <meta property="twitter:description" content="Exploring the convergence of AI technology and dolphin communication to advance conservation and understanding of cetacean intelligence.">
+    <meta property="twitter:title" content="Dolphin Singularity — Marine Cognition Research, Synthesized Weekly">
+    <meta property="twitter:description" content="A weekly newsletter on cetacean communication, animal cognition, and AI-meets-biology.">
     <meta property="twitter:image" content="https://dolphinsingularity.org/images/hero-background.png">
-    
-    <!-- Canonical URL -->
+
     <link rel="canonical" href="https://dolphinsingularity.org/">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/logo5.png">
     <link rel="apple-touch-icon" href="/images/logo5.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894087674561904"
-     crossorigin="anonymous"></script>
-     
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Dolphin Singularity",
-        "alternateName": "DolphinSingularity.org",
-        "url": "https://dolphinsingularity.org",
-        "logo": "https://dolphinsingularity.org/images/logo5.png",
-        "description": "AI-powered dolphin communication research and conservation organization",
-        "sameAs": [
-            "https://twitter.com/dolphinsingularity",
-            "https://facebook.com/dolphinsingularity"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "dolphinsingularity@gmail.com",
-            "contactType": "customer service"
-        }
-    }
-    </script>
-</head>
-<body>
-    <!-- Skip to main content link for screen readers -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- SVG Icon Sprite -->
-    <div style="display: none;">
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <symbol id="icon-brain" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13 3C9.2 3 6.2 5.9 6 9.7 4.3 9.9 3 11.3 3 13c0 1.1.5 2.1 1.4 2.6-.2.6-.4 1.2-.4 1.9 0 2.5 2 4.5 4.5 4.5 1.6 0 3-.8 3.8-2.1.5.1 1 .1 1.5.1 1.4 0 2.6-.4 3.7-1 .5 1.5 2 2.5 3.5 2.5 2.2 0 4-1.8 4-4 0-.8-.2-1.5-.6-2.1.6-.6 1.1-1.5 1.1-2.4 0-1.8-1.5-3.3-3.3-3.3-.3 0-.7.1-1 .2C20.3 6.1 17 3 13 3zm0 2c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6 2.7-6 6-6z"/>
-                </symbol>
-                <symbol id="icon-wave" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 12c-1.1 0-2.2-.3-3-1-1.6 1.4-4.4 1.4-6 0-.8.7-1.9 1-3 1s-2.2-.3-3-1c-.3-.2-.7-.2-1 0s-.3.7 0 1c1.1 1 2.5 1.5 4 1.5 1.1 0 2.2-.3 3-1 1.6 1.4 4.4 1.4 6 0 .8.7 1.9 1 3 1 1.5 0 2.9-.5 4-1.5.3-.3.3-.8 0-1-.3-.2-.7-.2-1 0-.8.7-1.9 1-3 1zm0-4c-1.1 0-2.2-.3-3-1-1.6 1.4-4.4 1.4-6 0-.8.7-1.9 1-3 1s-2.2-.3-3-1c-.3-.2-.7-.2-1 0s-.3.7 0 1c1.1 1 2.5 1.5 4 1.5 1.1 0 2.2-.3 3-1 1.6 1.4 4.4 1.4 6 0 .8.7 1.9 1 3 1 1.5 0 2.9-.5 4-1.5.3-.3.3-.8 0-1-.3-.2-.7-.2-1 0-.8.7-1.9 1-3 1zm0 8c-1.1 0-2.2-.3-3-1-1.6 1.4-4.4 1.4-6 0-.8.7-1.9 1-3 1s-2.2-.3-3-1c-.3-.2-.7-.2-1 0s-.3.7 0 1c1.1 1 2.5 1.5 4 1.5 1.1 0 2.2-.3 3-1 1.6 1.4 4.4 1.4 6 0 .8.7 1.9 1 3 1 1.5 0 2.9-.5 4-1.5.3-.3.3-.8 0-1-.3-.2-.7-.2-1 0-.8.7-1.9 1-3 1z"/>
-                </symbol>
-                <symbol id="icon-dolphin" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c1.4 0 2.7-.3 3.9-.8.5-.2.7-.8.5-1.3-.2-.5-.8-.7-1.3-.5-1 .4-2 .6-3.1.6-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8c0 .6-.1 1.1-.2 1.6-.1.5.2 1.1.7 1.2.5.1 1.1-.2 1.2-.7.2-.7.3-1.4.3-2.1 0-5.5-4.5-10-10-10zm5.5 7c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5zm-7 0c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5zm1.5 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                </symbol>
-                <symbol id="icon-research" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M7 2v2h1v14c0 2.2 1.8 4 4 4s4-1.8 4-4V4h1V2H7zm5 18c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2zm2-4h-4v-2h4v2zm0-4h-4V8h4v4zm0-6h-4V4h4v2z"/>
-                </symbol>
-                <symbol id="icon-chart" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"/>
-                </symbol>
-                <symbol id="icon-education" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
-                </symbol>
-            </defs>
-        </svg>
-    </div>
-    
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-content">
-            <div class="dolphin-loader"></div>
-            <p>Loading the Dolphin Singularity...</p>
-        </div>
-    </div>
-    
-    <!-- Floating Share Bar -->
-    <div class="share-bar" id="shareBar">
-        <a href="https://twitter.com/intent/tweet?text=Discover%20the%20Dolphin%20Singularity%20-%20where%20AI%20meets%20cetacean%20intelligence&url=https://dolphinsingularity.org" target="_blank" aria-label="Share on Twitter" title="Share on Twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://dolphinsingularity.org" target="_blank" aria-label="Share on Facebook" title="Share on Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-        </a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dolphinsingularity.org" target="_blank" aria-label="Share on LinkedIn" title="Share on LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-        </a>
-        <a href="#" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!'); return false;" aria-label="Copy Link" title="Copy Link">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-            </svg>
-        </a>
-    </div>
-    
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <img src="images/logo5.png" alt="Dolphin Singularity Logo" class="nav-logo">
-                <h1>Dolphin Singularity</h1>
-            </div>
-            <div class="nav-controls">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="newsletter.html">Newsletter</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="reading-list.html">Reading List</a></li>
-                <li><a href="glossary.html">Glossary</a></li>
-                <li><a href="conservation.html">Conservation</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="nav-dropdown-toggle">More <span class="dropdown-arrow">▼</span></a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="sound-library.html">Sounds</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="donate.html">Donate</a></li>
-                        <li><a href="store.html">Store</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.45rem 1.1rem; font-size: 0.9rem;">Subscribe</a></li>
-            </ul>
-        </div>
-    </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    <header id="home" class="hero">
-        <div class="hero-background">
-            <picture>
-                <source srcset="images/hero-background.jpg" type="image/jpeg">
-                <img src="images/hero-background.png" alt="Dolphin in ocean representing AI-powered communication research" class="hero-image" width="1920" height="1080" loading="eager">
-            </picture>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title">Marine Cognition Research,<br>Synthesized Weekly</h1>
-            <p class="hero-subtitle">The papers are scattered. This newsletter isn't. Cetacean communication, animal cognition, and AI-meets-biology — with a point of view.</p>
-            <div class="hero-cta">
-                <a href="newsletter.html" class="btn btn-primary">Read the Newsletter</a>
-                <a href="research.html" class="btn btn-secondary">Explore Research</a>
-            </div>
-        </div>
-    </header>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894087674561904" crossorigin="anonymous"></script>
 
-    <main id="main-content">
-    <section id="mission" class="section">
-        <div class="container">
-            <h2 class="section-title">The Dolphin Singularity</h2>
-            <p class="large-text" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
-                As AI technology advances, we approach a moment where human-dolphin communication could become truly bidirectional. This "dolphin singularity" represents not just a technological breakthrough, but a fundamental shift in our relationship with non-human intelligence.
-            </p>
-
-            <div class="grid-3">
-                <div class="highlight-card">
-                    <div class="card-icon">
-                        <picture>
-                            <source srcset="images/brainlogo.jpg" type="image/jpeg">
-                            <img src="images/brainlogo.png" alt="AI Brain representing neural network analysis" class="card-icon-img" width="80" height="80" loading="lazy">
-                        </picture>
-                    </div>
-                    <h3>AI-Powered Research</h3>
-                    <p>Using advanced machine learning to decode dolphin vocalizations and reveal the structure of cetacean communication.</p>
-                    <a href="research.html" class="card-link">Learn More →</a>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-icon">
-                        <svg class="icon" width="48" height="48">
-                            <use xlink:href="#icon-wave"></use>
-                        </svg>
-                    </div>
-                    <h3>Conservation Impact</h3>
-                    <p>Understanding dolphin intelligence strengthens the case for protection and informs global conservation efforts.</p>
-                    <a href="conservation.html" class="card-link">Take Action →</a>
-                </div>
-                <div class="highlight-card">
-                    <div class="card-icon">
-                        <svg class="icon" width="48" height="48">
-                            <use xlink:href="#icon-dolphin"></use>
-                        </svg>
-                    </div>
-                    <h3>First Contact</h3>
-                    <p>Working toward meaningful bidirectional communication between humans and dolphins through AI technology.</p>
-                    <a href="about.html" class="card-link">Our Mission →</a>
-                </div>
-            </div>
-            
-            <!-- New: Featured Tools & Resources -->
-            <div class="features-showcase" style="margin-top: 4rem; padding: 3rem; background: var(--card-bg); border-radius: 12px; box-shadow: var(--shadow);">
-                <h3 style="font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--primary-color);">Explore Our Interactive Tools</h3>
-                <div class="grid-3" style="gap: 2rem;">
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem;">🎵 Sound Library</h4>
-                        <p style="margin-bottom: 1rem; color: var(--text-muted);">Listen to real dolphin vocalizations, from signature whistles to echolocation clicks</p>
-                        <a href="sound-library.html" class="btn btn-secondary">Explore Sounds →</a>
-                    </div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem;">📊 Acoustic Visualizer</h4>
-                        <p style="margin-bottom: 1rem; color: var(--text-muted);">See dolphin sound patterns in real-time with interactive spectrograms</p>
-                        <a href="visualizer.html" class="btn btn-secondary">Try Visualizer →</a>
-                    </div>
-                    <div>
-                        <h4 style="margin-bottom: 0.5rem;">🤖 AI Knowledge Base</h4>
-                        <p style="margin-bottom: 1rem; color: var(--text-muted);">Ask questions about dolphin research and get AI-powered answers</p>
-                        <a href="knowledge-explorer.html" class="btn btn-secondary">Ask AI →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Current Focus</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-icon">
-                        <svg class="icon" width="48" height="48">
-                            <use xlink:href="#icon-brain"></use>
-                        </svg>
-                    </div>
-                    <h3>DolphinGemma Project</h3>
-                    <p>Advanced AI models analyzing dolphin vocalizations and behavioral patterns to decode their complex communication systems. Machine learning algorithms are revealing unprecedented insights into dolphin language structure.</p>
-                    <ul class="feature-list">
-                        <li>Neural network analysis of whistles and clicks</li>
-                        <li>Pattern recognition in social communication</li>
-                        <li>Real-time translation research</li>
-                    </ul>
-                    <a href="research.html" class="btn btn-primary" style="margin-top: 1.5rem;">View Research</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🔊</div>
-                    <h3>Signal Processing</h3>
-                    <p>Using cutting-edge AI to process and interpret the full spectrum of dolphin acoustic signals, from echolocation to signature whistles, enabling deeper understanding of their cognitive abilities.</p>
-                    <ul class="feature-list">
-                        <li>Spectrogram analysis with deep learning</li>
-                        <li>Context-aware communication mapping</li>
-                        <li>Multi-species comparative studies</li>
-                    </ul>
-                    <a href="research.html" class="btn btn-primary" style="margin-top: 1.5rem;">View Research</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="newsletter" class="section section-alt">
-        <div class="container">
-            <div class="newsletter-section">
-                <h2 class="section-title">The Weekly Newsletter</h2>
-                <p class="section-subtitle" style="max-width: 680px; margin: 0 auto 2rem;">
-                    ~800 words every week on two or three recent developments in cetacean communication,
-                    animal cognition, or AI-meets-biology research. Written with a strong point of view.
-                    Free to start &mdash; $8/month to go deeper.
-                </p>
-
-                <div class="newsletter-benefits" style="margin-bottom: 2.5rem;">
-                    <div class="benefit-item">
-                        <span class="benefit-icon">
-                            <svg class="icon" width="32" height="32">
-                                <use xlink:href="#icon-research"></use>
-                            </svg>
-                        </span>
-                        <span>Peer-reviewed synthesis</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">
-                            <svg class="icon" width="32" height="32">
-                                <use xlink:href="#icon-brain"></use>
-                            </svg>
-                        </span>
-                        <span>AI &amp; cognition coverage</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">
-                            <svg class="icon" width="32" height="32">
-                                <use xlink:href="#icon-wave"></use>
-                            </svg>
-                        </span>
-                        <span>Honest takes on the hype</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">
-                            <svg class="icon" width="32" height="32">
-                                <use xlink:href="#icon-education"></use>
-                            </svg>
-                        </span>
-                        <span>Free for university labs</span>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary">Subscribe on Substack</a>
-                    <a href="newsletter.html" class="btn btn-secondary">Learn more</a>
-                </div>
-                <p class="form-note" style="margin-top: 1rem;">Free to start. No credit card. Unsubscribe anytime.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cta" class="section">
-        <div class="container">
-            <div class="cta-box">
-                <h2>Start reading free</h2>
-                <p class="large-text">Join the readers tracking what actually matters in marine cognition and AI research. Opinionated. Weekly. Free to start.</p>
-                <div class="cta-buttons">
-                    <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary">Subscribe on Substack</a>
-                    <a href="newsletter.html" class="btn btn-secondary">About the Newsletter</a>
-                    <a href="research.html" class="btn btn-secondary">Explore Research</a>
-                    <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Dolphin Singularity</h4>
-                    <p>Advancing AI-powered dolphin communication research and conservation.</p>
-                    <div class="social-links">
-                        <a href="https://twitter.com/intent/tweet?text=Join%20the%20Dolphin%20Singularity%20-%20AI%20meets%20dolphin%20communication&url=https://dolphinsingularity.org" target="_blank" aria-label="Share on Twitter">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://dolphinsingularity.org" target="_blank" aria-label="Share on Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://dolphinsingularity.org" target="_blank" aria-label="Share on LinkedIn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
-                        <a href="mailto:?subject=Dolphin%20Singularity%20-%20AI%20Communication%20Research&body=Check%20out%20this%20fascinating%20research%20on%20AI-powered%20dolphin%20communication:%20https://dolphinsingularity.org" aria-label="Share via Email">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="research.html">Research Papers</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="conservation.html">Conservation Guide</a></li>
-                        <li><a href="https://www.dolphinproject.com" target="_blank">The Dolphin Project</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <p>Join us in protecting dolphins and advancing interspecies communication.</p>
-                    <p style="margin-top: 1rem;"><a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 DolphinSingularity.org. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a> | <a href="humans.txt">Humans</a> | Built with 🐬 for a better future</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js" defer></script>
-    
-    <!-- Additional Structured Data for Homepage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "url": "https://dolphinsingularity.org",
         "name": "Dolphin Singularity",
-        "description": "AI-powered dolphin communication research and conservation",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://dolphinsingularity.org/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-        }
+        "description": "Weekly newsletter synthesizing cetacean communication, animal cognition, and AI-meets-biology research."
     }
     </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ResearchProject",
-        "name": "DolphinGemma",
-        "description": "Advanced AI models analyzing dolphin vocalizations and behavioral patterns to decode their complex communication systems",
-        "url": "https://dolphinsingularity.org/research.html",
-        "sponsor": {
-            "@type": "Organization",
-            "name": "Dolphin Singularity"
-        },
-        "knowsAbout": ["dolphin communication", "machine learning", "bioacoustics", "cetacean intelligence"]
+
+    <style>
+    /* ── Reset & base ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --bg:          #0c1117;
+        --surface:     #111927;
+        --surface-alt: #0f1520;
+        --text:        #e5ddd0;
+        --muted:       #7a8fa6;
+        --faint:       #3d4f63;
+        --accent:      #4a9896;
+        --accent-hover:#5db3b0;
+        --accent-dim:  rgba(74,152,150,0.12);
+        --border:      rgba(255,255,255,0.08);
+        --nav-h:       58px;
+        --max-prose:   680px;
+        --max-wide:    960px;
+        --pad-x:       clamp(1.25rem, 5vw, 2rem);
+        --section-gap: clamp(5rem, 9vw, 7rem);
     }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        line-height: 1.72;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: var(--accent);
+        color: #fff;
+        padding: 8px 16px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        z-index: 9999;
+        border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── Nav ───────────────────────────────────────────────── */
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--nav-h);
+        background: rgba(10, 14, 20, 0.96);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+        z-index: 100;
+    }
+
+    .nav-inner {
+        max-width: var(--max-wide);
+        margin: 0 auto;
+        padding: 0 var(--pad-x);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav-brand {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text);
+        text-decoration: none;
+        letter-spacing: -0.01em;
+        flex-shrink: 0;
+        margin-right: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 1.75rem;
+        align-items: center;
+    }
+
+    .nav-links a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-subscribe {
+        display: inline-block;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+        padding: 0.4rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background 0.15s, color 0.15s;
+        flex-shrink: 0;
+    }
+
+    .nav-subscribe:hover {
+        background: var(--accent);
+        color: #fff;
+    }
+
+    /* Hamburger */
+    .nav-hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+        margin-left: 0.5rem;
+    }
+
+    .nav-hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--muted);
+        border-radius: 2px;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav */
+    @media (max-width: 720px) {
+        .nav-hamburger { display: flex; }
+        .nav-links, .nav-subscribe {
+            display: none;
+        }
+        .nav-links.open {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: var(--nav-h);
+            left: 0; right: 0; bottom: 0;
+            background: rgba(10, 14, 20, 0.98);
+            padding: 2rem var(--pad-x);
+            gap: 0.25rem;
+            overflow-y: auto;
+            z-index: 99;
+        }
+        .nav-links.open a {
+            font-size: 1.1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+        .nav-links.open li:last-child a { border-bottom: none; }
+    }
+
+    /* ── Hero ──────────────────────────────────────────────── */
+    .hero {
+        min-height: 100svh;
+        padding-top: var(--nav-h);
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-inner {
+        max-width: var(--max-wide);
+        margin: 0 auto;
+        padding: clamp(4rem, 10vw, 7rem) var(--pad-x) clamp(4rem, 8vw, 6rem);
+        width: 100%;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        max-width: 720px;
+        margin-bottom: 1.75rem;
+    }
+
+    .hero-body {
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
+        line-height: 1.75;
+        color: var(--muted);
+        max-width: 600px;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 600;
+        padding: 0.8rem 1.75rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.15s, transform 0.15s;
+        letter-spacing: 0.01em;
+    }
+
+    .btn-primary:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px solid var(--faint);
+        padding-bottom: 1px;
+        transition: color 0.15s, border-color 0.15s;
+    }
+
+    .btn-ghost:hover {
+        color: var(--text);
+        border-color: var(--muted);
+    }
+
+    .hero-note {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        color: var(--faint);
+    }
+
+    /* ── Divider ───────────────────────────────────────────── */
+    .section-divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        max-width: var(--max-wide);
+        margin: 0 auto;
+    }
+
+    /* ── About / prose section ─────────────────────────────── */
+    .about {
+        padding: var(--section-gap) var(--pad-x);
+    }
+
+    .prose {
+        max-width: var(--max-prose);
+        margin: 0 auto;
+    }
+
+    .prose h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.01em;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .prose p {
+        color: var(--muted);
+        margin-bottom: 1.25rem;
+        line-height: 1.8;
+    }
+
+    .prose p:last-child { margin-bottom: 0; }
+
+    .prose p strong { color: var(--text); font-weight: 600; }
+
+    /* Text link list (tools) */
+    .text-links {
+        margin-top: 2.75rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .text-links p {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin-bottom: 0.85rem;
+    }
+
+    .text-links ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.55rem;
+    }
+
+    .text-links li {
+        font-size: 0.93rem;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+    .text-links a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.15s;
+    }
+
+    .text-links a:hover { border-bottom-color: var(--accent); }
+
+    /* ── Bottom CTA ────────────────────────────────────────── */
+    .bottom-cta {
+        background: var(--surface-alt);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: var(--section-gap) var(--pad-x);
+    }
+
+    .bottom-cta-inner {
+        max-width: var(--max-prose);
+        margin: 0 auto;
+    }
+
+    .bottom-cta h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+    }
+
+    .bottom-cta p {
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        max-width: 520px;
+    }
+
+    .bottom-cta-actions {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .cta-detail {
+        font-size: 0.8rem;
+        color: var(--faint);
+        line-height: 1.6;
+    }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    .footer {
+        background: #080d13;
+        border-top: 1px solid var(--border);
+        padding: 3.5rem var(--pad-x) 2rem;
+    }
+
+    .footer-inner {
+        max-width: var(--max-wide);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .footer-brand {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 0.6rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.85rem;
+        color: var(--faint);
+        line-height: 1.6;
+        max-width: 280px;
+    }
+
+    .footer-col h4 {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--faint);
+        margin-bottom: 0.9rem;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 0.45rem; }
+
+    .footer-col a {
+        font-size: 0.88rem;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.15s;
+    }
+
+    .footer-col a:hover { color: var(--text); }
+
+    .footer-bottom {
+        max-width: var(--max-wide);
+        margin: 2.5rem auto 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+        font-size: 0.78rem;
+        color: var(--faint);
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom a {
+        color: var(--faint);
+        text-decoration: none;
+        transition: color 0.15s;
+    }
+
+    .footer-bottom a:hover { color: var(--muted); }
+
+    @media (max-width: 680px) {
+        .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+        .footer-bottom { flex-direction: column; gap: 0.5rem; }
+        .hero-cta { flex-direction: column; align-items: flex-start; }
+    }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Dolphin Singularity</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="newsletter.html">Newsletter</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="sound-library.html">Sounds</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="nav-subscribe">Subscribe</a>
+            <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-inner">
+                <p class="hero-eyebrow">Weekly newsletter</p>
+                <h1>Marine cognition research,<br>synthesized weekly.</h1>
+                <p class="hero-body">
+                    The research is scattered across journals, preprints, and lab blogs you don't follow.
+                    Every week I read it and tell you what actually matters — cetacean communication,
+                    animal cognition, AI meets biology — with a point of view.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn-primary">Subscribe free</a>
+                    <a href="newsletter.html" class="btn-ghost">About the newsletter</a>
+                </div>
+                <p class="hero-note">Free to read &middot; $8/month for the full archive &middot; Unsubscribe anytime</p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- About / project description -->
+        <section class="about" aria-labelledby="about-heading">
+            <div class="prose">
+                <h2 id="about-heading">What this is</h2>
+                <p>
+                    Marine cognition is advancing fast. The last five years have brought AI-powered acoustic 
+                    analysis, large-scale population studies, and serious scientific attention to questions 
+                    that were once considered fringe. Projects like <strong>DolphinGemma</strong> are 
+                    applying transformer architectures to bottlenose dolphin vocalization data at a scale 
+                    previously unimaginable. <strong>Project CETI</strong> is attempting the same with sperm 
+                    whale codas. The tools are genuinely new. The results so far are genuinely mixed — and 
+                    the popular coverage is almost uniformly worse than the research deserves.
+                </p>
+                <p>
+                    This newsletter exists in the space between "dolphins have names" headlines and primary 
+                    literature that assumes you have a background in acoustic signal processing. Each issue 
+                    covers two or three recent developments — a new paper, a shift in methodology, a finding 
+                    being overstated or undercovered. The voice has a point of view: honest about what's 
+                    established, explicit about what's preliminary, willing to say when something is hype.
+                </p>
+                <p>
+                    The free tier gets every issue. After eight weeks of public archive, full back issues 
+                    become paid at $8/month. University departments and graduate researchers can 
+                    <a href="contact.html" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">request institutional access</a> 
+                    free.
+                </p>
+
+                <div class="text-links">
+                    <p>Also on this site</p>
+                    <ul>
+                        <li>
+                            <a href="sound-library.html">Sound Library</a>
+                            &mdash; dolphin vocalizations, signature whistles, echolocation recordings
+                        </li>
+                        <li>
+                            <a href="visualizer.html">Acoustic Visualizer</a>
+                            &mdash; interactive spectrograms of dolphin calls
+                        </li>
+                        <li>
+                            <a href="reading-list.html">Reading List</a>
+                            &mdash; 20 annotated books on cetacean communication and animal cognition
+                        </li>
+                        <li>
+                            <a href="glossary.html">Glossary</a>
+                            &mdash; plain-English definitions of key terms: signature whistle, DolphinGemma, bioacoustics
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                            &mdash; longer pieces on the ethics, science, and philosophy of interspecies communication
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="bottom-cta" aria-labelledby="cta-heading">
+            <div class="bottom-cta-inner">
+                <h2 id="cta-heading">Start reading free.</h2>
+                <p>
+                    Subscribe on Substack. The first issue lands immediately.
+                    No credit card required for the free tier.
+                </p>
+                <div class="bottom-cta-actions">
+                    <a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn-primary">Subscribe on Substack</a>
+                    <span class="cta-detail">Free to read<br>$8/month for the full archive</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-brand">Dolphin Singularity</p>
+                <p class="footer-tagline">Weekly synthesis of cetacean communication, animal cognition, and AI-meets-biology research.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Read</h4>
+                <ul>
+                    <li><a href="newsletter.html">Newsletter</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="reading-list.html">Reading List</a></li>
+                    <li><a href="glossary.html">Glossary</a></li>
+                    <li><a href="research.html">Research</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="sound-library.html">Sound Library</a></li>
+                    <li><a href="visualizer.html">Visualizer</a></li>
+                    <li><a href="conservation.html">Conservation</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 DolphinSingularity.org</span>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="mailto:dolphinsingularity@gmail.com">dolphinsingularity@gmail.com</a>
+        </div>
+    </footer>
+
+    <script>
+    // Minimal mobile nav toggle — no dependency on script.js
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('open', open);
+        hamburger.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
     </script>
 </body>
 </html>
