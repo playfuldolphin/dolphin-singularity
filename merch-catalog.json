@@ -1,7 +1,7 @@
 {
     "provider": "Printful Quick Stores",
-    "storeUrl": null,
-    "launchStatus": "preview",
+    "storeUrl": "https://dolphinsingularity.printful.me/",
+    "launchStatus": "live",
     "products": [
         {
             "id": "classic-tee",
@@ -13,8 +13,8 @@
             "artwork": "images/merch/dolphin-ivory-print.png",
             "description": "An engraved dolphin, flowing acoustic lines, and the Dolphin Singularity wordmark. The original design in a classic crewneck format.",
             "printWidthInches": 7,
-            "productUrl": null,
-            "priceLabel": null
+            "productUrl": "https://dolphinsingularity.printful.me/product/the-original-tee-dolphin-singularity",
+            "priceLabel": "$29"
         },
         {
             "id": "classic-hoodie",
@@ -26,8 +26,8 @@
             "artwork": "images/merch/dolphin-ivory-print.png",
             "description": "The same dolphin artwork, scaled for the chest of a pullover hoodie. A quieter companion to the graphic tees.",
             "printWidthInches": 6,
-            "productUrl": null,
-            "priceLabel": null
+            "productUrl": "https://dolphinsingularity.printful.me/product/the-original-hoodie-dolphin-singularity",
+            "priceLabel": "$49"
         },
         {
             "id": "whistle-meeting",
@@ -36,11 +36,11 @@
             "kind": "T-shirt",
             "color": "Natural / ocean teal",
             "image": "images/merch/whistle-meeting-tee.jpg",
-            "artwork": "images/merch/whistle-meeting-print.png",
-            "description": "“This meeting could have been a whistle.” For everyone who has sat through a forty-minute conversation with about three seconds of useful information.",
-            "printWidthInches": 7,
-            "productUrl": null,
-            "priceLabel": null
+            "artwork": "images/merch/dolphin-laptop-print.png",
+            "description": "A very tired dolphin, one tiny laptop, and absolutely no caption needed. A larger illustration centered on the chest for everyone with one meeting too many.",
+            "printWidthInches": 10,
+            "productUrl": "https://dolphinsingularity.printful.me/product/the-meeting-tee-this-meeting-could-have-been-a-whistle",
+            "priceLabel": "$29"
         },
         {
             "id": "fluent-dolphin",
@@ -51,9 +51,9 @@
             "image": "images/merch/fluent-dolphin-tee.jpg",
             "artwork": "images/merch/fluent-dolphin-print.png",
             "description": "“Fluent in EEE EEE EEE.” Excellent communication skills. Unconventional delivery. A confident little dolphin with a lot to say.",
-            "printWidthInches": 7,
-            "productUrl": null,
-            "priceLabel": null
+            "printWidthInches": 9,
+            "productUrl": "https://dolphinsingularity.printful.me/product/the-fluent-tee-eee-eee-eee",
+            "priceLabel": "$29"
         },
         {
             "id": "weird-noises",
@@ -64,9 +64,9 @@
             "image": "images/merch/weird-noises-tee.jpg",
             "artwork": "images/merch/weird-noises-print.png",
             "description": "“Highly intelligent. Still making weird noises.” Two things can be true. A cheerful tribute to complicated minds and unusual conversations.",
-            "printWidthInches": 7,
-            "productUrl": null,
-            "priceLabel": null
+            "printWidthInches": 10,
+            "productUrl": "https://dolphinsingularity.printful.me/product/the-highly-intelligent-tee-weird-noises",
+            "priceLabel": "$29"
         }
     ]
 }

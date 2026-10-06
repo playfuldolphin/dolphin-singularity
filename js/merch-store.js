@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         catalog = await response.json();
         if (!Array.isArray(catalog.products)) return;
     } catch (_) {
-        // Direct image links and the full collection remain usable without the catalog.
+        // Product links and the full collection remain usable without the catalog.
         return;
     }
 
@@ -63,12 +63,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             event.preventDefault();
             const image = document.getElementById('dialogImage');
             image.src = product.image;
-            image.alt = `Design mockup of ${product.name}`;
+            image.alt = `Supplier mockup of ${product.name}`;
             document.getElementById('dialogTitle').textContent = product.name;
             document.getElementById('dialogKind').textContent = `${product.kind} / ${product.color}`;
             document.getElementById('dialogDescription').textContent = product.description;
             dialog.querySelector('.merch-caption').textContent = catalog.launchStatus === 'live' && validProductUrl(product.productUrl)
-                ? 'Design mockup. See the Printful listing for final garment details, sizing, and pricing.'
+                ? 'Supplier mockup. See the Printful listing for garment details, sizing, and current pricing.'
                 : 'Design mockup. This item is not open for orders yet.';
             dialog.showModal();
         });
