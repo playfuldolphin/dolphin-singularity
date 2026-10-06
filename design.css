@@ -160,7 +160,7 @@ a { color: var(--primary-color); }
     font-size: 0.8rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(232,224,208,0.45);
+    color: #b9c6d0;
 }
 
 /* Breadcrumb */

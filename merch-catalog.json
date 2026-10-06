@@ -1,0 +1,72 @@
+{
+    "provider": "Printful Quick Stores",
+    "storeUrl": null,
+    "launchStatus": "preview",
+    "products": [
+        {
+            "id": "classic-tee",
+            "name": "The Original Tee",
+            "collection": "originals",
+            "kind": "T-shirt",
+            "color": "Midnight navy / ivory",
+            "image": "images/merch/classic-tee.jpg",
+            "artwork": "images/merch/dolphin-ivory-print.png",
+            "description": "An engraved dolphin, flowing acoustic lines, and the Dolphin Singularity wordmark. The original design in a classic crewneck format.",
+            "printWidthInches": 7,
+            "productUrl": null,
+            "priceLabel": null
+        },
+        {
+            "id": "classic-hoodie",
+            "name": "The Original Hoodie",
+            "collection": "originals",
+            "kind": "Hoodie",
+            "color": "Midnight navy / ivory",
+            "image": "images/merch/classic-hoodie.jpg",
+            "artwork": "images/merch/dolphin-ivory-print.png",
+            "description": "The same dolphin artwork, scaled for the chest of a pullover hoodie. A quieter companion to the graphic tees.",
+            "printWidthInches": 6,
+            "productUrl": null,
+            "priceLabel": null
+        },
+        {
+            "id": "whistle-meeting",
+            "name": "The Meeting Tee",
+            "collection": "graphics",
+            "kind": "T-shirt",
+            "color": "Natural / ocean teal",
+            "image": "images/merch/whistle-meeting-tee.jpg",
+            "artwork": "images/merch/whistle-meeting-print.png",
+            "description": "“This meeting could have been a whistle.” For everyone who has sat through a forty-minute conversation with about three seconds of useful information.",
+            "printWidthInches": 7,
+            "productUrl": null,
+            "priceLabel": null
+        },
+        {
+            "id": "fluent-dolphin",
+            "name": "The Fluent Tee",
+            "collection": "graphics",
+            "kind": "T-shirt",
+            "color": "Natural / ocean teal",
+            "image": "images/merch/fluent-dolphin-tee.jpg",
+            "artwork": "images/merch/fluent-dolphin-print.png",
+            "description": "“Fluent in EEE EEE EEE.” Excellent communication skills. Unconventional delivery. A confident little dolphin with a lot to say.",
+            "printWidthInches": 7,
+            "productUrl": null,
+            "priceLabel": null
+        },
+        {
+            "id": "weird-noises",
+            "name": "The Highly Intelligent Tee",
+            "collection": "graphics",
+            "kind": "T-shirt",
+            "color": "Natural / ocean teal",
+            "image": "images/merch/weird-noises-tee.jpg",
+            "artwork": "images/merch/weird-noises-print.png",
+            "description": "“Highly intelligent. Still making weird noises.” Two things can be true. A cheerful tribute to complicated minds and unusual conversations.",
+            "printWidthInches": 7,
+            "productUrl": null,
+            "priceLabel": null
+        }
+    ]
+}
