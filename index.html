@@ -66,7 +66,7 @@
         --blue-light:  #2874A6;
         --text:        #1C1C1C;
         --muted:       #5A6878;
-        --faint:       #8A9AAA;
+        --faint:       #596776;
         --rule:        #D8D4CC;
         --rule-dark:   rgba(255,255,255,0.12);
         --mono:        'Courier New', Courier, monospace;
@@ -163,7 +163,7 @@
         font-size: 0.72rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(232,224,208,0.6);
+        color: #b9c6d0;
         text-decoration: none;
         transition: color 0.15s;
     }
@@ -204,7 +204,7 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    @media (max-width: 680px) {
+    @media (max-width: 768px) {
         .nav-hamburger { display: flex; }
         .nav-links, .nav-subscribe { display: none; }
         .nav-links.open {
@@ -302,52 +302,38 @@
         padding-top: 1.25rem;
     }
 
-    /* Email capture */
-    .subscribe-form {
+    /* Subscription links use Substack's supported sign-up page. */
+    .subscribe-actions {
         display: flex;
-        gap: 0;
-        max-width: 440px;
-        margin-bottom: 0.65rem;
-        border: 1px solid var(--rule);
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.75rem;
+        scroll-margin-top: calc(var(--nav-h) + 1rem);
     }
-
-    .subscribe-form input[type="email"] {
-        flex: 1;
-        font-family: var(--mono);
-        font-size: 0.82rem;
-        padding: 0.8rem 1rem;
-        border: none;
-        background: var(--surface);
-        color: var(--text);
-        outline: none;
-        min-width: 0;
-    }
-
-    .subscribe-form input[type="email"]::placeholder { color: var(--faint); }
-
-    .subscribe-form input[type="email"]:focus {
-        background: #fff;
-    }
-
-    .subscribe-form button {
-        font-family: var(--mono);
-        font-size: 0.72rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: var(--navy);
-        color: #e8e0d0;
-        border: none;
+    .subscribe-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        min-height: 48px;
         padding: 0.8rem 1.25rem;
-        cursor: pointer;
-        white-space: nowrap;
-        transition: background 0.15s;
-        flex-shrink: 0;
+        background: var(--navy);
+        color: #fff;
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
     }
-    .subscribe-form button:hover { background: var(--navy-mid); }
+    .subscribe-link:hover { background: var(--navy-mid); text-decoration: none; }
+    .archive-link { font-family: var(--mono); font-size: 0.8rem; text-decoration: underline; }
+    :focus-visible { outline: 3px solid #4a9896; outline-offset: 4px; }
+    .nav-hamburger { min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+    .nav-links.open { overflow-y: auto; }
+    .nav-mobile-subscribe { display: none; }
 
     .form-note {
         font-family: var(--mono);
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         color: var(--faint);
         letter-spacing: 0.04em;
     }
@@ -376,10 +362,10 @@
 
     .spec-label {
         font-family: var(--mono);
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: rgba(255,255,255,0.25);
+        color: #b9c6d0;
         margin-top: 0.5rem;
     }
 
@@ -391,10 +377,10 @@
 
     .sidebar-label {
         font-family: var(--mono);
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: rgba(255,255,255,0.3);
+        color: #b9c6d0;
         margin-bottom: 0.75rem;
     }
 
@@ -412,24 +398,24 @@
         font-family: var(--mono);
         font-size: 0.72rem;
         line-height: 1.7;
-        color: rgba(232,224,208,0.55);
+        color: #b9c6d0;
         letter-spacing: 0.02em;
         margin-bottom: 1rem;
     }
 
     .sidebar-link {
         font-family: var(--mono);
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: rgba(232,224,208,0.4);
+        color: #b9c6d0;
         text-decoration: none;
         border-bottom: 1px solid rgba(232,224,208,0.2);
         transition: color 0.15s, border-color 0.15s;
     }
     .sidebar-link:hover {
         color: rgba(232,224,208,0.9);
-        border-color: rgba(232,224,208,0.5);
+        border-color: #b9c6d0;
         text-decoration: none;
     }
 
@@ -470,7 +456,7 @@
 
     .issue-num {
         font-family: var(--mono);
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         letter-spacing: 0.06em;
         color: var(--faint);
         padding-top: 0.2rem;
@@ -505,7 +491,7 @@
 
     .issue-read {
         font-family: var(--mono);
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--blue);
@@ -553,7 +539,7 @@
         display: inline-block;
         margin-top: 0.5rem;
         font-family: var(--mono);
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--blue);
@@ -616,7 +602,7 @@
 
     .tool-label {
         font-family: var(--mono);
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--faint);
@@ -641,7 +627,7 @@
 
     .tool-link {
         font-family: var(--mono);
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--blue);
@@ -681,29 +667,13 @@
         font-family: var(--mono);
         font-size: 0.75rem;
         letter-spacing: 0.04em;
-        color: rgba(232,224,208,0.45);
+        color: #b9c6d0;
         line-height: 1.6;
     }
 
-    .bottom-cta .subscribe-form {
-        border-color: rgba(232,224,208,0.2);
-        min-width: 340px;
-    }
-
-    .bottom-cta .subscribe-form input[type="email"] {
-        background: rgba(255,255,255,0.07);
-        color: #e8e0d0;
-    }
-    .bottom-cta .subscribe-form input[type="email"]::placeholder { color: rgba(232,224,208,0.3); }
-    .bottom-cta .subscribe-form input[type="email"]:focus { background: rgba(255,255,255,0.12); }
-
-    .bottom-cta .subscribe-form button {
-        background: rgba(232,224,208,0.12);
-        border-left: 1px solid rgba(232,224,208,0.2);
-    }
-    .bottom-cta .subscribe-form button:hover { background: rgba(232,224,208,0.2); }
-
-    .bottom-cta .form-note { color: rgba(232,224,208,0.3); margin-top: 0.5rem; }
+    .bottom-cta .subscribe-link { background: #e8e0d0; color: var(--navy); }
+    .bottom-cta .subscribe-link:hover { background: #fff; }
+    .bottom-cta .form-note { color: #b9c6d0; margin-top: 0.5rem; }
 
     /* ── Footer ─────────────────────────────────────────────── */
     .footer {
@@ -726,12 +696,12 @@
         font-family: var(--mono);
         font-size: 0.72rem;
         letter-spacing: 0.05em;
-        color: rgba(232,224,208,0.35);
+        color: #b9c6d0;
         line-height: 1.8;
     }
 
     .footer-left a {
-        color: rgba(232,224,208,0.35);
+        color: #b9c6d0;
         text-decoration: none;
         transition: color 0.15s;
     }
@@ -741,14 +711,14 @@
         font-family: var(--mono);
         font-size: 0.72rem;
         letter-spacing: 0.05em;
-        color: rgba(232,224,208,0.35);
+        color: #b9c6d0;
         display: flex;
         gap: 2rem;
         flex-wrap: wrap;
     }
 
     .footer-right a {
-        color: rgba(232,224,208,0.35);
+        color: #b9c6d0;
         text-decoration: none;
         transition: color 0.15s;
     }
@@ -775,18 +745,29 @@
         .tool-item { border-right: none; border-bottom: 1px solid var(--rule); }
         .tool-item:last-child { border-bottom: none; }
         .bottom-cta-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-        .bottom-cta .subscribe-form { min-width: 0; width: 100%; max-width: 440px; }
+
         .issue-item { grid-template-columns: 60px 1fr; }
     }
 
     @media (max-width: 520px) {
         :root { --pad: 1.25rem; }
         .hero h1 { font-size: 1.75rem; }
-        .subscribe-form { flex-direction: column; }
-        .subscribe-form button { width: 100%; padding: 0.75rem; }
+        .subscribe-actions { align-items: stretch; flex-direction: column; }
+        .subscribe-link { width: 100%; }
         .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
         .issue-item { grid-template-columns: 1fr; gap: 0.25rem; }
         .issue-num { padding-top: 0; }
+    }
+    @media (max-width: 768px) {
+        .nav-mobile-subscribe { display: list-item; }
+        .nav:not(.js-navigation) { position: static; height: auto; }
+        .nav:not(.js-navigation) .nav-inner { height: auto; flex-wrap: wrap; padding-block: 1rem; }
+        .nav:not(.js-navigation) .nav-hamburger { display: none; }
+        .nav:not(.js-navigation) .nav-links { display: flex; flex-wrap: wrap; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
     </style>
 </head>
@@ -800,9 +781,10 @@
             <li><a href="newsletter.html">Newsletter</a></li>
             <li><a href="research.html">Research</a></li>
             <li><a href="about.html">About</a></li>
+            <li class="nav-mobile-subscribe"><a href="https://playfuldolphin.substack.com/subscribe">Subscribe</a></li>
         </ul>
         <a href="#subscribe" class="nav-subscribe">Subscribe</a>
-        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <button class="nav-hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -817,7 +799,7 @@
             <div class="hero-kicker">
                 <span class="label">Weekly Research Newsletter</span>
                 <div class="kicker-rule"></div>
-                <span class="label">Vol. 1, 2025</span>
+                <span class="label">Independent publication</span>
             </div>
 
             <h1 id="hero-headline">
@@ -838,18 +820,11 @@
                 and honest about what the science actually shows.
             </p>
 
-            <!-- Email capture — NOTE: update action URL once you rename your
-                 Substack to dolphinsingularity (or set up custom domain).
-                 Current destination: playfuldolphin.substack.com         -->
-            <form class="subscribe-form" id="subscribe"
-                  action="https://playfuldolphin.substack.com/subscribe"
-                  method="post">
-                <input type="email" name="email"
-                       placeholder="your@email.com" required
-                       autocomplete="email">
-                <button type="submit">Subscribe free</button>
-            </form>
-            <p class="form-note">Free to read &nbsp;&middot;&nbsp; $8/month for the full archive &nbsp;&middot;&nbsp; Unsubscribe anytime</p>
+            <div class="subscribe-actions" id="subscribe">
+                <a class="subscribe-link" href="https://playfuldolphin.substack.com/subscribe">Subscribe on Substack <span aria-hidden="true">&rarr;</span></a>
+                <a class="archive-link" href="newsletter.html">Explore the newsletter</a>
+            </div>
+            <p class="form-note">Choose your subscription on Substack. Unsubscribe anytime.</p>
         </div>
 
         <!-- Sidebar -->
@@ -898,7 +873,7 @@
                     <text x="4" y="63"  font-family="Courier New" font-size="5" fill="rgba(255,255,255,0.2)">12kHz</text>
                     <text x="4" y="93"  font-family="Courier New" font-size="5" fill="rgba(255,255,255,0.2)">4kHz</text>
                 </svg>
-                <p class="spec-label">Bottlenose dolphin signature whistle · spectrogram</p>
+                <p class="spec-label">Illustrative whistle contour · not a field recording</p>
             </div>
 
             <div class="sidebar-bio">
@@ -930,10 +905,10 @@
                     <span class="issue-num">No.&nbsp;11</span>
                     <div class="issue-body">
                         <h2 class="issue-title">
-                            <a href="blog/translation-breakthrough.html">DolphinGemma is impressive. The coverage of it is not.</a>
+                            <a href="blog/translation-breakthrough.html">DolphinGemma: Sound Patterns Are Not Translation</a>
                         </h2>
                         <p class="issue-excerpt">
-                            Google's DolphinGemma model made headlines in April. Most of them were wrong in the same direction: they treated "AI can now classify dolphin whistles with high accuracy" as though it were one step away from real-time translation. It isn't, and the gap matters more than the achievement.
+                            What does predicting a dolphin sound tell us about its meaning? A closer look at the difference between modeling acoustic patterns and establishing communication.
                         </p>
                         <a href="blog/translation-breakthrough.html" class="issue-read">Read issue</a>
                     </div>
@@ -946,7 +921,7 @@
                             <a href="blog/signature-paradox.html">The signature whistle paradox: you named yourself, and you answer to it</a>
                         </h2>
                         <p class="issue-excerpt">
-                            Each bottlenose dolphin develops a unique whistle in its first year and uses it as a self-identifier throughout its life. Other dolphins copy it when addressing them. This seemingly simple behavior requires an extraordinary cascade of cognitive abilities — self-awareness, theory of mind, symbolic abstraction — that we're still working out how to measure.
+                            Each bottlenose dolphin develops a unique whistle in its first year and uses it as a self-identifier throughout its life. Other dolphins copy it when addressing them. What this behavior establishes about identity and social learning, and what remains open about cognition, deserves careful distinction.
                         </p>
                         <a href="blog/signature-paradox.html" class="issue-read">Read issue</a>
                     </div>
@@ -978,9 +953,9 @@
             </div>
             <div class="dg-grid">
                 <div class="dg-main">
-                    <h2>The DolphinGemma project is the most significant development in cetacean bioacoustics in a decade. Here's what it actually does.</h2>
+                    <h2>DolphinGemma models patterns in dolphin sounds. Here’s what that does — and doesn’t — tell us.</h2>
                     <p>
-                        Released by Google in collaboration with the Georgia Tech Research Institute and the Wild Dolphin Project, DolphinGemma is a transformer-based model fine-tuned on bottlenose dolphin vocalizations. It classifies whistle contours, identifies call types, and models temporal patterns in vocal sequences with a degree of precision that was previously impossible without significant compute investment.
+                        DolphinGemma is an audio model trained on the Wild Dolphin Project’s recordings of Atlantic spotted dolphins. It learns patterns in sound sequences and predicts subsequent sounds. <a href="https://blog.google/innovation-and-ai/products/dolphingemma/">Read Google’s introduction to the model</a>.
                     </p>
                     <p>
                         <strong>What it doesn't do:</strong> translate. The jump from "we can classify sounds with high accuracy" to "we understand what dolphins are communicating" is enormous and largely unsolved. DolphinGemma is a measurement instrument, not a decoder. The newsletter covers this distinction carefully because the coverage almost never does.
@@ -995,13 +970,13 @@
                     <span class="label-blue">Key figures</span>
 
                     <div class="dg-stat">
-                        <div class="dg-stat-value">94%</div>
-                        <div class="dg-stat-label">Signature whistle ID accuracy<br>DolphinGemma, 2025</div>
+                        <div class="dg-stat-value">~400M</div>
+                        <div class="dg-stat-label">Model parameters<br>DolphinGemma, Google’s 2025 announcement</div>
                     </div>
 
                     <div class="dg-stat">
-                        <div class="dg-stat-value">~1,200</div>
-                        <div class="dg-stat-label">Individual dolphins with<br>catalogued signature whistles</div>
+                        <div class="dg-stat-value">1985</div>
+                        <div class="dg-stat-label">Start of the Wild Dolphin Project’s<br>long-term field research</div>
                     </div>
 
                     <div class="dg-stat">
@@ -1031,7 +1006,7 @@
                     <p class="tool-label">Acoustics</p>
                     <h3 class="tool-title">Acoustic Visualizer</h3>
                     <p class="tool-desc">
-                        Interactive spectrograms of bottlenose dolphin calls. Signature whistles, burst-pulse sequences, echolocation click trains. See the frequency structure that AI models are trained on.
+                        Explore synthesized whistle and click examples through waveforms, frequency displays, and spectrograms. These teaching examples are not field recordings.
                     </p>
                     <a href="visualizer.html" class="tool-link">Open visualizer</a>
                 </div>
@@ -1040,9 +1015,9 @@
                     <p class="tool-label">Audio</p>
                     <h3 class="tool-title">Sound Library</h3>
                     <p class="tool-desc">
-                        Recordings of real dolphin vocalizations — signature whistles, echolocation, mother-calf contact calls, burst-pulse social sounds. With annotations on context and species.
+                        A guide to whistles, echolocation clicks, and burst pulses, with links to recordings published by the Wild Dolphin Project.
                     </p>
-                    <a href="sound-library.html" class="tool-link">Browse recordings</a>
+                    <a href="sound-library.html" class="tool-link">Explore dolphin sounds</a>
                 </div>
 
                 <div class="tool-item">
@@ -1065,18 +1040,12 @@
         <div class="bottom-cta-inner">
             <div>
                 <h2>Start reading free.</h2>
-                <p>Weekly · Free to read · $8/month for the full archive</p>
+                <p>Research, context, and a point of view. Delivered by email.</p>
             </div>
-            <!-- Same note about Substack rename applies here -->
             <div>
-                <form class="subscribe-form"
-                      action="https://playfuldolphin.substack.com/subscribe"
-                      method="post">
-                    <input type="email" name="email"
-                           placeholder="your@email.com" required
-                           autocomplete="email">
-                    <button type="submit">Subscribe</button>
-                </form>
+                <div class="subscribe-actions">
+                    <a class="subscribe-link" href="https://playfuldolphin.substack.com/subscribe">Subscribe on Substack <span aria-hidden="true">&rarr;</span></a>
+                </div>
                 <p class="form-note">Unsubscribe anytime. No spam.</p>
             </div>
         </div>
@@ -1103,30 +1072,6 @@
     </div>
 </footer>
 
-<script>
-// Mobile nav
-const hamburger = document.getElementById('hamburger');
-const navLinks   = document.getElementById('navLinks');
-
-hamburger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-});
-
-navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-    });
-});
-
-// Subscribe form — redirect to Substack (POST)
-// TODO: once Substack is renamed to dolphinsingularity,
-// update both form action URLs above.
-</script>
+<script src="js/navigation.js" defer></script>
 </body>
 </html>

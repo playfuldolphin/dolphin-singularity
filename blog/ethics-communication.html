@@ -65,7 +65,7 @@
                 <a href="../index.html" class="nav-brand-link">Dolphin Singularity</a>
             </div>
             <div class="nav-controls">
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -183,10 +183,10 @@
                     <li><strong>Ongoing consent:</strong> Regularly check if dolphins want to continue interacting</li>
                 </ol>
 
-                <div class="blog-image">
-                    <img src="../images/ethical-framework-diagram.png" alt="Ethical framework for dolphin communication research" />
-                    <p class="image-caption">Our ethical framework prioritizes dolphin autonomy and consent at every stage</p>
-                </div>
+                <aside class="editorial-note" aria-label="Ethical principles">
+                    <strong>Observe. Offer choice. Respect withdrawal.</strong>
+                    <p>These principles summarize the proposed approach above; they are an ethical position, not evidence of dolphin consent.</p>
+                </aside>
 
                 <h2>Communication as Cognitive Colonization?</h2>
 
@@ -419,7 +419,7 @@
 
                 <div class="blog-footer">
                     <h3>About the Author</h3>
-                    <p>Noah Wilson serves as Ethics & Philosophy Lead at Dolphin Singularity. She holds a PhD in Philosophy from Oxford University and has published extensively on animal consciousness, environmental ethics, and the moral implications of AI. Her book "Persons in the Sea: Toward an Ethics of Cetacean Rights" won the 2024 Philosophical Book Award.</p>
+                    <p>Noah Wilson writes Dolphin Singularity, a newsletter on cetacean communication, animal cognition, and AI research. <a href="../about.html">About Noah and the publication</a>.</p>
                 </div>
             </div>
         </div>
@@ -496,5 +496,6 @@
     </footer>
 
     <script src="../script.js"></script>
+    <script src="../js/navigation.js" defer></script>
 </body>
 </html>

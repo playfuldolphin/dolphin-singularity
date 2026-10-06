@@ -47,7 +47,7 @@
                 <a href="index.html" class="nav-brand-link">Dolphin Singularity</a>
             </div>
             <div class="nav-controls">
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -80,44 +80,13 @@
                     </div>
                 </div>
                 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="interest">I'm interested in:</label>
-                        <select id="interest" name="interest">
-                            <option value="">Select an option...</option>
-                            <option value="research">Research Collaboration</option>
-                            <option value="conservation">Conservation Efforts</option>
-                            <option value="ai">AI & Technology</option>
-                            <option value="volunteering">Volunteering</option>
-                            <option value="general">General Inquiry</option>
-                        </select>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
-                    
-                    <div class="form-message" id="formMessage"></div>
-                </form>
+                <div class="contact-form contact-email">
+                    <h2>Start a conversation</h2>
+                    <p>For questions, research collaborations, or conservation ideas, email Noah directly.</p>
+                    <a class="btn btn-primary" href="mailto:noah@dolphinsingularity.org">Write an email</a>
+                    <p>This opens your email app. You can also copy <a href="mailto:noah@dolphinsingularity.org">noah@dolphinsingularity.org</a> into your preferred email service.</p>
+                    <p>Include a little about yourself and what you would like to discuss.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -177,6 +146,7 @@
     }
     </script>
     
+    <script src="js/navigation.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>
