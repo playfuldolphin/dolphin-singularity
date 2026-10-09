@@ -3,7 +3,7 @@
  * Enables offline functionality and faster loading
  */
 
-const CACHE_VERSION = 'dolphin-singularity-v2.0';
+const CACHE_VERSION = 'dolphin-singularity-v4.0-archive';
 const CACHE_FILES = [
   '/',
   '/index.html',
@@ -14,6 +14,11 @@ const CACHE_FILES = [
   '/blog.html',
   '/conservation.html',
   '/styles.css',
+  '/design.css',
+  '/css/archive.css',
+  '/images/dolphin-archive-masthead.jpg',
+  '/js/navigation.js',
+  '/offline.html',
   '/styles-optimized.css',
   '/script.js',
   '/js/newsletter.js',

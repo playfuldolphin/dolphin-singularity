@@ -40,28 +40,31 @@ class DolphinSoundVisualizer {
         this.canvas.height = rect.height || 300;
     }
     
-    async initialize(audioElement) {
-        if (!this.audioContext) {
-            this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            this.analyser = this.audioContext.createAnalyser();
+    initialize(audioContext) {
+        if (!this.analyser) {
+            this.audioContext = audioContext;
+            this.analyser = audioContext.createAnalyser();
             this.analyser.fftSize = this.options.fftSize;
+            this.analyser.smoothingTimeConstant = this.options.smoothingTimeConstant;
             this.bufferLength = this.analyser.frequencyBinCount;
             this.dataArray = new Uint8Array(this.bufferLength);
-            
-            const source = this.audioContext.createMediaElementSource(audioElement);
-            source.connect(this.analyser);
-            this.analyser.connect(this.audioContext.destination);
+            const volume = audioContext.createGain();
+            volume.gain.value = 0.25;
+            this.analyser.connect(volume);
+            volume.connect(audioContext.destination);
         }
-        
+        this.stop();
         this.draw();
     }
-    
+
     draw() {
         this.animationId = requestAnimationFrame(() => this.draw());
         
         const { width, height } = this.canvas;
         this.ctx.fillStyle = this.options.colors.background;
-        this.ctx.fillRect(0, 0, width, height);
+        if (this.options.visualizationType !== 'spectrogram') {
+            this.ctx.fillRect(0, 0, width, height);
+        }
         
         switch (this.options.visualizationType) {
             case 'waveform':
@@ -195,6 +198,8 @@ class DolphinSoundVisualizer {
     
     setVisualizationType(type) {
         this.options.visualizationType = type;
+        this.ctx.fillStyle = this.options.colors.background;
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }
     
     stop() {
@@ -226,9 +231,10 @@ class DolphinSoundGenerator {
         
         for (let i = 0; i < buffer.length; i++) {
             const t = i / sampleRate;
-            // Sweep from 5kHz to 15kHz
-            const freq = 5000 + (10000 * t / duration);
-            data[i] = Math.sin(2 * Math.PI * freq * t) * 0.3;
+            // Audible teaching example: integrate a 1–4 kHz frequency sweep.
+            const phase = 2 * Math.PI * (1000 * t + 1500 * t * t / duration);
+            const envelope = Math.min(1, t / 0.02, (duration - t) / 0.02);
+            data[i] = Math.sin(phase) * 0.3 * envelope;
         }
         
         return buffer;
@@ -245,18 +251,19 @@ class DolphinSoundGenerator {
         for (let i = 0; i < buffer.length; i++) {
             const clickPhase = i % clickInterval;
             if (clickPhase < 50) {
-                // Short burst pulse
-                data[i] = Math.sin(2 * Math.PI * 100000 * (i / sampleRate)) * 0.5;
+                // Audible short pulse; not a simulation of ultrasonic dolphin sonar.
+                const envelope = Math.sin(Math.PI * clickPhase / 50);
+                data[i] = Math.sin(2 * Math.PI * 4000 * clickPhase / sampleRate) * envelope * 0.5;
             }
         }
         
         return buffer;
     }
     
-    playBuffer(buffer) {
+    playBuffer(buffer, destination = this.audioContext.destination) {
         const source = this.audioContext.createBufferSource();
         source.buffer = buffer;
-        source.connect(this.audioContext.destination);
+        source.connect(destination);
         source.start();
         return source;
     }

@@ -25,9 +25,6 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="design.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6894087674561904" crossorigin="anonymous"></script>
 
@@ -48,7 +45,7 @@
 
     .rp-header {
         background: #0A1520;
-        padding: 3rem 0 2.5rem;
+        padding: calc(52px + 3rem) 0 2.5rem;
         border-bottom: 1px solid rgba(255,255,255,0.07);
     }
 
@@ -63,7 +60,7 @@
         font-size: 0.7rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: rgba(232,224,208,0.35);
+        color: #b9c6d0;
         margin-bottom: 0.75rem;
     }
 
@@ -81,7 +78,7 @@
     .rp-header-desc {
         font-family: Georgia, serif;
         font-size: 1rem;
-        color: rgba(232,224,208,0.5);
+        color: #b9c6d0;
         max-width: 640px;
         line-height: 1.7;
     }
@@ -136,7 +133,7 @@
         font-size: 0.7rem;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        color: #8A9AAA;
+        color: #596776;
         text-align: right;
         max-width: 220px;
         line-height: 1.4;
@@ -193,7 +190,7 @@
         font-family: 'Courier New', monospace;
         font-size: 0.72rem;
         letter-spacing: 0.02em;
-        color: #8A9AAA;
+        color: #596776;
         margin-bottom: 0.5rem;
         line-height: 1.5;
     }
@@ -235,7 +232,7 @@
         text-transform: uppercase;
         background: none;
         border: 1px solid #D8D4CC;
-        color: #8A9AAA;
+        color: #596776;
         padding: 0.3rem 0.65rem;
         cursor: pointer;
         transition: border-color 0.15s, color 0.15s;
@@ -296,29 +293,31 @@
         .rp-paper-actions { flex-direction: row; align-items: center; }
     }
     </style>
+    <link rel="stylesheet" href="css/archive.css">
 </head>
-<body>
+<body class="retro-site">
 
-<nav class="navbar">
-    <div class="container">
-        <div class="nav-brand">
-            <a href="index.html" class="nav-brand-link">Dolphin Singularity</a>
-        </div>
-        <div class="nav-controls">
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="newsletter.html">Newsletter</a></li>
-            <li><a href="research.html" class="active">Research</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="https://playfuldolphin.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.45rem 1rem;font-size:0.72rem;letter-spacing:0.09em;text-transform:uppercase;border-radius:0">Subscribe</a></li>
-        </ul>
-    </div>
-</nav>
+<header class="archive-header" id="top">
+        <div class="archive-utility"><span>An independent journal of ocean intelligence</span><div><a href="newsletter.html">Newsletter</a><span aria-hidden="true"> | </span><a href="contact.html">Contact</a></div></div>
+        <a class="archive-masthead" href="index.html" aria-label="Dolphin Singularity home">
+            <span class="archive-masthead__eyebrow">Notes from a world beneath the surface</span>
+            <span class="archive-masthead__name">Dolphin<br>Singularity</span>
+            <span class="archive-masthead__tagline">Communication &nbsp;·&nbsp; Cognition &nbsp;·&nbsp; Conservation</span>
+        </a>
+        <nav class="archive-nav" aria-label="Main navigation">
+            <button class="archive-nav__toggle" id="mobileMenuToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">Explore the site <span aria-hidden="true">☰</span></button>
+            <ul class="archive-nav__links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Articles</a></li>
+                    <li><a href="research.html" aria-current="page">Research</a></li>
+                    <li><a href="sound-library.html">Sound Library</a></li>
+                    <li><a href="reading-list.html">Reading Room</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="store.html">Shop</a></li>
+                    <li class="archive-nav__subscribe"><a href="https://playfuldolphin.substack.com/subscribe">Subscribe by email</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <header class="rp-header">
     <div class="rp-header-inner">
@@ -348,15 +347,10 @@
                 previously took entire careers.
             </p>
             <p>
-                <strong>DolphinGemma</strong> (Google/GTRI/Wild Dolphin Project, 2025)
-                is the most visible result of this shift. It achieves 94% accuracy on
-                signature whistle identification and is released as an open model —
-                meaning any lab can build on it without Google's infrastructure.
-                <strong>Project CETI</strong> is doing the same for sperm whale codas,
-                using transformer architectures trained on years of field recordings.
+                <strong>DolphinGemma</strong> models sequences of dolphin sounds. Google’s announcement describes a roughly 400-million-parameter model trained on Wild Dolphin Project recordings of Atlantic spotted dolphins. <a href="https://blog.google/innovation-and-ai/products/dolphingemma/">Read the primary announcement</a>.
             </p>
             <p>
-                Neither of these is a translation system. The gap between
+                Predicting sound sequences does not establish their meaning. The gap between
                 "we can classify sounds accurately" and "we understand what they mean"
                 is large and largely unsolved. The papers below document both the
                 progress and the remaining distance.
@@ -364,8 +358,8 @@
         </div>
         <div class="rp-context-stat">
             <div class="stat-row">
-                <span class="stat-val">94%</span>
-                <span class="stat-lbl">Signature whistle ID accuracy, DolphinGemma 2025</span>
+                <span class="stat-val">~400M</span>
+                <span class="stat-lbl">DolphinGemma model parameters, Google’s 2025 announcement</span>
             </div>
             <div class="stat-row">
                 <span class="stat-val">99.5%</span>
@@ -729,6 +723,7 @@
     </div>
 </footer>
 
-<script src="script.js" defer></script>
+<script src="js/navigation.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
