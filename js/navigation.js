@@ -1,6 +1,6 @@
 // One responsive navigation controller for the homepage and inner pages.
 document.addEventListener('DOMContentLoaded', () => {
-    const nav = document.querySelector('.nav, .navbar');
+    const nav = document.querySelector('.archive-nav, .nav, .navbar');
     const toggle = document.querySelector('#hamburger, #mobileMenuToggle');
     const links = document.getElementById('navLinks');
     if (!nav || !toggle || !links) return;
